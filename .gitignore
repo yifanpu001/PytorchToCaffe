@@ -11,3 +11,4 @@ __pycache__/
 
 *.pth
 
+pyf_examples/exp01/caffemodels/
