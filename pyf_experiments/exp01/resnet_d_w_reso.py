@@ -223,9 +223,13 @@ class ResNet_BasicBlock(nn.Module):
         x = self.layer4(x)
 
         x = self.avgpool(x)
+        print(x.shape)
         x = x.view(x.shape[0], -1)
+        print(x.shape)
         # x = torch.flatten(x, 1)
         x = self.fc(x)
+        print(x.shape)
+        print('done')
 
         return x
 
@@ -381,13 +385,13 @@ def wide_resnet101_2(pretrained=False, progress=True, **kwargs):
 
 
 if __name__ == '__main__':
-    # """ ResNet_BasicBlock """
-    # model = ResNet_BasicBlock(BasicBlock, [3, 4, 6, 3], width=1)
-    # model.eval()
-    # input_tensor = torch.randn(4, 3, 224, 224)
-    # output_tensor = model(input_tensor)
-    # print(output_tensor.shape)
-    # print('#####################################################################')
+    """ ResNet_BasicBlock """
+    model = ResNet_BasicBlock(BasicBlock, [3, 4, 6, 3], width=1)
+    model.eval()
+    input_tensor = torch.randn(4, 3, 224, 224)
+    output_tensor = model(input_tensor)
+    print(output_tensor.shape)
+    print('#####################################################################')
     # print(model)
 
 
@@ -401,25 +405,26 @@ if __name__ == '__main__':
     # print('#####################################################################')
     # print(model)
 
-    args.depth_config = list(tuple(args.depth_config))
+    # """ main program """
+    # args.depth_config = list(tuple(args.depth_config))
 
-    input_size = tuple(args.input_size)
-    input_tensor = Variable(torch.ones([1, 3, input_size[0], input_size[1]]))
+    # input_size = tuple(args.input_size)
+    # input_tensor = Variable(torch.ones([1, 3, input_size[0], input_size[1]]))
 
-    model = eval(f'ResNet_{args.block}')(eval(args.block), args.depth_config, width=args.width)
-    model.eval()
+    # model = eval(f'ResNet_{args.block}')(eval(args.block), args.depth_config, width=args.width)
+    # model.eval()
 
     
-    save_path = '/home/pyf/codeforascend/PytorchToCaffe/pyf_examples/exp01'
-    name = f'caffemodels/resnet_{args.block}_depth[{str(args.depth_config[0])},{str(args.depth_config[1])},{str(args.depth_config[2])},{str(args.depth_config[3])}]_width{str(args.width)}_re{str(input_size[0])}x{str(input_size[1])}'
-    print(f'{save_path}/{name}')
-    os.system(f'mkdir {save_path}/{name}')
-    with open(f'{save_path}/{name}/model_config.txt', 'w') as fd:
-            fd.write(model.__repr__() + '\n')
+    # save_path = '/home/pyf/codeforascend/PytorchToCaffe/converted_models'
+    # name = f'exp01/resnet_{args.block}_depth[{str(args.depth_config[0])},{str(args.depth_config[1])},{str(args.depth_config[2])},{str(args.depth_config[3])}]_width{str(args.width)}_re{str(input_size[0])}x{str(input_size[1])}'
+    # print(f'{save_path}/{name}')
+    # os.system(f'mkdir {save_path}/{name}')
+    # with open(f'{save_path}/{name}/model_config.txt', 'w') as fd:
+    #         fd.write(model.__repr__() + '\n')
 
-    caffe_model_name = f'exp01_resnet_{args.block}_depth{args.depth_config}_width{args.width}_re{input_size[0]}x{input_size[1]}'
+    # caffe_model_name = f'exp01_resnet_{args.block}_depth[{str(args.depth_config[0])},{str(args.depth_config[1])},{str(args.depth_config[2])},{str(args.depth_config[3])}]_width{args.width}_re{input_size[0]}x{input_size[1]}'
 
 
-    pytorch_to_caffe.trans_net(model, input_tensor, caffe_model_name)
-    pytorch_to_caffe.save_prototxt(f'{save_path}/{name}/{caffe_model_name}.prototxt')
-    pytorch_to_caffe.save_caffemodel(f'{save_path}/{name}/{caffe_model_name}.caffemodel')
+    # pytorch_to_caffe.trans_net(model, input_tensor, caffe_model_name)
+    # pytorch_to_caffe.save_prototxt(f'{save_path}/{name}/{caffe_model_name}.prototxt')
+    # pytorch_to_caffe.save_caffemodel(f'{save_path}/{name}/{caffe_model_name}.caffemodel')
