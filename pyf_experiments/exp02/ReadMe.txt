@@ -1,0 +1,1 @@
+delete the layers after the last conv
