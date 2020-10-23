@@ -11,11 +11,15 @@ blocks = ['BasicBlock']
 # ]
 # widths = [1, 2, 3, 4]
 # input_sizes = [256, 512, 1024, 1536]
+
 depth_configs = [
+    [2, 2, 2, 2],
     [3, 4, 6, 3],
+    [3, 4, 23, 3],
+    [3, 8, 36, 3],
 ]
-widths = [1,]
-input_sizes = [256, 512,]
+widths = [1, 2, 3,]
+input_sizes = [256, 512, 1024,]
 
 """
 python /home/pyf/codeforascend/PytorchToCaffe/pyf_experiments/exp04/resnet_d_w_reso.py --block BasicBlock --depth_config 2 2 2 2 --width 2 --input_size 224 224
