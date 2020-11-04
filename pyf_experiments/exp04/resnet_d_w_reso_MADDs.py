@@ -6,6 +6,8 @@ import torch.nn as nn
 from torch.autograd import Variable
 import torchvision.models as models
 import pytorch_to_caffe
+from torchsummaryX import summary
+import csv
 import argparse
 
 parser = argparse.ArgumentParser(description='PyTorch To Caffe')
@@ -391,7 +393,8 @@ if __name__ == '__main__':
     # print('#####################################################################')
     # print(model)
 
-    """ main program """
+    """ for pth 2 caffe """
+    """
     args.depth_config = list(tuple(args.depth_config))
 
     input_size = tuple(args.input_size)
@@ -413,8 +416,32 @@ if __name__ == '__main__':
 
     pytorch_to_caffe.trans_net(model, input_tensor, caffe_model_name)
     pytorch_to_caffe.save_prototxt(f'{save_path}/{name}/{caffe_model_name}.prototxt')
-    pytorch_to_caffe.save_caffemodel(f'{save_path}/{name}/{caffe_model_name}.caffemodel')
+    pytorch_to_caffe.save_caffemodel(f'{save_path}/{name}/{caffe_model_name}.caffemodel')"""
 
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    # NEXT TIME: Add Model Summary Into the Model Diretory
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    ####################
+    ####################
+    """ for torchsummaryX """
+    args.depth_config = list(tuple(args.depth_config))
+    
+    input_size = tuple(args.input_size)
+    input_tensor = Variable(torch.ones([1, 3, input_size[0], input_size[1]]))
+
+    model = eval(f'ResNet_{args.block}')(eval(args.block), args.depth_config, width=args.width)
+    model.eval()
+
+    df, df_total = summary(model, torch.zeros([1, 3, input_size[0], input_size[1]]), print_summary=False)
+
+    """
+    # for debug
+    print("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv")
+    print(df_total.loc["Mult-Adds", 'Totals'])
+    print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")"""
+
+    d = f'[{str(args.depth_config[0])},{str(args.depth_config[1])},{str(args.depth_config[2])},{str(args.depth_config[3])}]'
+    model_name = f'exp04_resnet_{args.block}_depth{d}_width{str(args.width)}_re{str(input_size[0])}x{str(input_size[1])}'
+
+    with open('/home/pyf/codeforascend/PytorchToCaffe/pyf_experiments/exp04/exp04_Bottleneck_MADDs.csv', 'a') as csvfile:
+
+        writer = csv.writer(csvfile)
+        # writer.writerow(['Model Name','Block Name','Depth Config', 'Width', 'Resolution', 'MADDs'])
+        writer.writerow([model_name, args.block, d, str(args.width), str(input_size[0]), str(int(df_total.loc["Mult-Adds", 'Totals']))])

@@ -6,12 +6,14 @@ import torch.nn as nn
 from torch.autograd import Variable
 import torchvision.models as models
 import pytorch_to_caffe
+from torchsummaryX import summary
+import csv
 import argparse
 
 parser = argparse.ArgumentParser(description='PyTorch To Caffe')
 parser.add_argument('--block', type=str, help='block name of the model')
 parser.add_argument('--depth_config', nargs='+', type=int, help='depth of the model')
-parser.add_argument('--width', type=int, help='width of the model')
+parser.add_argument('--width', type=float, help='width of the model')
 parser.add_argument('--input_size', nargs='+', type=int, help='input feature map size of the model')
 args = parser.parse_args()
 
@@ -159,12 +161,12 @@ class ResNet_BasicBlock(nn.Module):
         self.bn1 = norm_layer(self.inplanes)
         self.relu = nn.ReLU(inplace=True)
         self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
-        self.layer1 = self._make_layer(block, 64 * width, layers[0])
-        self.layer2 = self._make_layer(block, 128 * width, layers[1], stride=2,
+        self.layer1 = self._make_layer(block, int(64 * width), layers[0])
+        self.layer2 = self._make_layer(block, int(128 * width), layers[1], stride=2,
                                        dilate=replace_stride_with_dilation[0])
-        self.layer3 = self._make_layer(block, 256 * width, layers[2], stride=2,
+        self.layer3 = self._make_layer(block, int(256 * width), layers[2], stride=2,
                                        dilate=replace_stride_with_dilation[1])
-        self.layer4 = self._make_layer(block, 512 * width, layers[3], stride=2,
+        self.layer4 = self._make_layer(block, int(512 * width), layers[3], stride=2,
                                        dilate=replace_stride_with_dilation[2])
         # self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
         # self.fc = nn.Linear(512 * width, num_classes)
@@ -248,7 +250,7 @@ class ResNet_Bottleneck(nn.Module):
             raise ValueError("replace_stride_with_dilation should be None "
                              "or a 3-element tuple, got {}".format(replace_stride_with_dilation))
         self.groups = groups
-        width_per_group = 64 * width
+        width_per_group = int(64 * width)
         self.base_width = width_per_group
         self.conv1 = nn.Conv2d(3, self.inplanes, kernel_size=7, stride=2, padding=3,
                                bias=False)
@@ -402,19 +404,21 @@ if __name__ == '__main__':
 
     
     save_path = '/home/pyf/codeforascend/PytorchToCaffe/converted_models'
-    name = f'exp04/resnet_{args.block}_depth[{str(args.depth_config[0])},{str(args.depth_config[1])},{str(args.depth_config[2])},{str(args.depth_config[3])}]_width{str(args.width)}_re{str(input_size[0])}x{str(input_size[1])}'
+    name = f'exp06/resnet_{args.block}_depth[{str(args.depth_config[0])},{str(args.depth_config[1])},{str(args.depth_config[2])},{str(args.depth_config[3])}]_width{str(args.width)}_re{str(input_size[0])}x{str(input_size[1])}'
     print(f'{save_path}/{name}')
     os.system(f'mkdir {save_path}/{name}')
     with open(f'{save_path}/{name}/model_config.txt', 'w') as fd:
             fd.write(model.__repr__() + '\n')
 
-    caffe_model_name = f'exp04_resnet_{args.block}_depth[{str(args.depth_config[0])},{str(args.depth_config[1])},{str(args.depth_config[2])},{str(args.depth_config[3])}]_width{args.width}_re{input_size[0]}x{input_size[1]}'
+    # MADDs
+    _, df_total = summary(model, torch.zeros([1, 3, input_size[0], input_size[1]]), print_summary=False)
+    with open(f'{save_path}/{name}/MADDs.csv', 'w') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow([str(int(df_total.loc["Mult-Adds", 'Totals']))])
+
+    caffe_model_name = f'exp06_resnet_{args.block}_depth[{str(args.depth_config[0])},{str(args.depth_config[1])},{str(args.depth_config[2])},{str(args.depth_config[3])}]_width{args.width}_re{input_size[0]}x{input_size[1]}'
 
 
     pytorch_to_caffe.trans_net(model, input_tensor, caffe_model_name)
     pytorch_to_caffe.save_prototxt(f'{save_path}/{name}/{caffe_model_name}.prototxt')
     pytorch_to_caffe.save_caffemodel(f'{save_path}/{name}/{caffe_model_name}.caffemodel')
-
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    # NEXT TIME: Add Model Summary Into the Model Diretory
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
