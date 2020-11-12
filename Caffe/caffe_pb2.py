@@ -19,7 +19,8 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='caffe.proto',
   package='caffe',
-  serialized_pb=_b('\n\x0b\x63\x61\x66\x66\x65.proto\x12\x05\x63\x61\x66\x66\x65\"\x1c\n\tBlobShape\x12\x0f\n\x03\x64im\x18\x01 \x03(\x03\x42\x02\x10\x01\"\xcc\x01\n\tBlobProto\x12\x1f\n\x05shape\x18\x07 \x01(\x0b\x32\x10.caffe.BlobShape\x12\x10\n\x04\x64\x61ta\x18\x05 \x03(\x02\x42\x02\x10\x01\x12\x10\n\x04\x64iff\x18\x06 \x03(\x02\x42\x02\x10\x01\x12\x17\n\x0b\x64ouble_data\x18\x08 \x03(\x01\x42\x02\x10\x01\x12\x17\n\x0b\x64ouble_diff\x18\t \x03(\x01\x42\x02\x10\x01\x12\x0e\n\x03num\x18\x01 \x01(\x05:\x01\x30\x12\x13\n\x08\x63hannels\x18\x02 \x01(\x05:\x01\x30\x12\x11\n\x06height\x18\x03 \x01(\x05:\x01\x30\x12\x10\n\x05width\x18\x04 \x01(\x05:\x01\x30\"2\n\x0f\x42lobProtoVector\x12\x1f\n\x05\x62lobs\x18\x01 \x03(\x0b\x32\x10.caffe.BlobProto\"\x91\x01\n\x05\x44\x61tum\x12\x10\n\x08\x63hannels\x18\x01 \x01(\x05\x12\x0e\n\x06height\x18\x02 \x01(\x05\x12\r\n\x05width\x18\x03 \x01(\x05\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\x12\r\n\x05label\x18\x05 \x01(\x05\x12\x12\n\nfloat_data\x18\x06 \x03(\x02\x12\x16\n\x07\x65ncoded\x18\x07 \x01(\x08:\x05\x66\x61lse\x12\x0e\n\x06labels\x18\x08 \x03(\x02\"A\n\x0cLabelMapItem\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\x05\x12\x14\n\x0c\x64isplay_name\x18\x03 \x01(\t\"-\n\x08LabelMap\x12!\n\x04item\x18\x01 \x03(\x0b\x32\x13.caffe.LabelMapItem\"o\n\x07Sampler\x12\x14\n\tmin_scale\x18\x01 \x01(\x02:\x01\x31\x12\x14\n\tmax_scale\x18\x02 \x01(\x02:\x01\x31\x12\x1b\n\x10min_aspect_ratio\x18\x03 \x01(\x02:\x01\x31\x12\x1b\n\x10max_aspect_ratio\x18\x04 \x01(\x02:\x01\x31\"\xc0\x01\n\x10SampleConstraint\x12\x1b\n\x13min_jaccard_overlap\x18\x01 \x01(\x02\x12\x1b\n\x13max_jaccard_overlap\x18\x02 \x01(\x02\x12\x1b\n\x13min_sample_coverage\x18\x03 \x01(\x02\x12\x1b\n\x13max_sample_coverage\x18\x04 \x01(\x02\x12\x1b\n\x13min_object_coverage\x18\x05 \x01(\x02\x12\x1b\n\x13max_object_coverage\x18\x06 \x01(\x02\"\xb2\x01\n\x0c\x42\x61tchSampler\x12 \n\x12use_original_image\x18\x01 \x01(\x08:\x04true\x12\x1f\n\x07sampler\x18\x02 \x01(\x0b\x32\x0e.caffe.Sampler\x12\x32\n\x11sample_constraint\x18\x03 \x01(\x0b\x32\x17.caffe.SampleConstraint\x12\x12\n\nmax_sample\x18\x04 \x01(\r\x12\x17\n\nmax_trials\x18\x05 \x01(\r:\x03\x31\x30\x30\"\x8a\x01\n\x0e\x45mitConstraint\x12\x39\n\temit_type\x18\x01 \x01(\x0e\x32\x1e.caffe.EmitConstraint.EmitType:\x06\x43\x45NTER\x12\x14\n\x0c\x65mit_overlap\x18\x02 \x01(\x02\"\'\n\x08\x45mitType\x12\n\n\x06\x43\x45NTER\x10\x00\x12\x0f\n\x0bMIN_OVERLAP\x10\x01\"\x87\x01\n\x0eNormalizedBBox\x12\x0c\n\x04xmin\x18\x01 \x01(\x02\x12\x0c\n\x04ymin\x18\x02 \x01(\x02\x12\x0c\n\x04xmax\x18\x03 \x01(\x02\x12\x0c\n\x04ymax\x18\x04 \x01(\x02\x12\r\n\x05label\x18\x05 \x01(\x05\x12\x11\n\tdifficult\x18\x06 \x01(\x08\x12\r\n\x05score\x18\x07 \x01(\x02\x12\x0c\n\x04size\x18\x08 \x01(\x02\"I\n\nAnnotation\x12\x16\n\x0binstance_id\x18\x01 \x01(\x05:\x01\x30\x12#\n\x04\x62\x62ox\x18\x02 \x01(\x0b\x32\x15.caffe.NormalizedBBox\"M\n\x0f\x41nnotationGroup\x12\x13\n\x0bgroup_label\x18\x01 \x01(\x05\x12%\n\nannotation\x18\x02 \x03(\x0b\x32\x11.caffe.Annotation\"\xaf\x01\n\x0e\x41nnotatedDatum\x12\x1b\n\x05\x64\x61tum\x18\x01 \x01(\x0b\x32\x0c.caffe.Datum\x12\x32\n\x04type\x18\x02 \x01(\x0e\x32$.caffe.AnnotatedDatum.AnnotationType\x12\x30\n\x10\x61nnotation_group\x18\x03 \x03(\x0b\x32\x16.caffe.AnnotationGroup\"\x1a\n\x0e\x41nnotationType\x12\x08\n\x04\x42\x42OX\x10\x00\"C\n\tMTCNNBBox\x12\x0c\n\x04xmin\x18\x01 \x01(\x02\x12\x0c\n\x04ymin\x18\x02 \x01(\x02\x12\x0c\n\x04xmax\x18\x03 \x01(\x02\x12\x0c\n\x04ymax\x18\x04 \x01(\x02\"U\n\nMTCNNDatum\x12\x1b\n\x05\x64\x61tum\x18\x01 \x01(\x0b\x32\x0c.caffe.Datum\x12\x1d\n\x03roi\x18\x02 \x01(\x0b\x32\x10.caffe.MTCNNBBox\x12\x0b\n\x03pts\x18\x03 \x03(\x02\"\x98\x02\n\x0f\x46illerParameter\x12\x16\n\x04type\x18\x01 \x01(\t:\x08\x63onstant\x12\x10\n\x05value\x18\x02 \x01(\x02:\x01\x30\x12\x0e\n\x03min\x18\x03 \x01(\x02:\x01\x30\x12\x0e\n\x03max\x18\x04 \x01(\x02:\x01\x31\x12\x0f\n\x04mean\x18\x05 \x01(\x02:\x01\x30\x12\x0e\n\x03std\x18\x06 \x01(\x02:\x01\x31\x12\x12\n\x06sparse\x18\x07 \x01(\x05:\x02-1\x12\x42\n\rvariance_norm\x18\x08 \x01(\x0e\x32#.caffe.FillerParameter.VarianceNorm:\x06\x46\x41N_IN\x12\x0c\n\x04\x66ile\x18\t \x01(\t\"4\n\x0cVarianceNorm\x12\n\n\x06\x46\x41N_IN\x10\x00\x12\x0b\n\x07\x46\x41N_OUT\x10\x01\x12\x0b\n\x07\x41VERAGE\x10\x02\"\x8e\x02\n\x0cNetParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05input\x18\x03 \x03(\t\x12%\n\x0binput_shape\x18\x08 \x03(\x0b\x32\x10.caffe.BlobShape\x12\x11\n\tinput_dim\x18\x04 \x03(\x05\x12\x1d\n\x0e\x66orce_backward\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x1e\n\x05state\x18\x06 \x01(\x0b\x32\x0f.caffe.NetState\x12\x19\n\ndebug_info\x18\x07 \x01(\x08:\x05\x66\x61lse\x12$\n\x05layer\x18\x64 \x03(\x0b\x32\x15.caffe.LayerParameter\x12\'\n\x06layers\x18\x02 \x03(\x0b\x32\x17.caffe.V1LayerParameter\"\xc0\n\n\x0fSolverParameter\x12\x0b\n\x03net\x18\x18 \x01(\t\x12&\n\tnet_param\x18\x19 \x01(\x0b\x32\x13.caffe.NetParameter\x12\x11\n\ttrain_net\x18\x01 \x01(\t\x12\x10\n\x08test_net\x18\x02 \x03(\t\x12,\n\x0ftrain_net_param\x18\x15 \x01(\x0b\x32\x13.caffe.NetParameter\x12+\n\x0etest_net_param\x18\x16 \x03(\x0b\x32\x13.caffe.NetParameter\x12$\n\x0btrain_state\x18\x1a \x01(\x0b\x32\x0f.caffe.NetState\x12#\n\ntest_state\x18\x1b \x03(\x0b\x32\x0f.caffe.NetState\x12\x11\n\ttest_iter\x18\x03 \x03(\x05\x12\x18\n\rtest_interval\x18\x04 \x01(\x05:\x01\x30\x12 \n\x11test_compute_loss\x18\x13 \x01(\x08:\x05\x66\x61lse\x12!\n\x13test_initialization\x18  \x01(\x08:\x04true\x12\x0f\n\x07\x62\x61se_lr\x18\x05 \x01(\x02\x12\x0f\n\x07\x64isplay\x18\x06 \x01(\x05\x12\x17\n\x0c\x61verage_loss\x18! \x01(\x05:\x01\x31\x12\x10\n\x08max_iter\x18\x07 \x01(\x05\x12\x14\n\titer_size\x18$ \x01(\x05:\x01\x31\x12\x11\n\tlr_policy\x18\x08 \x01(\t\x12\r\n\x05gamma\x18\t \x01(\x02\x12\r\n\x05power\x18\n \x01(\x02\x12\x10\n\x08momentum\x18\x0b \x01(\x02\x12\x14\n\x0cweight_decay\x18\x0c \x01(\x02\x12\x1f\n\x13regularization_type\x18\x1d \x01(\t:\x02L2\x12\x10\n\x08stepsize\x18\r \x01(\x05\x12\x11\n\tstepvalue\x18\" \x03(\x05\x12\x0f\n\x07stagelr\x18\x32 \x03(\x02\x12\x11\n\tstageiter\x18\x33 \x03(\x05\x12\x1a\n\x0e\x63lip_gradients\x18# \x01(\x02:\x02-1\x12\x13\n\x08snapshot\x18\x0e \x01(\x05:\x01\x30\x12\x17\n\x0fsnapshot_prefix\x18\x0f \x01(\t\x12\x1c\n\rsnapshot_diff\x18\x10 \x01(\x08:\x05\x66\x61lse\x12K\n\x0fsnapshot_format\x18% \x01(\x0e\x32%.caffe.SolverParameter.SnapshotFormat:\x0b\x42INARYPROTO\x12;\n\x0bsolver_mode\x18\x11 \x01(\x0e\x32!.caffe.SolverParameter.SolverMode:\x03GPU\x12\x14\n\tdevice_id\x18\x12 \x01(\x05:\x01\x30\x12\x17\n\x0brandom_seed\x18\x14 \x01(\x03:\x02-1\x12\x11\n\x04type\x18( \x01(\t:\x03SGD\x12\x14\n\x05\x64\x65lta\x18\x1f \x01(\x02:\x05\x31\x65-08\x12\x18\n\tmomentum2\x18\' \x01(\x02:\x05\x30.999\x12\x11\n\trms_decay\x18& \x01(\x02\x12\x19\n\ndebug_info\x18\x17 \x01(\x08:\x05\x66\x61lse\x12\"\n\x14snapshot_after_train\x18\x1c \x01(\x08:\x04true\x12;\n\x0bsolver_type\x18\x1e \x01(\x0e\x32!.caffe.SolverParameter.SolverType:\x03SGD\"+\n\x0eSnapshotFormat\x12\x08\n\x04HDF5\x10\x00\x12\x0f\n\x0b\x42INARYPROTO\x10\x01\"\x1e\n\nSolverMode\x12\x07\n\x03\x43PU\x10\x00\x12\x07\n\x03GPU\x10\x01\"U\n\nSolverType\x12\x07\n\x03SGD\x10\x00\x12\x0c\n\x08NESTEROV\x10\x01\x12\x0b\n\x07\x41\x44\x41GRAD\x10\x02\x12\x0b\n\x07RMSPROP\x10\x03\x12\x0c\n\x08\x41\x44\x41\x44\x45LTA\x10\x04\x12\x08\n\x04\x41\x44\x41M\x10\x05\"l\n\x0bSolverState\x12\x0c\n\x04iter\x18\x01 \x01(\x05\x12\x13\n\x0blearned_net\x18\x02 \x01(\t\x12!\n\x07history\x18\x03 \x03(\x0b\x32\x10.caffe.BlobProto\x12\x17\n\x0c\x63urrent_step\x18\x04 \x01(\x05:\x01\x30\"N\n\x08NetState\x12!\n\x05phase\x18\x01 \x01(\x0e\x32\x0c.caffe.Phase:\x04TEST\x12\x10\n\x05level\x18\x02 \x01(\x05:\x01\x30\x12\r\n\x05stage\x18\x03 \x03(\t\"s\n\x0cNetStateRule\x12\x1b\n\x05phase\x18\x01 \x01(\x0e\x32\x0c.caffe.Phase\x12\x11\n\tmin_level\x18\x02 \x01(\x05\x12\x11\n\tmax_level\x18\x03 \x01(\x05\x12\r\n\x05stage\x18\x04 \x03(\t\x12\x11\n\tnot_stage\x18\x05 \x03(\t\"\x90\x02\n\x1bSpatialTransformerParameter\x12\x1e\n\x0etransform_type\x18\x01 \x01(\t:\x06\x61\x66\x66ine\x12\x1e\n\x0csampler_type\x18\x02 \x01(\t:\x08\x62ilinear\x12\x10\n\x08output_H\x18\x03 \x01(\x05\x12\x10\n\x08output_W\x18\x04 \x01(\x05\x12\x1b\n\rto_compute_dU\x18\x05 \x01(\x08:\x04true\x12\x11\n\ttheta_1_1\x18\x06 \x01(\x01\x12\x11\n\ttheta_1_2\x18\x07 \x01(\x01\x12\x11\n\ttheta_1_3\x18\x08 \x01(\x01\x12\x11\n\ttheta_2_1\x18\t \x01(\x01\x12\x11\n\ttheta_2_2\x18\n \x01(\x01\x12\x11\n\ttheta_2_3\x18\x0b \x01(\x01\"5\n\x0fSTLossParameter\x12\x10\n\x08output_H\x18\x01 \x02(\x05\x12\x10\n\x08output_W\x18\x02 \x02(\x05\"\xa3\x01\n\tParamSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x31\n\nshare_mode\x18\x02 \x01(\x0e\x32\x1d.caffe.ParamSpec.DimCheckMode\x12\x12\n\x07lr_mult\x18\x03 \x01(\x02:\x01\x31\x12\x15\n\ndecay_mult\x18\x04 \x01(\x02:\x01\x31\"*\n\x0c\x44imCheckMode\x12\n\n\x06STRICT\x10\x00\x12\x0e\n\nPERMISSIVE\x10\x01\"\xc1%\n\x0eLayerParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0e\n\x06\x62ottom\x18\x03 \x03(\t\x12\x0b\n\x03top\x18\x04 \x03(\t\x12\x1b\n\x05phase\x18\n \x01(\x0e\x32\x0c.caffe.Phase\x12\x13\n\x0bloss_weight\x18\x05 \x03(\x02\x12\x1f\n\x05param\x18\x06 \x03(\x0b\x32\x10.caffe.ParamSpec\x12\x1f\n\x05\x62lobs\x18\x07 \x03(\x0b\x32\x10.caffe.BlobProto\x12\x16\n\x0epropagate_down\x18\x0b \x03(\x08\x12$\n\x07include\x18\x08 \x03(\x0b\x32\x13.caffe.NetStateRule\x12$\n\x07\x65xclude\x18\t \x03(\x0b\x32\x13.caffe.NetStateRule\x12\x37\n\x0ftransform_param\x18\x64 \x01(\x0b\x32\x1e.caffe.TransformationParameter\x12(\n\nloss_param\x18\x65 \x01(\x0b\x32\x14.caffe.LossParameter\x12<\n\x14\x64\x65tection_loss_param\x18\xc8\x01 \x01(\x0b\x32\x1d.caffe.DetectionLossParameter\x12<\n\x14\x65val_detection_param\x18\xc9\x01 \x01(\x0b\x32\x1d.caffe.EvalDetectionParameter\x12\x36\n\x11region_loss_param\x18\xca\x01 \x01(\x0b\x32\x1a.caffe.RegionLossParameter\x12+\n\x0breorg_param\x18\xcb\x01 \x01(\x0b\x32\x15.caffe.ReorgParameter\x12\x30\n\x0e\x61\x63\x63uracy_param\x18\x66 \x01(\x0b\x32\x18.caffe.AccuracyParameter\x12,\n\x0c\x61rgmax_param\x18g \x01(\x0b\x32\x16.caffe.ArgMaxParameter\x12\x34\n\x10\x62\x61tch_norm_param\x18\x8b\x01 \x01(\x0b\x32\x19.caffe.BatchNormParameter\x12)\n\nbias_param\x18\x8d\x01 \x01(\x0b\x32\x14.caffe.BiasParameter\x12,\n\x0c\x63oncat_param\x18h \x01(\x0b\x32\x16.caffe.ConcatParameter\x12?\n\x16\x63ontrastive_loss_param\x18i \x01(\x0b\x32\x1f.caffe.ContrastiveLossParameter\x12\x36\n\x11\x63onvolution_param\x18j \x01(\x0b\x32\x1b.caffe.ConvolutionParameter\x12(\n\ndata_param\x18k \x01(\x0b\x32\x14.caffe.DataParameter\x12.\n\rdropout_param\x18l \x01(\x0b\x32\x17.caffe.DropoutParameter\x12\x33\n\x10\x64ummy_data_param\x18m \x01(\x0b\x32\x19.caffe.DummyDataParameter\x12.\n\reltwise_param\x18n \x01(\x0b\x32\x17.caffe.EltwiseParameter\x12\'\n\telu_param\x18\x8c\x01 \x01(\x0b\x32\x13.caffe.ELUParameter\x12+\n\x0b\x65mbed_param\x18\x89\x01 \x01(\x0b\x32\x15.caffe.EmbedParameter\x12&\n\texp_param\x18o \x01(\x0b\x32\x13.caffe.ExpParameter\x12/\n\rflatten_param\x18\x87\x01 \x01(\x0b\x32\x17.caffe.FlattenParameter\x12\x31\n\x0fhdf5_data_param\x18p \x01(\x0b\x32\x18.caffe.HDF5DataParameter\x12\x35\n\x11hdf5_output_param\x18q \x01(\x0b\x32\x1a.caffe.HDF5OutputParameter\x12\x33\n\x10hinge_loss_param\x18r \x01(\x0b\x32\x19.caffe.HingeLossParameter\x12\x33\n\x10image_data_param\x18s \x01(\x0b\x32\x19.caffe.ImageDataParameter\x12\x39\n\x13infogain_loss_param\x18t \x01(\x0b\x32\x1c.caffe.InfogainLossParameter\x12\x39\n\x13inner_product_param\x18u \x01(\x0b\x32\x1c.caffe.InnerProductParameter\x12+\n\x0binput_param\x18\x8f\x01 \x01(\x0b\x32\x15.caffe.InputParameter\x12\'\n\tlog_param\x18\x86\x01 \x01(\x0b\x32\x13.caffe.LogParameter\x12&\n\tlrn_param\x18v \x01(\x0b\x32\x13.caffe.LRNParameter\x12\x35\n\x11memory_data_param\x18w \x01(\x0b\x32\x1a.caffe.MemoryDataParameter\x12&\n\tmvn_param\x18x \x01(\x0b\x32\x13.caffe.MVNParameter\x12.\n\rpooling_param\x18y \x01(\x0b\x32\x17.caffe.PoolingParameter\x12*\n\x0bpower_param\x18z \x01(\x0b\x32\x15.caffe.PowerParameter\x12+\n\x0bprelu_param\x18\x83\x01 \x01(\x0b\x32\x15.caffe.PReLUParameter\x12-\n\x0cpython_param\x18\x82\x01 \x01(\x0b\x32\x16.caffe.PythonParameter\x12\x33\n\x0frecurrent_param\x18\x92\x01 \x01(\x0b\x32\x19.caffe.RecurrentParameter\x12\x33\n\x0freduction_param\x18\x88\x01 \x01(\x0b\x32\x19.caffe.ReductionParameter\x12(\n\nrelu_param\x18{ \x01(\x0b\x32\x14.caffe.ReLUParameter\x12+\n\x0brelu6_param\x18\xd0\x01 \x01(\x0b\x32\x15.caffe.ReLU6Parameter\x12/\n\rreshape_param\x18\x85\x01 \x01(\x0b\x32\x17.caffe.ReshapeParameter\x12\x38\n\x11roi_pooling_param\x18\xd7\xc7\xf8\x03 \x01(\x0b\x32\x1a.caffe.ROIPoolingParameter\x12+\n\x0bscale_param\x18\x8e\x01 \x01(\x0b\x32\x15.caffe.ScaleParameter\x12.\n\rsigmoid_param\x18| \x01(\x0b\x32\x17.caffe.SigmoidParameter\x12=\n\x14smooth_l1_loss_param\x18\xd8\xc7\xf8\x03 \x01(\x0b\x32\x1c.caffe.SmoothL1LossParameter\x12.\n\rsoftmax_param\x18} \x01(\x0b\x32\x17.caffe.SoftmaxParameter\x12\'\n\tspp_param\x18\x84\x01 \x01(\x0b\x32\x13.caffe.SPPParameter\x12*\n\x0bslice_param\x18~ \x01(\x0b\x32\x15.caffe.SliceParameter\x12(\n\ntanh_param\x18\x7f \x01(\x0b\x32\x14.caffe.TanHParameter\x12\x33\n\x0fthreshold_param\x18\x80\x01 \x01(\x0b\x32\x19.caffe.ThresholdParameter\x12)\n\ntile_param\x18\x8a\x01 \x01(\x0b\x32\x14.caffe.TileParameter\x12\x36\n\x11window_data_param\x18\x81\x01 \x01(\x0b\x32\x1a.caffe.WindowDataParameter\x12\x35\n\x08st_param\x18\x94\x01 \x01(\x0b\x32\".caffe.SpatialTransformerParameter\x12.\n\rst_loss_param\x18\x91\x01 \x01(\x0b\x32\x16.caffe.STLossParameter\x12\'\n\trpn_param\x18\x96\x01 \x01(\x0b\x32\x13.caffe.RPNParameter\x12\x34\n\x10\x66ocal_loss_param\x18\x9b\x01 \x01(\x0b\x32\x19.caffe.FocalLossParameter\x12\x32\n\x0f\x61sdn_data_param\x18\x9f\x01 \x01(\x0b\x32\x18.caffe.AsdnDataParameter\x12%\n\x08\x62n_param\x18\xa0\x01 \x01(\x0b\x32\x12.caffe.BNParameter\x12\x34\n\x10mtcnn_data_param\x18\xa1\x01 \x01(\x0b\x32\x19.caffe.MTCNNDataParameter\x12-\n\x0cinterp_param\x18\xa2\x01 \x01(\x0b\x32\x16.caffe.InterpParameter\x12:\n\x13psroi_pooling_param\x18\xa3\x01 \x01(\x0b\x32\x1c.caffe.PSROIPoolingParameter\x12<\n\x14\x61nnotated_data_param\x18\xa4\x01 \x01(\x0b\x32\x1d.caffe.AnnotatedDataParameter\x12\x32\n\x0fprior_box_param\x18\xa5\x01 \x01(\x0b\x32\x18.caffe.PriorBoxParameter\x12)\n\ncrop_param\x18\xa7\x01 \x01(\x0b\x32\x14.caffe.CropParameter\x12\x44\n\x18\x64\x65tection_evaluate_param\x18\xa8\x01 \x01(\x0b\x32!.caffe.DetectionEvaluateParameter\x12@\n\x16\x64\x65tection_output_param\x18\xa9\x01 \x01(\x0b\x32\x1f.caffe.DetectionOutputParameter\x12.\n\nnorm_param\x18\xaa\x01 \x01(\x0b\x32\x19.caffe.NormalizeParameter\x12:\n\x13multibox_loss_param\x18\xab\x01 \x01(\x0b\x32\x1c.caffe.MultiBoxLossParameter\x12/\n\rpermute_param\x18\xac\x01 \x01(\x0b\x32\x17.caffe.PermuteParameter\x12\x34\n\x10video_data_param\x18\xad\x01 \x01(\x0b\x32\x19.caffe.VideoDataParameter\x12G\n\x1amargin_inner_product_param\x18\xae\x01 \x01(\x0b\x32\".caffe.MarginInnerProductParameter\x12\x36\n\x11\x63\x65nter_loss_param\x18\xaf\x01 \x01(\x0b\x32\x1a.caffe.CenterLossParameter\x12L\n\x1c\x64\x65\x66ormable_convolution_param\x18\xb0\x01 \x01(\x0b\x32%.caffe.DeformableConvolutionParameter\x12\x43\n\x18label_specific_add_param\x18\xb1\x01 \x01(\x0b\x32 .caffe.LabelSpecificAddParameter\x12X\n#additive_margin_inner_product_param\x18\xb2\x01 \x01(\x0b\x32*.caffe.AdditiveMarginInnerProductParameter\x12\x35\n\x11\x63osin_add_m_param\x18\xb3\x01 \x01(\x0b\x32\x19.caffe.CosinAddmParameter\x12\x35\n\x11\x63osin_mul_m_param\x18\xb4\x01 \x01(\x0b\x32\x19.caffe.CosinMulmParameter\x12:\n\x13\x63hannel_scale_param\x18\xb5\x01 \x01(\x0b\x32\x1c.caffe.ChannelScaleParameter\x12)\n\nflip_param\x18\xb6\x01 \x01(\x0b\x32\x14.caffe.FlipParameter\x12\x38\n\x12triplet_loss_param\x18\xb7\x01 \x01(\x0b\x32\x1b.caffe.TripletLossParameter\x12G\n\x1a\x63oupled_cluster_loss_param\x18\xb8\x01 \x01(\x0b\x32\".caffe.CoupledClusterLossParameter\x12\x43\n\x1ageneral_triplet_loss_param\x18\xb9\x01 \x01(\x0b\x32\x1e.caffe.GeneralTripletParameter\x12\x32\n\x0froi_align_param\x18\xba\x01 \x01(\x0b\x32\x18.caffe.ROIAlignParameter\x12\x32\n\x0eupsample_param\x18\xa3\x8d\x06 \x01(\x0b\x32\x18.caffe.UpsampleParameter\x12.\n\x0cmatmul_param\x18\xa5\x8d\x06 \x01(\x0b\x32\x16.caffe.MatMulParameter\x12\x39\n\x12pass_through_param\x18\xa4\x8d\x06 \x01(\x0b\x32\x1b.caffe.PassThroughParameter\"\xa3\x01\n\x11UpsampleParameter\x12\x10\n\x05scale\x18\x01 \x01(\r:\x01\x32\x12\x0f\n\x07scale_h\x18\x02 \x01(\r\x12\x0f\n\x07scale_w\x18\x03 \x01(\r\x12\x18\n\tpad_out_h\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x18\n\tpad_out_w\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x12\n\nupsample_h\x18\x06 \x01(\r\x12\x12\n\nupsample_w\x18\x07 \x01(\r\">\n\x0fMatMulParameter\x12\r\n\x05\x64im_1\x18\x01 \x01(\r\x12\r\n\x05\x64im_2\x18\x02 \x01(\r\x12\r\n\x05\x64im_3\x18\x03 \x01(\r\"^\n\x14PassThroughParameter\x12\x15\n\nnum_output\x18\x01 \x01(\r:\x01\x30\x12\x17\n\x0c\x62lock_height\x18\x02 \x01(\r:\x01\x30\x12\x16\n\x0b\x62lock_width\x18\x03 \x01(\r:\x01\x30\"\x95\x01\n\x16\x41nnotatedDataParameter\x12*\n\rbatch_sampler\x18\x01 \x03(\x0b\x32\x13.caffe.BatchSampler\x12\x16\n\x0elabel_map_file\x18\x02 \x01(\t\x12\x37\n\tanno_type\x18\x03 \x01(\x0e\x32$.caffe.AnnotatedDatum.AnnotationType\"\xab\x01\n\x11\x41sdnDataParameter\x12\x16\n\ncount_drop\x18\x01 \x01(\x05:\x02\x31\x35\x12\x19\n\rpermute_count\x18\x02 \x01(\x05:\x02\x32\x30\x12\x19\n\x0e\x63ount_drop_neg\x18\x03 \x01(\x05:\x01\x30\x12\x16\n\x08\x63hannels\x18\x04 \x01(\x05:\x04\x31\x30\x32\x34\x12\x14\n\titer_size\x18\x05 \x01(\x05:\x01\x32\x12\x1a\n\x0fmaintain_before\x18\x06 \x01(\x05:\x01\x31\"\x80\x02\n\x12MTCNNDataParameter\x12\x17\n\taugmented\x18\x01 \x01(\x08:\x04true\x12\x12\n\x04\x66lip\x18\x02 \x01(\x08:\x04true\x12\x18\n\x0cnum_positive\x18\x03 \x01(\x05:\x02-1\x12\x18\n\x0cnum_negitive\x18\x04 \x01(\x05:\x02-1\x12\x14\n\x08num_part\x18\x05 \x01(\x05:\x02-1\x12\x17\n\x0cresize_width\x18\x06 \x01(\r:\x01\x30\x12\x18\n\rresize_height\x18\x07 \x01(\r:\x01\x30\x12\x1f\n\x12min_negitive_scale\x18\x08 \x01(\x02:\x03\x30.5\x12\x1f\n\x12max_negitive_scale\x18\t \x01(\x02:\x03\x31.5\"\x90\x01\n\x0fInterpParameter\x12\x11\n\x06height\x18\x01 \x01(\x05:\x01\x30\x12\x10\n\x05width\x18\x02 \x01(\x05:\x01\x30\x12\x16\n\x0bzoom_factor\x18\x03 \x01(\x05:\x01\x31\x12\x18\n\rshrink_factor\x18\x04 \x01(\x05:\x01\x31\x12\x12\n\x07pad_beg\x18\x05 \x01(\x05:\x01\x30\x12\x12\n\x07pad_end\x18\x06 \x01(\x05:\x01\x30\"V\n\x15PSROIPoolingParameter\x12\x15\n\rspatial_scale\x18\x01 \x02(\x02\x12\x12\n\noutput_dim\x18\x02 \x02(\x05\x12\x12\n\ngroup_size\x18\x03 \x02(\x05\"E\n\rFlipParameter\x12\x18\n\nflip_width\x18\x01 \x01(\x08:\x04true\x12\x1a\n\x0b\x66lip_height\x18\x02 \x01(\x08:\x05\x66\x61lse\"\x8b\x02\n\x0b\x42NParameter\x12,\n\x0cslope_filler\x18\x01 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x02 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x15\n\x08momentum\x18\x03 \x01(\x02:\x03\x30.9\x12\x12\n\x03\x65ps\x18\x04 \x01(\x02:\x05\x31\x65-05\x12\x15\n\x06\x66rozen\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x32\n\x06\x65ngine\x18\x06 \x01(\x0e\x32\x19.caffe.BNParameter.Engine:\x07\x44\x45\x46\x41ULT\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"\xa2\x01\n\x12\x46ocalLossParameter\x12\x34\n\x04type\x18\x01 \x01(\x0e\x32\x1e.caffe.FocalLossParameter.Type:\x06ORIGIN\x12\x10\n\x05gamma\x18\x02 \x01(\x02:\x01\x32\x12\x13\n\x05\x61lpha\x18\x03 \x01(\x02:\x04\x30.25\x12\x0f\n\x04\x62\x65ta\x18\x04 \x01(\x02:\x01\x31\"\x1e\n\x04Type\x12\n\n\x06ORIGIN\x10\x00\x12\n\n\x06LINEAR\x10\x01\"\xca\x03\n\x17TransformationParameter\x12\x10\n\x05scale\x18\x01 \x01(\x02:\x01\x31\x12\x15\n\x06mirror\x18\x02 \x01(\x08:\x05\x66\x61lse\x12\x14\n\tcrop_size\x18\x03 \x01(\r:\x01\x30\x12\x11\n\x06\x63rop_h\x18\x0b \x01(\r:\x01\x30\x12\x11\n\x06\x63rop_w\x18\x0c \x01(\r:\x01\x30\x12\x11\n\tmean_file\x18\x04 \x01(\t\x12\x12\n\nmean_value\x18\x05 \x03(\x02\x12\x1a\n\x0b\x66orce_color\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\x19\n\nforce_gray\x18\x07 \x01(\x08:\x05\x66\x61lse\x12,\n\x0cresize_param\x18\x08 \x01(\x0b\x32\x16.caffe.ResizeParameter\x12*\n\x0bnoise_param\x18\t \x01(\x0b\x32\x15.caffe.NoiseParameter\x12\x31\n\rdistort_param\x18\r \x01(\x0b\x32\x1a.caffe.DistortionParameter\x12/\n\x0c\x65xpand_param\x18\x0e \x01(\x0b\x32\x19.caffe.ExpansionParameter\x12.\n\x0f\x65mit_constraint\x18\n \x01(\x0b\x32\x15.caffe.EmitConstraint\"\x90\x04\n\x0fResizeParameter\x12\x0f\n\x04prob\x18\x01 \x01(\x02:\x01\x31\x12=\n\x0bresize_mode\x18\x02 \x01(\x0e\x32\".caffe.ResizeParameter.Resize_mode:\x04WARP\x12\x11\n\x06height\x18\x03 \x01(\r:\x01\x30\x12\x10\n\x05width\x18\x04 \x01(\r:\x01\x30\x12\x17\n\x0cheight_scale\x18\x08 \x01(\r:\x01\x30\x12\x16\n\x0bwidth_scale\x18\t \x01(\r:\x01\x30\x12;\n\x08pad_mode\x18\x05 \x01(\x0e\x32\x1f.caffe.ResizeParameter.Pad_mode:\x08\x43ONSTANT\x12\x11\n\tpad_value\x18\x06 \x03(\x02\x12\x37\n\x0binterp_mode\x18\x07 \x03(\x0e\x32\".caffe.ResizeParameter.Interp_mode\"G\n\x0bResize_mode\x12\x08\n\x04WARP\x10\x01\x12\x12\n\x0e\x46IT_SMALL_SIZE\x10\x02\x12\x1a\n\x16\x46IT_LARGE_SIZE_AND_PAD\x10\x03\":\n\x08Pad_mode\x12\x0c\n\x08\x43ONSTANT\x10\x01\x12\x0c\n\x08MIRRORED\x10\x02\x12\x12\n\x0eREPEAT_NEAREST\x10\x03\"I\n\x0bInterp_mode\x12\n\n\x06LINEAR\x10\x01\x12\x08\n\x04\x41REA\x10\x02\x12\x0b\n\x07NEAREST\x10\x03\x12\t\n\x05\x43UBIC\x10\x04\x12\x0c\n\x08LANCZOS4\x10\x05\"9\n\x13SaltPepperParameter\x12\x13\n\x08\x66raction\x18\x01 \x01(\x02:\x01\x30\x12\r\n\x05value\x18\x02 \x03(\x02\"\xee\x02\n\x0eNoiseParameter\x12\x0f\n\x04prob\x18\x01 \x01(\x02:\x01\x30\x12\x16\n\x07hist_eq\x18\x02 \x01(\x08:\x05\x66\x61lse\x12\x16\n\x07inverse\x18\x03 \x01(\x08:\x05\x66\x61lse\x12\x19\n\ndecolorize\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x19\n\ngauss_blur\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x10\n\x04jpeg\x18\x06 \x01(\x02:\x02-1\x12\x18\n\tposterize\x18\x07 \x01(\x08:\x05\x66\x61lse\x12\x14\n\x05\x65rode\x18\x08 \x01(\x08:\x05\x66\x61lse\x12\x19\n\nsaltpepper\x18\t \x01(\x08:\x05\x66\x61lse\x12\x34\n\x10saltpepper_param\x18\n \x01(\x0b\x32\x1a.caffe.SaltPepperParameter\x12\x14\n\x05\x63lahe\x18\x0b \x01(\x08:\x05\x66\x61lse\x12\x1d\n\x0e\x63onvert_to_hsv\x18\x0c \x01(\x08:\x05\x66\x61lse\x12\x1d\n\x0e\x63onvert_to_lab\x18\r \x01(\x08:\x05\x66\x61lse\"\xbd\x02\n\x13\x44istortionParameter\x12\x1a\n\x0f\x62rightness_prob\x18\x01 \x01(\x02:\x01\x30\x12\x1b\n\x10\x62rightness_delta\x18\x02 \x01(\x02:\x01\x30\x12\x18\n\rcontrast_prob\x18\x03 \x01(\x02:\x01\x30\x12\x19\n\x0e\x63ontrast_lower\x18\x04 \x01(\x02:\x01\x30\x12\x19\n\x0e\x63ontrast_upper\x18\x05 \x01(\x02:\x01\x30\x12\x13\n\x08hue_prob\x18\x06 \x01(\x02:\x01\x30\x12\x14\n\thue_delta\x18\x07 \x01(\x02:\x01\x30\x12\x1a\n\x0fsaturation_prob\x18\x08 \x01(\x02:\x01\x30\x12\x1b\n\x10saturation_lower\x18\t \x01(\x02:\x01\x30\x12\x1b\n\x10saturation_upper\x18\n \x01(\x02:\x01\x30\x12\x1c\n\x11random_order_prob\x18\x0b \x01(\x02:\x01\x30\"B\n\x12\x45xpansionParameter\x12\x0f\n\x04prob\x18\x01 \x01(\x02:\x01\x31\x12\x1b\n\x10max_expand_ratio\x18\x02 \x01(\x02:\x01\x31\"\xc2\x01\n\rLossParameter\x12\x14\n\x0cignore_label\x18\x01 \x01(\x05\x12\x44\n\rnormalization\x18\x03 \x01(\x0e\x32&.caffe.LossParameter.NormalizationMode:\x05VALID\x12\x11\n\tnormalize\x18\x02 \x01(\x08\"B\n\x11NormalizationMode\x12\x08\n\x04\x46ULL\x10\x00\x12\t\n\x05VALID\x10\x01\x12\x0e\n\nBATCH_SIZE\x10\x02\x12\x08\n\x04NONE\x10\x03\"L\n\x11\x41\x63\x63uracyParameter\x12\x10\n\x05top_k\x18\x01 \x01(\r:\x01\x31\x12\x0f\n\x04\x61xis\x18\x02 \x01(\x05:\x01\x31\x12\x14\n\x0cignore_label\x18\x03 \x01(\x05\"M\n\x0f\x41rgMaxParameter\x12\x1a\n\x0bout_max_val\x18\x01 \x01(\x08:\x05\x66\x61lse\x12\x10\n\x05top_k\x18\x02 \x01(\r:\x01\x31\x12\x0c\n\x04\x61xis\x18\x03 \x01(\x05\"9\n\x0f\x43oncatParameter\x12\x0f\n\x04\x61xis\x18\x02 \x01(\x05:\x01\x31\x12\x15\n\nconcat_dim\x18\x01 \x01(\r:\x01\x31\"j\n\x12\x42\x61tchNormParameter\x12\x18\n\x10use_global_stats\x18\x01 \x01(\x08\x12&\n\x17moving_average_fraction\x18\x02 \x01(\x02:\x05\x30.999\x12\x12\n\x03\x65ps\x18\x03 \x01(\x02:\x05\x31\x65-05\"]\n\rBiasParameter\x12\x0f\n\x04\x61xis\x18\x01 \x01(\x05:\x01\x31\x12\x13\n\x08num_axes\x18\x02 \x01(\x05:\x01\x31\x12&\n\x06\x66iller\x18\x03 \x01(\x0b\x32\x16.caffe.FillerParameter\"L\n\x18\x43ontrastiveLossParameter\x12\x11\n\x06margin\x18\x01 \x01(\x02:\x01\x31\x12\x1d\n\x0elegacy_version\x18\x02 \x01(\x08:\x05\x66\x61lse\"\xec\x01\n\x16\x44\x65tectionLossParameter\x12\x0f\n\x04side\x18\x01 \x01(\r:\x01\x37\x12\x15\n\tnum_class\x18\x02 \x01(\r:\x02\x32\x30\x12\x15\n\nnum_object\x18\x03 \x01(\r:\x01\x32\x12\x17\n\x0cobject_scale\x18\x04 \x01(\x02:\x01\x31\x12\x1b\n\x0enoobject_scale\x18\x05 \x01(\x02:\x03\x30.5\x12\x16\n\x0b\x63lass_scale\x18\x06 \x01(\x02:\x01\x31\x12\x16\n\x0b\x63oord_scale\x18\x07 \x01(\x02:\x01\x35\x12\x12\n\x04sqrt\x18\x08 \x01(\x08:\x04true\x12\x19\n\nconstriant\x18\t \x01(\x08:\x05\x66\x61lse\"\x91\x03\n\x13RegionLossParameter\x12\x10\n\x04side\x18\x01 \x01(\r:\x02\x31\x33\x12\x15\n\tnum_class\x18\x02 \x01(\r:\x02\x32\x30\x12\x15\n\nbias_match\x18\x03 \x01(\r:\x01\x31\x12\x11\n\x06\x63oords\x18\x04 \x01(\r:\x01\x34\x12\x0e\n\x03num\x18\x05 \x01(\r:\x01\x35\x12\x12\n\x07softmax\x18\x06 \x01(\r:\x01\x31\x12\x13\n\x06jitter\x18\x07 \x01(\x02:\x03\x30.2\x12\x12\n\x07rescore\x18\x08 \x01(\r:\x01\x31\x12\x17\n\x0cobject_scale\x18\t \x01(\x02:\x01\x31\x12\x16\n\x0b\x63lass_scale\x18\n \x01(\x02:\x01\x31\x12\x1b\n\x0enoobject_scale\x18\x0b \x01(\x02:\x03\x30.5\x12\x16\n\x0b\x63oord_scale\x18\x0c \x01(\x02:\x01\x35\x12\x13\n\x08\x61\x62solute\x18\r \x01(\r:\x01\x31\x12\x13\n\x06thresh\x18\x0e \x01(\x02:\x03\x30.2\x12\x11\n\x06random\x18\x0f \x01(\r:\x01\x31\x12\x0e\n\x06\x62iases\x18\x10 \x03(\x02\x12\x14\n\x0csoftmax_tree\x18\x11 \x01(\t\x12\x11\n\tclass_map\x18\x12 \x01(\t\"8\n\x0eReorgParameter\x12\x0e\n\x06stride\x18\x01 \x01(\r\x12\x16\n\x07reverse\x18\x02 \x01(\x08:\x05\x66\x61lse\"\xb3\x02\n\x16\x45valDetectionParameter\x12\x0f\n\x04side\x18\x01 \x01(\r:\x01\x37\x12\x15\n\tnum_class\x18\x02 \x01(\r:\x02\x32\x30\x12\x15\n\nnum_object\x18\x03 \x01(\r:\x01\x32\x12\x16\n\tthreshold\x18\x04 \x01(\x02:\x03\x30.5\x12\x12\n\x04sqrt\x18\x05 \x01(\x08:\x04true\x12\x18\n\nconstriant\x18\x06 \x01(\x08:\x04true\x12\x45\n\nscore_type\x18\x07 \x01(\x0e\x32\'.caffe.EvalDetectionParameter.ScoreType:\x08MULTIPLY\x12\x0f\n\x03nms\x18\x08 \x01(\x02:\x02-1\x12\x0e\n\x06\x62iases\x18\t \x03(\x02\",\n\tScoreType\x12\x07\n\x03OBJ\x10\x00\x12\x08\n\x04PROB\x10\x01\x12\x0c\n\x08MULTIPLY\x10\x02\"\xfc\x03\n\x14\x43onvolutionParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12\x17\n\tbias_term\x18\x02 \x01(\x08:\x04true\x12\x0b\n\x03pad\x18\x03 \x03(\r\x12\x13\n\x0bkernel_size\x18\x04 \x03(\r\x12\x0e\n\x06stride\x18\x06 \x03(\r\x12\x10\n\x08\x64ilation\x18\x12 \x03(\r\x12\x10\n\x05pad_h\x18\t \x01(\r:\x01\x30\x12\x10\n\x05pad_w\x18\n \x01(\r:\x01\x30\x12\x10\n\x08kernel_h\x18\x0b \x01(\r\x12\x10\n\x08kernel_w\x18\x0c \x01(\r\x12\x10\n\x08stride_h\x18\r \x01(\r\x12\x10\n\x08stride_w\x18\x0e \x01(\r\x12\x10\n\x05group\x18\x05 \x01(\r:\x01\x31\x12-\n\rweight_filler\x18\x07 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x08 \x01(\x0b\x32\x16.caffe.FillerParameter\x12;\n\x06\x65ngine\x18\x0f \x01(\x0e\x32\".caffe.ConvolutionParameter.Engine:\x07\x44\x45\x46\x41ULT\x12\x0f\n\x04\x61xis\x18\x10 \x01(\x05:\x01\x31\x12\x1e\n\x0f\x66orce_nd_im2col\x18\x11 \x01(\x08:\x05\x66\x61lse\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"0\n\rCropParameter\x12\x0f\n\x04\x61xis\x18\x01 \x01(\x05:\x01\x32\x12\x0e\n\x06offset\x18\x02 \x03(\r\"\xb2\x02\n\rDataParameter\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x12\n\nbatch_size\x18\x04 \x01(\r\x12\x14\n\trand_skip\x18\x07 \x01(\r:\x01\x30\x12\x31\n\x07\x62\x61\x63kend\x18\x08 \x01(\x0e\x32\x17.caffe.DataParameter.DB:\x07LEVELDB\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x11\n\tmean_file\x18\x03 \x01(\t\x12\x14\n\tcrop_size\x18\x05 \x01(\r:\x01\x30\x12\x15\n\x06mirror\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\"\n\x13\x66orce_encoded_color\x18\t \x01(\x08:\x05\x66\x61lse\x12\x13\n\x08prefetch\x18\n \x01(\r:\x01\x34\x12\x0c\n\x04side\x18\x0b \x03(\r\"\x1b\n\x02\x44\x42\x12\x0b\n\x07LEVELDB\x10\x00\x12\x08\n\x04LMDB\x10\x01\"\xdc\x01\n\x1a\x44\x65tectionEvaluateParameter\x12\x13\n\x0bnum_classes\x18\x01 \x01(\r\x12\x1e\n\x13\x62\x61\x63kground_label_id\x18\x02 \x01(\r:\x01\x30\x12\x1e\n\x11overlap_threshold\x18\x03 \x01(\x02:\x03\x30.5\x12#\n\x15\x65valuate_difficult_gt\x18\x04 \x01(\x08:\x04true\x12\x16\n\x0ename_size_file\x18\x05 \x01(\t\x12,\n\x0cresize_param\x18\x06 \x01(\x0b\x32\x16.caffe.ResizeParameter\"[\n\x1eNonMaximumSuppressionParameter\x12\x1a\n\rnms_threshold\x18\x01 \x01(\x02:\x03\x30.3\x12\r\n\x05top_k\x18\x02 \x01(\x05\x12\x0e\n\x03\x65ta\x18\x03 \x01(\x02:\x01\x31\"\xd8\x01\n\x13SaveOutputParameter\x12\x18\n\x10output_directory\x18\x01 \x01(\t\x12\x1a\n\x12output_name_prefix\x18\x02 \x01(\t\x12\x15\n\routput_format\x18\x03 \x01(\t\x12\x16\n\x0elabel_map_file\x18\x04 \x01(\t\x12\x16\n\x0ename_size_file\x18\x05 \x01(\t\x12\x16\n\x0enum_test_image\x18\x06 \x01(\r\x12,\n\x0cresize_param\x18\x07 \x01(\x0b\x32\x16.caffe.ResizeParameter\"\xc7\x03\n\x18\x44\x65tectionOutputParameter\x12\x13\n\x0bnum_classes\x18\x01 \x01(\r\x12\x1c\n\x0eshare_location\x18\x02 \x01(\x08:\x04true\x12\x1e\n\x13\x62\x61\x63kground_label_id\x18\x03 \x01(\x05:\x01\x30\x12\x38\n\tnms_param\x18\x04 \x01(\x0b\x32%.caffe.NonMaximumSuppressionParameter\x12\x35\n\x11save_output_param\x18\x05 \x01(\x0b\x32\x1a.caffe.SaveOutputParameter\x12<\n\tcode_type\x18\x06 \x01(\x0e\x32!.caffe.PriorBoxParameter.CodeType:\x06\x43ORNER\x12)\n\x1avariance_encoded_in_target\x18\x08 \x01(\x08:\x05\x66\x61lse\x12\x16\n\nkeep_top_k\x18\x07 \x01(\x05:\x02-1\x12\x1c\n\x14\x63onfidence_threshold\x18\t \x01(\x02\x12\x18\n\tvisualize\x18\n \x01(\x08:\x05\x66\x61lse\x12\x1b\n\x13visualize_threshold\x18\x0b \x01(\x02\x12\x11\n\tsave_file\x18\x0c \x01(\t\"I\n\x10\x44ropoutParameter\x12\x1a\n\rdropout_ratio\x18\x01 \x01(\x02:\x03\x30.5\x12\x19\n\x0bscale_train\x18\x02 \x01(\x08:\x04true\"\xa0\x01\n\x12\x44ummyDataParameter\x12+\n\x0b\x64\x61ta_filler\x18\x01 \x03(\x0b\x32\x16.caffe.FillerParameter\x12\x1f\n\x05shape\x18\x06 \x03(\x0b\x32\x10.caffe.BlobShape\x12\x0b\n\x03num\x18\x02 \x03(\r\x12\x10\n\x08\x63hannels\x18\x03 \x03(\r\x12\x0e\n\x06height\x18\x04 \x03(\r\x12\r\n\x05width\x18\x05 \x03(\r\"\xa5\x01\n\x10\x45ltwiseParameter\x12\x39\n\toperation\x18\x01 \x01(\x0e\x32!.caffe.EltwiseParameter.EltwiseOp:\x03SUM\x12\r\n\x05\x63oeff\x18\x02 \x03(\x02\x12\x1e\n\x10stable_prod_grad\x18\x03 \x01(\x08:\x04true\"\'\n\tEltwiseOp\x12\x08\n\x04PROD\x10\x00\x12\x07\n\x03SUM\x10\x01\x12\x07\n\x03MAX\x10\x02\" \n\x0c\x45LUParameter\x12\x10\n\x05\x61lpha\x18\x01 \x01(\x02:\x01\x31\"\xac\x01\n\x0e\x45mbedParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12\x11\n\tinput_dim\x18\x02 \x01(\r\x12\x17\n\tbias_term\x18\x03 \x01(\x08:\x04true\x12-\n\rweight_filler\x18\x04 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x05 \x01(\x0b\x32\x16.caffe.FillerParameter\"D\n\x0c\x45xpParameter\x12\x10\n\x04\x62\x61se\x18\x01 \x01(\x02:\x02-1\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x10\n\x05shift\x18\x03 \x01(\x02:\x01\x30\"9\n\x10\x46lattenParameter\x12\x0f\n\x04\x61xis\x18\x01 \x01(\x05:\x01\x31\x12\x14\n\x08\x65nd_axis\x18\x02 \x01(\x05:\x02-1\"O\n\x11HDF5DataParameter\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x12\n\nbatch_size\x18\x02 \x01(\r\x12\x16\n\x07shuffle\x18\x03 \x01(\x08:\x05\x66\x61lse\"(\n\x13HDF5OutputParameter\x12\x11\n\tfile_name\x18\x01 \x01(\t\"^\n\x12HingeLossParameter\x12\x30\n\x04norm\x18\x01 \x01(\x0e\x32\x1e.caffe.HingeLossParameter.Norm:\x02L1\"\x16\n\x04Norm\x12\x06\n\x02L1\x10\x01\x12\x06\n\x02L2\x10\x02\"\x97\x02\n\x12ImageDataParameter\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x15\n\nbatch_size\x18\x04 \x01(\r:\x01\x31\x12\x14\n\trand_skip\x18\x07 \x01(\r:\x01\x30\x12\x16\n\x07shuffle\x18\x08 \x01(\x08:\x05\x66\x61lse\x12\x15\n\nnew_height\x18\t \x01(\r:\x01\x30\x12\x14\n\tnew_width\x18\n \x01(\r:\x01\x30\x12\x16\n\x08is_color\x18\x0b \x01(\x08:\x04true\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x11\n\tmean_file\x18\x03 \x01(\t\x12\x14\n\tcrop_size\x18\x05 \x01(\r:\x01\x30\x12\x15\n\x06mirror\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\x15\n\x0broot_folder\x18\x0c \x01(\t:\x00\"\'\n\x15InfogainLossParameter\x12\x0e\n\x06source\x18\x01 \x01(\t\"\xe5\x01\n\x15InnerProductParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12\x17\n\tbias_term\x18\x02 \x01(\x08:\x04true\x12-\n\rweight_filler\x18\x03 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x04 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x0f\n\x04\x61xis\x18\x05 \x01(\x05:\x01\x31\x12\x18\n\ttranspose\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\x18\n\tnormalize\x18\x07 \x01(\x08:\x05\x66\x61lse\"1\n\x0eInputParameter\x12\x1f\n\x05shape\x18\x01 \x03(\x0b\x32\x10.caffe.BlobShape\"D\n\x0cLogParameter\x12\x10\n\x04\x62\x61se\x18\x01 \x01(\x02:\x02-1\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x10\n\x05shift\x18\x03 \x01(\x02:\x01\x30\"\xb8\x02\n\x0cLRNParameter\x12\x15\n\nlocal_size\x18\x01 \x01(\r:\x01\x35\x12\x10\n\x05\x61lpha\x18\x02 \x01(\x02:\x01\x31\x12\x12\n\x04\x62\x65ta\x18\x03 \x01(\x02:\x04\x30.75\x12\x44\n\x0bnorm_region\x18\x04 \x01(\x0e\x32\x1e.caffe.LRNParameter.NormRegion:\x0f\x41\x43ROSS_CHANNELS\x12\x0c\n\x01k\x18\x05 \x01(\x02:\x01\x31\x12\x33\n\x06\x65ngine\x18\x06 \x01(\x0e\x32\x1a.caffe.LRNParameter.Engine:\x07\x44\x45\x46\x41ULT\"5\n\nNormRegion\x12\x13\n\x0f\x41\x43ROSS_CHANNELS\x10\x00\x12\x12\n\x0eWITHIN_CHANNEL\x10\x01\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"Z\n\x13MemoryDataParameter\x12\x12\n\nbatch_size\x18\x01 \x01(\r\x12\x10\n\x08\x63hannels\x18\x02 \x01(\r\x12\x0e\n\x06height\x18\x03 \x01(\r\x12\r\n\x05width\x18\x04 \x01(\r\"\xe8\x08\n\x15MultiBoxLossParameter\x12J\n\rloc_loss_type\x18\x01 \x01(\x0e\x32(.caffe.MultiBoxLossParameter.LocLossType:\tSMOOTH_L1\x12J\n\x0e\x63onf_loss_type\x18\x02 \x01(\x0e\x32).caffe.MultiBoxLossParameter.ConfLossType:\x07SOFTMAX\x12\x15\n\nloc_weight\x18\x03 \x01(\x02:\x01\x31\x12\x13\n\x0bnum_classes\x18\x04 \x01(\r\x12\x1c\n\x0eshare_location\x18\x05 \x01(\x08:\x04true\x12J\n\nmatch_type\x18\x06 \x01(\x0e\x32&.caffe.MultiBoxLossParameter.MatchType:\x0ePER_PREDICTION\x12\x1e\n\x11overlap_threshold\x18\x07 \x01(\x02:\x03\x30.5\x12$\n\x16use_prior_for_matching\x18\x08 \x01(\x08:\x04true\x12\x1e\n\x13\x62\x61\x63kground_label_id\x18\t \x01(\r:\x01\x30\x12\x1e\n\x10use_difficult_gt\x18\n \x01(\x08:\x04true\x12\x15\n\rdo_neg_mining\x18\x0b \x01(\x08\x12\x18\n\rneg_pos_ratio\x18\x0c \x01(\x02:\x01\x33\x12\x18\n\x0bneg_overlap\x18\r \x01(\x02:\x03\x30.5\x12<\n\tcode_type\x18\x0e \x01(\x0e\x32!.caffe.PriorBoxParameter.CodeType:\x06\x43ORNER\x12(\n\x19\x65ncode_variance_in_target\x18\x10 \x01(\x08:\x05\x66\x61lse\x12%\n\x16map_object_to_agnostic\x18\x11 \x01(\x08:\x05\x66\x61lse\x12)\n\x1aignore_cross_boundary_bbox\x18\x12 \x01(\x08:\x05\x66\x61lse\x12\x18\n\tbp_inside\x18\x13 \x01(\x08:\x05\x66\x61lse\x12J\n\x0bmining_type\x18\x14 \x01(\x0e\x32\'.caffe.MultiBoxLossParameter.MiningType:\x0cMAX_NEGATIVE\x12\x38\n\tnms_param\x18\x15 \x01(\x0b\x32%.caffe.NonMaximumSuppressionParameter\x12\x17\n\x0bsample_size\x18\x16 \x01(\x05:\x02\x36\x34\x12 \n\x11use_prior_for_nms\x18\x17 \x01(\x08:\x05\x66\x61lse\"$\n\x0bLocLossType\x12\x06\n\x02L2\x10\x00\x12\r\n\tSMOOTH_L1\x10\x01\")\n\x0c\x43onfLossType\x12\x0b\n\x07SOFTMAX\x10\x00\x12\x0c\n\x08LOGISTIC\x10\x01\".\n\tMatchType\x12\r\n\tBIPARTITE\x10\x00\x12\x12\n\x0ePER_PREDICTION\x10\x01\":\n\nMiningType\x12\x08\n\x04NONE\x10\x00\x12\x10\n\x0cMAX_NEGATIVE\x10\x01\x12\x10\n\x0cHARD_EXAMPLE\x10\x02\"\x92\x01\n\x12NormalizeParameter\x12\x1c\n\x0e\x61\x63ross_spatial\x18\x01 \x01(\x08:\x04true\x12,\n\x0cscale_filler\x18\x02 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x1c\n\x0e\x63hannel_shared\x18\x03 \x01(\x08:\x04true\x12\x12\n\x03\x65ps\x18\x04 \x01(\x02:\x05\x31\x65-10\"!\n\x10PermuteParameter\x12\r\n\x05order\x18\x01 \x03(\r\"d\n\x0cMVNParameter\x12 \n\x12normalize_variance\x18\x01 \x01(\x08:\x04true\x12\x1e\n\x0f\x61\x63ross_channels\x18\x02 \x01(\x08:\x05\x66\x61lse\x12\x12\n\x03\x65ps\x18\x03 \x01(\x02:\x05\x31\x65-09\"5\n\x12ParameterParameter\x12\x1f\n\x05shape\x18\x01 \x01(\x0b\x32\x10.caffe.BlobShape\"\xbb\x03\n\x10PoolingParameter\x12\x35\n\x04pool\x18\x01 \x01(\x0e\x32\".caffe.PoolingParameter.PoolMethod:\x03MAX\x12\x0e\n\x03pad\x18\x04 \x01(\r:\x01\x30\x12\x10\n\x05pad_h\x18\t \x01(\r:\x01\x30\x12\x10\n\x05pad_w\x18\n \x01(\r:\x01\x30\x12\x13\n\x0bkernel_size\x18\x02 \x01(\r\x12\x10\n\x08kernel_h\x18\x05 \x01(\r\x12\x10\n\x08kernel_w\x18\x06 \x01(\r\x12\x11\n\x06stride\x18\x03 \x01(\r:\x01\x31\x12\x10\n\x08stride_h\x18\x07 \x01(\r\x12\x10\n\x08stride_w\x18\x08 \x01(\r\x12\x37\n\x06\x65ngine\x18\x0b \x01(\x0e\x32\x1e.caffe.PoolingParameter.Engine:\x07\x44\x45\x46\x41ULT\x12\x1d\n\x0eglobal_pooling\x18\x0c \x01(\x08:\x05\x66\x61lse\x12\x17\n\tceil_mode\x18\r \x01(\x08:\x04true\".\n\nPoolMethod\x12\x07\n\x03MAX\x10\x00\x12\x07\n\x03\x41VE\x10\x01\x12\x0e\n\nSTOCHASTIC\x10\x02\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"F\n\x0ePowerParameter\x12\x10\n\x05power\x18\x01 \x01(\x02:\x01\x31\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x10\n\x05shift\x18\x03 \x01(\x02:\x01\x30\"\xb5\x02\n\x11PriorBoxParameter\x12\x10\n\x08min_size\x18\x01 \x03(\x02\x12\x10\n\x08max_size\x18\x02 \x03(\x02\x12\x14\n\x0c\x61spect_ratio\x18\x03 \x03(\x02\x12\x12\n\x04\x66lip\x18\x04 \x01(\x08:\x04true\x12\x13\n\x04\x63lip\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x10\n\x08variance\x18\x06 \x03(\x02\x12\x10\n\x08img_size\x18\x07 \x01(\r\x12\r\n\x05img_h\x18\x08 \x01(\r\x12\r\n\x05img_w\x18\t \x01(\r\x12\x0c\n\x04step\x18\n \x01(\x02\x12\x0e\n\x06step_h\x18\x0b \x01(\x02\x12\x0e\n\x06step_w\x18\x0c \x01(\x02\x12\x13\n\x06offset\x18\r \x01(\x02:\x03\x30.5\"8\n\x08\x43odeType\x12\n\n\x06\x43ORNER\x10\x01\x12\x0f\n\x0b\x43\x45NTER_SIZE\x10\x02\x12\x0f\n\x0b\x43ORNER_SIZE\x10\x03\"g\n\x0fPythonParameter\x12\x0e\n\x06module\x18\x01 \x01(\t\x12\r\n\x05layer\x18\x02 \x01(\t\x12\x13\n\tparam_str\x18\x03 \x01(\t:\x00\x12 \n\x11share_in_parallel\x18\x04 \x01(\x08:\x05\x66\x61lse\"\xc0\x01\n\x12RecurrentParameter\x12\x15\n\nnum_output\x18\x01 \x01(\r:\x01\x30\x12-\n\rweight_filler\x18\x02 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x03 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x19\n\ndebug_info\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\rexpose_hidden\x18\x05 \x01(\x08:\x05\x66\x61lse\"\xad\x01\n\x12ReductionParameter\x12=\n\toperation\x18\x01 \x01(\x0e\x32%.caffe.ReductionParameter.ReductionOp:\x03SUM\x12\x0f\n\x04\x61xis\x18\x02 \x01(\x05:\x01\x30\x12\x10\n\x05\x63oeff\x18\x03 \x01(\x02:\x01\x31\"5\n\x0bReductionOp\x12\x07\n\x03SUM\x10\x01\x12\x08\n\x04\x41SUM\x10\x02\x12\t\n\x05SUMSQ\x10\x03\x12\x08\n\x04MEAN\x10\x04\"\x8d\x01\n\rReLUParameter\x12\x19\n\x0enegative_slope\x18\x01 \x01(\x02:\x01\x30\x12\x34\n\x06\x65ngine\x18\x02 \x01(\x0e\x32\x1b.caffe.ReLUParameter.Engine:\x07\x44\x45\x46\x41ULT\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"t\n\x0eReLU6Parameter\x12\x35\n\x06\x65ngine\x18\x02 \x01(\x0e\x32\x1c.caffe.ReLU6Parameter.Engine:\x07\x44\x45\x46\x41ULT\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"Z\n\x10ReshapeParameter\x12\x1f\n\x05shape\x18\x01 \x01(\x0b\x32\x10.caffe.BlobShape\x12\x0f\n\x04\x61xis\x18\x02 \x01(\x05:\x01\x30\x12\x14\n\x08num_axes\x18\x03 \x01(\x05:\x02-1\"Y\n\x13ROIPoolingParameter\x12\x13\n\x08pooled_h\x18\x01 \x01(\r:\x01\x30\x12\x13\n\x08pooled_w\x18\x02 \x01(\r:\x01\x30\x12\x18\n\rspatial_scale\x18\x03 \x01(\x02:\x01\x31\"\xcb\x01\n\x0eScaleParameter\x12\x0f\n\x04\x61xis\x18\x01 \x01(\x05:\x01\x31\x12\x13\n\x08num_axes\x18\x02 \x01(\x05:\x01\x31\x12&\n\x06\x66iller\x18\x03 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x18\n\tbias_term\x18\x04 \x01(\x08:\x05\x66\x61lse\x12+\n\x0b\x62ias_filler\x18\x05 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x11\n\tmin_value\x18\x06 \x01(\x02\x12\x11\n\tmax_value\x18\x07 \x01(\x02\"x\n\x10SigmoidParameter\x12\x37\n\x06\x65ngine\x18\x01 \x01(\x0e\x32\x1e.caffe.SigmoidParameter.Engine:\x07\x44\x45\x46\x41ULT\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\")\n\x15SmoothL1LossParameter\x12\x10\n\x05sigma\x18\x01 \x01(\x02:\x01\x31\"L\n\x0eSliceParameter\x12\x0f\n\x04\x61xis\x18\x03 \x01(\x05:\x01\x31\x12\x13\n\x0bslice_point\x18\x02 \x03(\r\x12\x14\n\tslice_dim\x18\x01 \x01(\r:\x01\x31\"\x89\x01\n\x10SoftmaxParameter\x12\x37\n\x06\x65ngine\x18\x01 \x01(\x0e\x32\x1e.caffe.SoftmaxParameter.Engine:\x07\x44\x45\x46\x41ULT\x12\x0f\n\x04\x61xis\x18\x02 \x01(\x05:\x01\x31\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"r\n\rTanHParameter\x12\x34\n\x06\x65ngine\x18\x01 \x01(\x0e\x32\x1b.caffe.TanHParameter.Engine:\x07\x44\x45\x46\x41ULT\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"/\n\rTileParameter\x12\x0f\n\x04\x61xis\x18\x01 \x01(\x05:\x01\x31\x12\r\n\x05tiles\x18\x02 \x01(\x05\"*\n\x12ThresholdParameter\x12\x14\n\tthreshold\x18\x01 \x01(\x02:\x01\x30\"\xc1\x02\n\x13WindowDataParameter\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x11\n\tmean_file\x18\x03 \x01(\t\x12\x12\n\nbatch_size\x18\x04 \x01(\r\x12\x14\n\tcrop_size\x18\x05 \x01(\r:\x01\x30\x12\x15\n\x06mirror\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\x19\n\x0c\x66g_threshold\x18\x07 \x01(\x02:\x03\x30.5\x12\x19\n\x0c\x62g_threshold\x18\x08 \x01(\x02:\x03\x30.5\x12\x19\n\x0b\x66g_fraction\x18\t \x01(\x02:\x04\x30.25\x12\x16\n\x0b\x63ontext_pad\x18\n \x01(\r:\x01\x30\x12\x17\n\tcrop_mode\x18\x0b \x01(\t:\x04warp\x12\x1b\n\x0c\x63\x61\x63he_images\x18\x0c \x01(\x08:\x05\x66\x61lse\x12\x15\n\x0broot_folder\x18\r \x01(\t:\x00\"\xeb\x01\n\x0cSPPParameter\x12\x16\n\x0epyramid_height\x18\x01 \x01(\r\x12\x31\n\x04pool\x18\x02 \x01(\x0e\x32\x1e.caffe.SPPParameter.PoolMethod:\x03MAX\x12\x33\n\x06\x65ngine\x18\x06 \x01(\x0e\x32\x1a.caffe.SPPParameter.Engine:\x07\x44\x45\x46\x41ULT\".\n\nPoolMethod\x12\x07\n\x03MAX\x10\x00\x12\x07\n\x03\x41VE\x10\x01\x12\x0e\n\nSTOCHASTIC\x10\x02\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"\xdc\x14\n\x10V1LayerParameter\x12\x0e\n\x06\x62ottom\x18\x02 \x03(\t\x12\x0b\n\x03top\x18\x03 \x03(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12$\n\x07include\x18  \x03(\x0b\x32\x13.caffe.NetStateRule\x12$\n\x07\x65xclude\x18! \x03(\x0b\x32\x13.caffe.NetStateRule\x12/\n\x04type\x18\x05 \x01(\x0e\x32!.caffe.V1LayerParameter.LayerType\x12\x1f\n\x05\x62lobs\x18\x06 \x03(\x0b\x32\x10.caffe.BlobProto\x12\x0e\n\x05param\x18\xe9\x07 \x03(\t\x12>\n\x0f\x62lob_share_mode\x18\xea\x07 \x03(\x0e\x32$.caffe.V1LayerParameter.DimCheckMode\x12\x10\n\x08\x62lobs_lr\x18\x07 \x03(\x02\x12\x14\n\x0cweight_decay\x18\x08 \x03(\x02\x12\x13\n\x0bloss_weight\x18# \x03(\x02\x12\x30\n\x0e\x61\x63\x63uracy_param\x18\x1b \x01(\x0b\x32\x18.caffe.AccuracyParameter\x12,\n\x0c\x61rgmax_param\x18\x17 \x01(\x0b\x32\x16.caffe.ArgMaxParameter\x12,\n\x0c\x63oncat_param\x18\t \x01(\x0b\x32\x16.caffe.ConcatParameter\x12?\n\x16\x63ontrastive_loss_param\x18( \x01(\x0b\x32\x1f.caffe.ContrastiveLossParameter\x12\x36\n\x11\x63onvolution_param\x18\n \x01(\x0b\x32\x1b.caffe.ConvolutionParameter\x12(\n\ndata_param\x18\x0b \x01(\x0b\x32\x14.caffe.DataParameter\x12.\n\rdropout_param\x18\x0c \x01(\x0b\x32\x17.caffe.DropoutParameter\x12\x33\n\x10\x64ummy_data_param\x18\x1a \x01(\x0b\x32\x19.caffe.DummyDataParameter\x12.\n\reltwise_param\x18\x18 \x01(\x0b\x32\x17.caffe.EltwiseParameter\x12&\n\texp_param\x18) \x01(\x0b\x32\x13.caffe.ExpParameter\x12\x31\n\x0fhdf5_data_param\x18\r \x01(\x0b\x32\x18.caffe.HDF5DataParameter\x12\x35\n\x11hdf5_output_param\x18\x0e \x01(\x0b\x32\x1a.caffe.HDF5OutputParameter\x12\x33\n\x10hinge_loss_param\x18\x1d \x01(\x0b\x32\x19.caffe.HingeLossParameter\x12\x33\n\x10image_data_param\x18\x0f \x01(\x0b\x32\x19.caffe.ImageDataParameter\x12\x39\n\x13infogain_loss_param\x18\x10 \x01(\x0b\x32\x1c.caffe.InfogainLossParameter\x12\x39\n\x13inner_product_param\x18\x11 \x01(\x0b\x32\x1c.caffe.InnerProductParameter\x12&\n\tlrn_param\x18\x12 \x01(\x0b\x32\x13.caffe.LRNParameter\x12\x35\n\x11memory_data_param\x18\x16 \x01(\x0b\x32\x1a.caffe.MemoryDataParameter\x12&\n\tmvn_param\x18\" \x01(\x0b\x32\x13.caffe.MVNParameter\x12.\n\rpooling_param\x18\x13 \x01(\x0b\x32\x17.caffe.PoolingParameter\x12*\n\x0bpower_param\x18\x15 \x01(\x0b\x32\x15.caffe.PowerParameter\x12(\n\nrelu_param\x18\x1e \x01(\x0b\x32\x14.caffe.ReLUParameter\x12.\n\rsigmoid_param\x18& \x01(\x0b\x32\x17.caffe.SigmoidParameter\x12.\n\rsoftmax_param\x18\' \x01(\x0b\x32\x17.caffe.SoftmaxParameter\x12*\n\x0bslice_param\x18\x1f \x01(\x0b\x32\x15.caffe.SliceParameter\x12(\n\ntanh_param\x18% \x01(\x0b\x32\x14.caffe.TanHParameter\x12\x32\n\x0fthreshold_param\x18\x19 \x01(\x0b\x32\x19.caffe.ThresholdParameter\x12\x35\n\x11window_data_param\x18\x14 \x01(\x0b\x32\x1a.caffe.WindowDataParameter\x12\x37\n\x0ftransform_param\x18$ \x01(\x0b\x32\x1e.caffe.TransformationParameter\x12(\n\nloss_param\x18* \x01(\x0b\x32\x14.caffe.LossParameter\x12<\n\x14\x64\x65tection_loss_param\x18\xc8\x01 \x01(\x0b\x32\x1d.caffe.DetectionLossParameter\x12<\n\x14\x65val_detection_param\x18\xc9\x01 \x01(\x0b\x32\x1d.caffe.EvalDetectionParameter\x12&\n\x05layer\x18\x01 \x01(\x0b\x32\x17.caffe.V0LayerParameter\"\xd8\x04\n\tLayerType\x12\x08\n\x04NONE\x10\x00\x12\n\n\x06\x41\x42SVAL\x10#\x12\x0c\n\x08\x41\x43\x43URACY\x10\x01\x12\n\n\x06\x41RGMAX\x10\x1e\x12\x08\n\x04\x42NLL\x10\x02\x12\n\n\x06\x43ONCAT\x10\x03\x12\x14\n\x10\x43ONTRASTIVE_LOSS\x10%\x12\x0f\n\x0b\x43ONVOLUTION\x10\x04\x12\x08\n\x04\x44\x41TA\x10\x05\x12\x11\n\rDECONVOLUTION\x10\'\x12\x0b\n\x07\x44ROPOUT\x10\x06\x12\x0e\n\nDUMMY_DATA\x10 \x12\x12\n\x0e\x45UCLIDEAN_LOSS\x10\x07\x12\x0b\n\x07\x45LTWISE\x10\x19\x12\x07\n\x03\x45XP\x10&\x12\x0b\n\x07\x46LATTEN\x10\x08\x12\r\n\tHDF5_DATA\x10\t\x12\x0f\n\x0bHDF5_OUTPUT\x10\n\x12\x0e\n\nHINGE_LOSS\x10\x1c\x12\n\n\x06IM2COL\x10\x0b\x12\x0e\n\nIMAGE_DATA\x10\x0c\x12\x11\n\rINFOGAIN_LOSS\x10\r\x12\x11\n\rINNER_PRODUCT\x10\x0e\x12\x07\n\x03LRN\x10\x0f\x12\x0f\n\x0bMEMORY_DATA\x10\x1d\x12\x1d\n\x19MULTINOMIAL_LOGISTIC_LOSS\x10\x10\x12\x07\n\x03MVN\x10\"\x12\x0b\n\x07POOLING\x10\x11\x12\t\n\x05POWER\x10\x1a\x12\x08\n\x04RELU\x10\x12\x12\x0b\n\x07SIGMOID\x10\x13\x12\x1e\n\x1aSIGMOID_CROSS_ENTROPY_LOSS\x10\x1b\x12\x0b\n\x07SILENCE\x10$\x12\x0b\n\x07SOFTMAX\x10\x14\x12\x10\n\x0cSOFTMAX_LOSS\x10\x15\x12\t\n\x05SPLIT\x10\x16\x12\t\n\x05SLICE\x10!\x12\x08\n\x04TANH\x10\x17\x12\x0f\n\x0bWINDOW_DATA\x10\x18\x12\r\n\tTHRESHOLD\x10\x1f\"*\n\x0c\x44imCheckMode\x12\n\n\x06STRICT\x10\x00\x12\x0e\n\nPERMISSIVE\x10\x01\"\xfd\x07\n\x10V0LayerParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x12\n\nnum_output\x18\x03 \x01(\r\x12\x16\n\x08\x62iasterm\x18\x04 \x01(\x08:\x04true\x12-\n\rweight_filler\x18\x05 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x06 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x0e\n\x03pad\x18\x07 \x01(\r:\x01\x30\x12\x12\n\nkernelsize\x18\x08 \x01(\r\x12\x10\n\x05group\x18\t \x01(\r:\x01\x31\x12\x11\n\x06stride\x18\n \x01(\r:\x01\x31\x12\x35\n\x04pool\x18\x0b \x01(\x0e\x32\".caffe.V0LayerParameter.PoolMethod:\x03MAX\x12\x1a\n\rdropout_ratio\x18\x0c \x01(\x02:\x03\x30.5\x12\x15\n\nlocal_size\x18\r \x01(\r:\x01\x35\x12\x10\n\x05\x61lpha\x18\x0e \x01(\x02:\x01\x31\x12\x12\n\x04\x62\x65ta\x18\x0f \x01(\x02:\x04\x30.75\x12\x0c\n\x01k\x18\x16 \x01(\x02:\x01\x31\x12\x0e\n\x06source\x18\x10 \x01(\t\x12\x10\n\x05scale\x18\x11 \x01(\x02:\x01\x31\x12\x10\n\x08meanfile\x18\x12 \x01(\t\x12\x11\n\tbatchsize\x18\x13 \x01(\r\x12\x13\n\x08\x63ropsize\x18\x14 \x01(\r:\x01\x30\x12\x15\n\x06mirror\x18\x15 \x01(\x08:\x05\x66\x61lse\x12\x1f\n\x05\x62lobs\x18\x32 \x03(\x0b\x32\x10.caffe.BlobProto\x12\x10\n\x08\x62lobs_lr\x18\x33 \x03(\x02\x12\x14\n\x0cweight_decay\x18\x34 \x03(\x02\x12\x14\n\trand_skip\x18\x35 \x01(\r:\x01\x30\x12\x1d\n\x10\x64\x65t_fg_threshold\x18\x36 \x01(\x02:\x03\x30.5\x12\x1d\n\x10\x64\x65t_bg_threshold\x18\x37 \x01(\x02:\x03\x30.5\x12\x1d\n\x0f\x64\x65t_fg_fraction\x18\x38 \x01(\x02:\x04\x30.25\x12\x1a\n\x0f\x64\x65t_context_pad\x18: \x01(\r:\x01\x30\x12\x1b\n\rdet_crop_mode\x18; \x01(\t:\x04warp\x12\x12\n\x07new_num\x18< \x01(\x05:\x01\x30\x12\x17\n\x0cnew_channels\x18= \x01(\x05:\x01\x30\x12\x15\n\nnew_height\x18> \x01(\x05:\x01\x30\x12\x14\n\tnew_width\x18? \x01(\x05:\x01\x30\x12\x1d\n\x0eshuffle_images\x18@ \x01(\x08:\x05\x66\x61lse\x12\x15\n\nconcat_dim\x18\x41 \x01(\r:\x01\x31\x12\x36\n\x11hdf5_output_param\x18\xe9\x07 \x01(\x0b\x32\x1a.caffe.HDF5OutputParameter\".\n\nPoolMethod\x12\x07\n\x03MAX\x10\x00\x12\x07\n\x03\x41VE\x10\x01\x12\x0e\n\nSTOCHASTIC\x10\x02\"W\n\x0ePReLUParameter\x12&\n\x06\x66iller\x18\x01 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x1d\n\x0e\x63hannel_shared\x18\x02 \x01(\x08:\x05\x66\x61lse\"\xa8\x01\n\x0cRPNParameter\x12\x13\n\x0b\x66\x65\x61t_stride\x18\x01 \x01(\r\x12\x10\n\x08\x62\x61sesize\x18\x02 \x01(\r\x12\r\n\x05scale\x18\x03 \x03(\r\x12\r\n\x05ratio\x18\x04 \x03(\x02\x12\x12\n\nboxminsize\x18\x05 \x01(\r\x12\x14\n\x0cper_nms_topn\x18\t \x01(\r\x12\x15\n\rpost_nms_topn\x18\x0b \x01(\r\x12\x12\n\nnms_thresh\x18\x08 \x01(\x02\"\xbb\x01\n\x12VideoDataParameter\x12?\n\nvideo_type\x18\x01 \x01(\x0e\x32#.caffe.VideoDataParameter.VideoType:\x06WEBCAM\x12\x14\n\tdevice_id\x18\x02 \x01(\x05:\x01\x30\x12\x12\n\nvideo_file\x18\x03 \x01(\t\x12\x16\n\x0bskip_frames\x18\x04 \x01(\r:\x01\x30\"\"\n\tVideoType\x12\n\n\x06WEBCAM\x10\x00\x12\t\n\x05VIDEO\x10\x01\"i\n\x13\x43\x65nterLossParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12-\n\rcenter_filler\x18\x02 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x0f\n\x04\x61xis\x18\x03 \x01(\x05:\x01\x31\"\xd9\x02\n\x1bMarginInnerProductParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12\x43\n\x04type\x18\x02 \x01(\x0e\x32-.caffe.MarginInnerProductParameter.MarginType:\x06SINGLE\x12-\n\rweight_filler\x18\x03 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x0f\n\x04\x61xis\x18\x04 \x01(\x05:\x01\x31\x12\x0f\n\x04\x62\x61se\x18\x05 \x01(\x02:\x01\x31\x12\x10\n\x05gamma\x18\x06 \x01(\x02:\x01\x30\x12\x10\n\x05power\x18\x07 \x01(\x02:\x01\x31\x12\x14\n\titeration\x18\x08 \x01(\x05:\x01\x30\x12\x15\n\nlambda_min\x18\t \x01(\x02:\x01\x30\"?\n\nMarginType\x12\n\n\x06SINGLE\x10\x00\x12\n\n\x06\x44OUBLE\x10\x01\x12\n\n\x06TRIPLE\x10\x02\x12\r\n\tQUADRUPLE\x10\x03\"\x8a\x01\n#AdditiveMarginInnerProductParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12-\n\rweight_filler\x18\x02 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x0f\n\x01m\x18\x03 \x01(\x02:\x04\x30.35\x12\x0f\n\x04\x61xis\x18\x04 \x01(\x05:\x01\x31\"\xad\x04\n\x1e\x44\x65\x66ormableConvolutionParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12\x17\n\tbias_term\x18\x02 \x01(\x08:\x04true\x12\x0b\n\x03pad\x18\x03 \x03(\r\x12\x13\n\x0bkernel_size\x18\x04 \x03(\r\x12\x0e\n\x06stride\x18\x06 \x03(\r\x12\x10\n\x08\x64ilation\x18\x12 \x03(\r\x12\x10\n\x05pad_h\x18\t \x01(\r:\x01\x30\x12\x10\n\x05pad_w\x18\n \x01(\r:\x01\x30\x12\x10\n\x08kernel_h\x18\x0b \x01(\r\x12\x10\n\x08kernel_w\x18\x0c \x01(\r\x12\x10\n\x08stride_h\x18\r \x01(\r\x12\x10\n\x08stride_w\x18\x0e \x01(\r\x12\x10\n\x05group\x18\x05 \x01(\r:\x01\x34\x12\x1b\n\x10\x64\x65\x66ormable_group\x18\x19 \x01(\r:\x01\x34\x12-\n\rweight_filler\x18\x07 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x08 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x45\n\x06\x65ngine\x18\x0f \x01(\x0e\x32,.caffe.DeformableConvolutionParameter.Engine:\x07\x44\x45\x46\x41ULT\x12\x0f\n\x04\x61xis\x18\x10 \x01(\x05:\x01\x31\x12\x1e\n\x0f\x66orce_nd_im2col\x18\x11 \x01(\x08:\x05\x66\x61lse\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"K\n\x19LabelSpecificAddParameter\x12\x0f\n\x04\x62ias\x18\x01 \x01(\x02:\x01\x30\x12\x1d\n\x0etransform_test\x18\x02 \x01(\x08:\x05\x66\x61lse\"\xed\x01\n\x15\x43hannelScaleParameter\x12\x18\n\ndo_forward\x18\x01 \x01(\x08:\x04true\x12!\n\x13\x64o_backward_feature\x18\x02 \x01(\x08:\x04true\x12\x1f\n\x11\x64o_backward_scale\x18\x03 \x01(\x08:\x04true\x12\x1b\n\x0cglobal_scale\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x1e\n\x10max_global_scale\x18\x05 \x01(\x02:\x04\x31\x30\x30\x30\x12\x1b\n\x10min_global_scale\x18\x06 \x01(\x02:\x01\x30\x12\x1c\n\x11init_global_scale\x18\x07 \x01(\x02:\x01\x31\"C\n\x12\x43osinAddmParameter\x12\x0e\n\x01m\x18\x01 \x01(\x02:\x03\x30.5\x12\x1d\n\x0etransform_test\x18\x02 \x01(\x08:\x05\x66\x61lse\"A\n\x12\x43osinMulmParameter\x12\x0c\n\x01m\x18\x01 \x01(\x02:\x01\x34\x12\x1d\n\x0etransform_test\x18\x02 \x01(\x08:\x05\x66\x61lse\"r\n\x1b\x43oupledClusterLossParameter\x12\x11\n\x06margin\x18\x01 \x01(\x02:\x01\x31\x12\x15\n\ngroup_size\x18\x02 \x01(\x05:\x01\x33\x12\x10\n\x05scale\x18\x03 \x01(\x02:\x01\x31\x12\x17\n\x08log_flag\x18\x04 \x01(\x08:\x05\x66\x61lse\"R\n\x14TripletLossParameter\x12\x11\n\x06margin\x18\x01 \x01(\x02:\x01\x31\x12\x15\n\ngroup_size\x18\x02 \x01(\x05:\x01\x33\x12\x10\n\x05scale\x18\x03 \x01(\x02:\x01\x31\"\xe2\x01\n\x17GeneralTripletParameter\x12\x13\n\x06margin\x18\x01 \x01(\x02:\x03\x30.2\x12\x1d\n\x0f\x61\x64\x64_center_loss\x18\x02 \x01(\x08:\x04true\x12\x1b\n\x0chardest_only\x18\x03 \x01(\x08:\x05\x66\x61lse\x12\x1d\n\x0epositive_first\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x1f\n\x14positive_upper_bound\x18\x05 \x01(\x02:\x01\x31\x12\x1a\n\x0fpositive_weight\x18\x06 \x01(\x02:\x01\x31\x12\x1a\n\x0fnegative_weight\x18\x07 \x01(\x02:\x01\x31\"W\n\x11ROIAlignParameter\x12\x13\n\x08pooled_h\x18\x01 \x01(\r:\x01\x30\x12\x13\n\x08pooled_w\x18\x02 \x01(\r:\x01\x30\x12\x18\n\rspatial_scale\x18\x03 \x01(\x02:\x01\x31*\x1c\n\x05Phase\x12\t\n\x05TRAIN\x10\x00\x12\x08\n\x04TEST\x10\x01')
+  syntax='proto2',
+  serialized_pb=_b('\n\x0b\x63\x61\x66\x66\x65.proto\x12\x05\x63\x61\x66\x66\x65\"\x1c\n\tBlobShape\x12\x0f\n\x03\x64im\x18\x01 \x03(\x03\x42\x02\x10\x01\"\xcc\x01\n\tBlobProto\x12\x1f\n\x05shape\x18\x07 \x01(\x0b\x32\x10.caffe.BlobShape\x12\x10\n\x04\x64\x61ta\x18\x05 \x03(\x02\x42\x02\x10\x01\x12\x10\n\x04\x64iff\x18\x06 \x03(\x02\x42\x02\x10\x01\x12\x17\n\x0b\x64ouble_data\x18\x08 \x03(\x01\x42\x02\x10\x01\x12\x17\n\x0b\x64ouble_diff\x18\t \x03(\x01\x42\x02\x10\x01\x12\x0e\n\x03num\x18\x01 \x01(\x05:\x01\x30\x12\x13\n\x08\x63hannels\x18\x02 \x01(\x05:\x01\x30\x12\x11\n\x06height\x18\x03 \x01(\x05:\x01\x30\x12\x10\n\x05width\x18\x04 \x01(\x05:\x01\x30\"2\n\x0f\x42lobProtoVector\x12\x1f\n\x05\x62lobs\x18\x01 \x03(\x0b\x32\x10.caffe.BlobProto\"\x91\x01\n\x05\x44\x61tum\x12\x10\n\x08\x63hannels\x18\x01 \x01(\x05\x12\x0e\n\x06height\x18\x02 \x01(\x05\x12\r\n\x05width\x18\x03 \x01(\x05\x12\x0c\n\x04\x64\x61ta\x18\x04 \x01(\x0c\x12\r\n\x05label\x18\x05 \x01(\x05\x12\x12\n\nfloat_data\x18\x06 \x03(\x02\x12\x16\n\x07\x65ncoded\x18\x07 \x01(\x08:\x05\x66\x61lse\x12\x0e\n\x06labels\x18\x08 \x03(\x02\"A\n\x0cLabelMapItem\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\x05\x12\x14\n\x0c\x64isplay_name\x18\x03 \x01(\t\"-\n\x08LabelMap\x12!\n\x04item\x18\x01 \x03(\x0b\x32\x13.caffe.LabelMapItem\"o\n\x07Sampler\x12\x14\n\tmin_scale\x18\x01 \x01(\x02:\x01\x31\x12\x14\n\tmax_scale\x18\x02 \x01(\x02:\x01\x31\x12\x1b\n\x10min_aspect_ratio\x18\x03 \x01(\x02:\x01\x31\x12\x1b\n\x10max_aspect_ratio\x18\x04 \x01(\x02:\x01\x31\"\xc0\x01\n\x10SampleConstraint\x12\x1b\n\x13min_jaccard_overlap\x18\x01 \x01(\x02\x12\x1b\n\x13max_jaccard_overlap\x18\x02 \x01(\x02\x12\x1b\n\x13min_sample_coverage\x18\x03 \x01(\x02\x12\x1b\n\x13max_sample_coverage\x18\x04 \x01(\x02\x12\x1b\n\x13min_object_coverage\x18\x05 \x01(\x02\x12\x1b\n\x13max_object_coverage\x18\x06 \x01(\x02\"\xb2\x01\n\x0c\x42\x61tchSampler\x12 \n\x12use_original_image\x18\x01 \x01(\x08:\x04true\x12\x1f\n\x07sampler\x18\x02 \x01(\x0b\x32\x0e.caffe.Sampler\x12\x32\n\x11sample_constraint\x18\x03 \x01(\x0b\x32\x17.caffe.SampleConstraint\x12\x12\n\nmax_sample\x18\x04 \x01(\r\x12\x17\n\nmax_trials\x18\x05 \x01(\r:\x03\x31\x30\x30\"\x8a\x01\n\x0e\x45mitConstraint\x12\x39\n\temit_type\x18\x01 \x01(\x0e\x32\x1e.caffe.EmitConstraint.EmitType:\x06\x43\x45NTER\x12\x14\n\x0c\x65mit_overlap\x18\x02 \x01(\x02\"\'\n\x08\x45mitType\x12\n\n\x06\x43\x45NTER\x10\x00\x12\x0f\n\x0bMIN_OVERLAP\x10\x01\"\x87\x01\n\x0eNormalizedBBox\x12\x0c\n\x04xmin\x18\x01 \x01(\x02\x12\x0c\n\x04ymin\x18\x02 \x01(\x02\x12\x0c\n\x04xmax\x18\x03 \x01(\x02\x12\x0c\n\x04ymax\x18\x04 \x01(\x02\x12\r\n\x05label\x18\x05 \x01(\x05\x12\x11\n\tdifficult\x18\x06 \x01(\x08\x12\r\n\x05score\x18\x07 \x01(\x02\x12\x0c\n\x04size\x18\x08 \x01(\x02\"I\n\nAnnotation\x12\x16\n\x0binstance_id\x18\x01 \x01(\x05:\x01\x30\x12#\n\x04\x62\x62ox\x18\x02 \x01(\x0b\x32\x15.caffe.NormalizedBBox\"M\n\x0f\x41nnotationGroup\x12\x13\n\x0bgroup_label\x18\x01 \x01(\x05\x12%\n\nannotation\x18\x02 \x03(\x0b\x32\x11.caffe.Annotation\"\xaf\x01\n\x0e\x41nnotatedDatum\x12\x1b\n\x05\x64\x61tum\x18\x01 \x01(\x0b\x32\x0c.caffe.Datum\x12\x32\n\x04type\x18\x02 \x01(\x0e\x32$.caffe.AnnotatedDatum.AnnotationType\x12\x30\n\x10\x61nnotation_group\x18\x03 \x03(\x0b\x32\x16.caffe.AnnotationGroup\"\x1a\n\x0e\x41nnotationType\x12\x08\n\x04\x42\x42OX\x10\x00\"C\n\tMTCNNBBox\x12\x0c\n\x04xmin\x18\x01 \x01(\x02\x12\x0c\n\x04ymin\x18\x02 \x01(\x02\x12\x0c\n\x04xmax\x18\x03 \x01(\x02\x12\x0c\n\x04ymax\x18\x04 \x01(\x02\"U\n\nMTCNNDatum\x12\x1b\n\x05\x64\x61tum\x18\x01 \x01(\x0b\x32\x0c.caffe.Datum\x12\x1d\n\x03roi\x18\x02 \x01(\x0b\x32\x10.caffe.MTCNNBBox\x12\x0b\n\x03pts\x18\x03 \x03(\x02\"\x98\x02\n\x0f\x46illerParameter\x12\x16\n\x04type\x18\x01 \x01(\t:\x08\x63onstant\x12\x10\n\x05value\x18\x02 \x01(\x02:\x01\x30\x12\x0e\n\x03min\x18\x03 \x01(\x02:\x01\x30\x12\x0e\n\x03max\x18\x04 \x01(\x02:\x01\x31\x12\x0f\n\x04mean\x18\x05 \x01(\x02:\x01\x30\x12\x0e\n\x03std\x18\x06 \x01(\x02:\x01\x31\x12\x12\n\x06sparse\x18\x07 \x01(\x05:\x02-1\x12\x42\n\rvariance_norm\x18\x08 \x01(\x0e\x32#.caffe.FillerParameter.VarianceNorm:\x06\x46\x41N_IN\x12\x0c\n\x04\x66ile\x18\t \x01(\t\"4\n\x0cVarianceNorm\x12\n\n\x06\x46\x41N_IN\x10\x00\x12\x0b\n\x07\x46\x41N_OUT\x10\x01\x12\x0b\n\x07\x41VERAGE\x10\x02\"\x8e\x02\n\x0cNetParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05input\x18\x03 \x03(\t\x12%\n\x0binput_shape\x18\x08 \x03(\x0b\x32\x10.caffe.BlobShape\x12\x11\n\tinput_dim\x18\x04 \x03(\x05\x12\x1d\n\x0e\x66orce_backward\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x1e\n\x05state\x18\x06 \x01(\x0b\x32\x0f.caffe.NetState\x12\x19\n\ndebug_info\x18\x07 \x01(\x08:\x05\x66\x61lse\x12$\n\x05layer\x18\x64 \x03(\x0b\x32\x15.caffe.LayerParameter\x12\'\n\x06layers\x18\x02 \x03(\x0b\x32\x17.caffe.V1LayerParameter\"\xc0\n\n\x0fSolverParameter\x12\x0b\n\x03net\x18\x18 \x01(\t\x12&\n\tnet_param\x18\x19 \x01(\x0b\x32\x13.caffe.NetParameter\x12\x11\n\ttrain_net\x18\x01 \x01(\t\x12\x10\n\x08test_net\x18\x02 \x03(\t\x12,\n\x0ftrain_net_param\x18\x15 \x01(\x0b\x32\x13.caffe.NetParameter\x12+\n\x0etest_net_param\x18\x16 \x03(\x0b\x32\x13.caffe.NetParameter\x12$\n\x0btrain_state\x18\x1a \x01(\x0b\x32\x0f.caffe.NetState\x12#\n\ntest_state\x18\x1b \x03(\x0b\x32\x0f.caffe.NetState\x12\x11\n\ttest_iter\x18\x03 \x03(\x05\x12\x18\n\rtest_interval\x18\x04 \x01(\x05:\x01\x30\x12 \n\x11test_compute_loss\x18\x13 \x01(\x08:\x05\x66\x61lse\x12!\n\x13test_initialization\x18  \x01(\x08:\x04true\x12\x0f\n\x07\x62\x61se_lr\x18\x05 \x01(\x02\x12\x0f\n\x07\x64isplay\x18\x06 \x01(\x05\x12\x17\n\x0c\x61verage_loss\x18! \x01(\x05:\x01\x31\x12\x10\n\x08max_iter\x18\x07 \x01(\x05\x12\x14\n\titer_size\x18$ \x01(\x05:\x01\x31\x12\x11\n\tlr_policy\x18\x08 \x01(\t\x12\r\n\x05gamma\x18\t \x01(\x02\x12\r\n\x05power\x18\n \x01(\x02\x12\x10\n\x08momentum\x18\x0b \x01(\x02\x12\x14\n\x0cweight_decay\x18\x0c \x01(\x02\x12\x1f\n\x13regularization_type\x18\x1d \x01(\t:\x02L2\x12\x10\n\x08stepsize\x18\r \x01(\x05\x12\x11\n\tstepvalue\x18\" \x03(\x05\x12\x0f\n\x07stagelr\x18\x32 \x03(\x02\x12\x11\n\tstageiter\x18\x33 \x03(\x05\x12\x1a\n\x0e\x63lip_gradients\x18# \x01(\x02:\x02-1\x12\x13\n\x08snapshot\x18\x0e \x01(\x05:\x01\x30\x12\x17\n\x0fsnapshot_prefix\x18\x0f \x01(\t\x12\x1c\n\rsnapshot_diff\x18\x10 \x01(\x08:\x05\x66\x61lse\x12K\n\x0fsnapshot_format\x18% \x01(\x0e\x32%.caffe.SolverParameter.SnapshotFormat:\x0b\x42INARYPROTO\x12;\n\x0bsolver_mode\x18\x11 \x01(\x0e\x32!.caffe.SolverParameter.SolverMode:\x03GPU\x12\x14\n\tdevice_id\x18\x12 \x01(\x05:\x01\x30\x12\x17\n\x0brandom_seed\x18\x14 \x01(\x03:\x02-1\x12\x11\n\x04type\x18( \x01(\t:\x03SGD\x12\x14\n\x05\x64\x65lta\x18\x1f \x01(\x02:\x05\x31\x65-08\x12\x18\n\tmomentum2\x18\' \x01(\x02:\x05\x30.999\x12\x11\n\trms_decay\x18& \x01(\x02\x12\x19\n\ndebug_info\x18\x17 \x01(\x08:\x05\x66\x61lse\x12\"\n\x14snapshot_after_train\x18\x1c \x01(\x08:\x04true\x12;\n\x0bsolver_type\x18\x1e \x01(\x0e\x32!.caffe.SolverParameter.SolverType:\x03SGD\"+\n\x0eSnapshotFormat\x12\x08\n\x04HDF5\x10\x00\x12\x0f\n\x0b\x42INARYPROTO\x10\x01\"\x1e\n\nSolverMode\x12\x07\n\x03\x43PU\x10\x00\x12\x07\n\x03GPU\x10\x01\"U\n\nSolverType\x12\x07\n\x03SGD\x10\x00\x12\x0c\n\x08NESTEROV\x10\x01\x12\x0b\n\x07\x41\x44\x41GRAD\x10\x02\x12\x0b\n\x07RMSPROP\x10\x03\x12\x0c\n\x08\x41\x44\x41\x44\x45LTA\x10\x04\x12\x08\n\x04\x41\x44\x41M\x10\x05\"l\n\x0bSolverState\x12\x0c\n\x04iter\x18\x01 \x01(\x05\x12\x13\n\x0blearned_net\x18\x02 \x01(\t\x12!\n\x07history\x18\x03 \x03(\x0b\x32\x10.caffe.BlobProto\x12\x17\n\x0c\x63urrent_step\x18\x04 \x01(\x05:\x01\x30\"N\n\x08NetState\x12!\n\x05phase\x18\x01 \x01(\x0e\x32\x0c.caffe.Phase:\x04TEST\x12\x10\n\x05level\x18\x02 \x01(\x05:\x01\x30\x12\r\n\x05stage\x18\x03 \x03(\t\"s\n\x0cNetStateRule\x12\x1b\n\x05phase\x18\x01 \x01(\x0e\x32\x0c.caffe.Phase\x12\x11\n\tmin_level\x18\x02 \x01(\x05\x12\x11\n\tmax_level\x18\x03 \x01(\x05\x12\r\n\x05stage\x18\x04 \x03(\t\x12\x11\n\tnot_stage\x18\x05 \x03(\t\"\x90\x02\n\x1bSpatialTransformerParameter\x12\x1e\n\x0etransform_type\x18\x01 \x01(\t:\x06\x61\x66\x66ine\x12\x1e\n\x0csampler_type\x18\x02 \x01(\t:\x08\x62ilinear\x12\x10\n\x08output_H\x18\x03 \x01(\x05\x12\x10\n\x08output_W\x18\x04 \x01(\x05\x12\x1b\n\rto_compute_dU\x18\x05 \x01(\x08:\x04true\x12\x11\n\ttheta_1_1\x18\x06 \x01(\x01\x12\x11\n\ttheta_1_2\x18\x07 \x01(\x01\x12\x11\n\ttheta_1_3\x18\x08 \x01(\x01\x12\x11\n\ttheta_2_1\x18\t \x01(\x01\x12\x11\n\ttheta_2_2\x18\n \x01(\x01\x12\x11\n\ttheta_2_3\x18\x0b \x01(\x01\"5\n\x0fSTLossParameter\x12\x10\n\x08output_H\x18\x01 \x02(\x05\x12\x10\n\x08output_W\x18\x02 \x02(\x05\"\xa3\x01\n\tParamSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x31\n\nshare_mode\x18\x02 \x01(\x0e\x32\x1d.caffe.ParamSpec.DimCheckMode\x12\x12\n\x07lr_mult\x18\x03 \x01(\x02:\x01\x31\x12\x15\n\ndecay_mult\x18\x04 \x01(\x02:\x01\x31\"*\n\x0c\x44imCheckMode\x12\n\n\x06STRICT\x10\x00\x12\x0e\n\nPERMISSIVE\x10\x01\"\xf4%\n\x0eLayerParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0e\n\x06\x62ottom\x18\x03 \x03(\t\x12\x0b\n\x03top\x18\x04 \x03(\t\x12\x1b\n\x05phase\x18\n \x01(\x0e\x32\x0c.caffe.Phase\x12\x13\n\x0bloss_weight\x18\x05 \x03(\x02\x12\x1f\n\x05param\x18\x06 \x03(\x0b\x32\x10.caffe.ParamSpec\x12\x1f\n\x05\x62lobs\x18\x07 \x03(\x0b\x32\x10.caffe.BlobProto\x12\x16\n\x0epropagate_down\x18\x0b \x03(\x08\x12$\n\x07include\x18\x08 \x03(\x0b\x32\x13.caffe.NetStateRule\x12$\n\x07\x65xclude\x18\t \x03(\x0b\x32\x13.caffe.NetStateRule\x12\x37\n\x0ftransform_param\x18\x64 \x01(\x0b\x32\x1e.caffe.TransformationParameter\x12(\n\nloss_param\x18\x65 \x01(\x0b\x32\x14.caffe.LossParameter\x12<\n\x14\x64\x65tection_loss_param\x18\xc8\x01 \x01(\x0b\x32\x1d.caffe.DetectionLossParameter\x12<\n\x14\x65val_detection_param\x18\xc9\x01 \x01(\x0b\x32\x1d.caffe.EvalDetectionParameter\x12\x36\n\x11region_loss_param\x18\xca\x01 \x01(\x0b\x32\x1a.caffe.RegionLossParameter\x12+\n\x0breorg_param\x18\xcb\x01 \x01(\x0b\x32\x15.caffe.ReorgParameter\x12\x30\n\x0e\x61\x63\x63uracy_param\x18\x66 \x01(\x0b\x32\x18.caffe.AccuracyParameter\x12,\n\x0c\x61rgmax_param\x18g \x01(\x0b\x32\x16.caffe.ArgMaxParameter\x12\x34\n\x10\x62\x61tch_norm_param\x18\x8b\x01 \x01(\x0b\x32\x19.caffe.BatchNormParameter\x12)\n\nbias_param\x18\x8d\x01 \x01(\x0b\x32\x14.caffe.BiasParameter\x12,\n\x0c\x63oncat_param\x18h \x01(\x0b\x32\x16.caffe.ConcatParameter\x12?\n\x16\x63ontrastive_loss_param\x18i \x01(\x0b\x32\x1f.caffe.ContrastiveLossParameter\x12\x36\n\x11\x63onvolution_param\x18j \x01(\x0b\x32\x1b.caffe.ConvolutionParameter\x12(\n\ndata_param\x18k \x01(\x0b\x32\x14.caffe.DataParameter\x12.\n\rdropout_param\x18l \x01(\x0b\x32\x17.caffe.DropoutParameter\x12\x33\n\x10\x64ummy_data_param\x18m \x01(\x0b\x32\x19.caffe.DummyDataParameter\x12.\n\reltwise_param\x18n \x01(\x0b\x32\x17.caffe.EltwiseParameter\x12\'\n\telu_param\x18\x8c\x01 \x01(\x0b\x32\x13.caffe.ELUParameter\x12+\n\x0b\x65mbed_param\x18\x89\x01 \x01(\x0b\x32\x15.caffe.EmbedParameter\x12&\n\texp_param\x18o \x01(\x0b\x32\x13.caffe.ExpParameter\x12/\n\rflatten_param\x18\x87\x01 \x01(\x0b\x32\x17.caffe.FlattenParameter\x12\x31\n\x0fhdf5_data_param\x18p \x01(\x0b\x32\x18.caffe.HDF5DataParameter\x12\x35\n\x11hdf5_output_param\x18q \x01(\x0b\x32\x1a.caffe.HDF5OutputParameter\x12\x33\n\x10hinge_loss_param\x18r \x01(\x0b\x32\x19.caffe.HingeLossParameter\x12\x33\n\x10image_data_param\x18s \x01(\x0b\x32\x19.caffe.ImageDataParameter\x12\x39\n\x13infogain_loss_param\x18t \x01(\x0b\x32\x1c.caffe.InfogainLossParameter\x12\x39\n\x13inner_product_param\x18u \x01(\x0b\x32\x1c.caffe.InnerProductParameter\x12+\n\x0binput_param\x18\x8f\x01 \x01(\x0b\x32\x15.caffe.InputParameter\x12\'\n\tlog_param\x18\x86\x01 \x01(\x0b\x32\x13.caffe.LogParameter\x12&\n\tlrn_param\x18v \x01(\x0b\x32\x13.caffe.LRNParameter\x12\x35\n\x11memory_data_param\x18w \x01(\x0b\x32\x1a.caffe.MemoryDataParameter\x12&\n\tmvn_param\x18x \x01(\x0b\x32\x13.caffe.MVNParameter\x12.\n\rpooling_param\x18y \x01(\x0b\x32\x17.caffe.PoolingParameter\x12*\n\x0bpower_param\x18z \x01(\x0b\x32\x15.caffe.PowerParameter\x12+\n\x0bprelu_param\x18\x83\x01 \x01(\x0b\x32\x15.caffe.PReLUParameter\x12-\n\x0cpython_param\x18\x82\x01 \x01(\x0b\x32\x16.caffe.PythonParameter\x12\x33\n\x0frecurrent_param\x18\x92\x01 \x01(\x0b\x32\x19.caffe.RecurrentParameter\x12\x33\n\x0freduction_param\x18\x88\x01 \x01(\x0b\x32\x19.caffe.ReductionParameter\x12(\n\nrelu_param\x18{ \x01(\x0b\x32\x14.caffe.ReLUParameter\x12+\n\x0brelu6_param\x18\xd0\x01 \x01(\x0b\x32\x15.caffe.ReLU6Parameter\x12/\n\rreshape_param\x18\x85\x01 \x01(\x0b\x32\x17.caffe.ReshapeParameter\x12\x38\n\x11roi_pooling_param\x18\xd7\xc7\xf8\x03 \x01(\x0b\x32\x1a.caffe.ROIPoolingParameter\x12+\n\x0bscale_param\x18\x8e\x01 \x01(\x0b\x32\x15.caffe.ScaleParameter\x12.\n\rsigmoid_param\x18| \x01(\x0b\x32\x17.caffe.SigmoidParameter\x12=\n\x14smooth_l1_loss_param\x18\xd8\xc7\xf8\x03 \x01(\x0b\x32\x1c.caffe.SmoothL1LossParameter\x12.\n\rsoftmax_param\x18} \x01(\x0b\x32\x17.caffe.SoftmaxParameter\x12\'\n\tspp_param\x18\x84\x01 \x01(\x0b\x32\x13.caffe.SPPParameter\x12*\n\x0bslice_param\x18~ \x01(\x0b\x32\x15.caffe.SliceParameter\x12(\n\ntanh_param\x18\x7f \x01(\x0b\x32\x14.caffe.TanHParameter\x12\x33\n\x0fthreshold_param\x18\x80\x01 \x01(\x0b\x32\x19.caffe.ThresholdParameter\x12)\n\ntile_param\x18\x8a\x01 \x01(\x0b\x32\x14.caffe.TileParameter\x12\x36\n\x11window_data_param\x18\x81\x01 \x01(\x0b\x32\x1a.caffe.WindowDataParameter\x12\x35\n\x08st_param\x18\x94\x01 \x01(\x0b\x32\".caffe.SpatialTransformerParameter\x12.\n\rst_loss_param\x18\x91\x01 \x01(\x0b\x32\x16.caffe.STLossParameter\x12\'\n\trpn_param\x18\x96\x01 \x01(\x0b\x32\x13.caffe.RPNParameter\x12\x34\n\x10\x66ocal_loss_param\x18\x9b\x01 \x01(\x0b\x32\x19.caffe.FocalLossParameter\x12\x32\n\x0f\x61sdn_data_param\x18\x9f\x01 \x01(\x0b\x32\x18.caffe.AsdnDataParameter\x12%\n\x08\x62n_param\x18\xa0\x01 \x01(\x0b\x32\x12.caffe.BNParameter\x12\x34\n\x10mtcnn_data_param\x18\xa1\x01 \x01(\x0b\x32\x19.caffe.MTCNNDataParameter\x12-\n\x0cinterp_param\x18\xa2\x01 \x01(\x0b\x32\x16.caffe.InterpParameter\x12:\n\x13psroi_pooling_param\x18\xa3\x01 \x01(\x0b\x32\x1c.caffe.PSROIPoolingParameter\x12<\n\x14\x61nnotated_data_param\x18\xa4\x01 \x01(\x0b\x32\x1d.caffe.AnnotatedDataParameter\x12\x32\n\x0fprior_box_param\x18\xa5\x01 \x01(\x0b\x32\x18.caffe.PriorBoxParameter\x12)\n\ncrop_param\x18\xa7\x01 \x01(\x0b\x32\x14.caffe.CropParameter\x12\x44\n\x18\x64\x65tection_evaluate_param\x18\xa8\x01 \x01(\x0b\x32!.caffe.DetectionEvaluateParameter\x12@\n\x16\x64\x65tection_output_param\x18\xa9\x01 \x01(\x0b\x32\x1f.caffe.DetectionOutputParameter\x12.\n\nnorm_param\x18\xaa\x01 \x01(\x0b\x32\x19.caffe.NormalizeParameter\x12:\n\x13multibox_loss_param\x18\xab\x01 \x01(\x0b\x32\x1c.caffe.MultiBoxLossParameter\x12/\n\rpermute_param\x18\xac\x01 \x01(\x0b\x32\x17.caffe.PermuteParameter\x12\x34\n\x10video_data_param\x18\xad\x01 \x01(\x0b\x32\x19.caffe.VideoDataParameter\x12G\n\x1amargin_inner_product_param\x18\xae\x01 \x01(\x0b\x32\".caffe.MarginInnerProductParameter\x12\x36\n\x11\x63\x65nter_loss_param\x18\xaf\x01 \x01(\x0b\x32\x1a.caffe.CenterLossParameter\x12L\n\x1c\x64\x65\x66ormable_convolution_param\x18\xb0\x01 \x01(\x0b\x32%.caffe.DeformableConvolutionParameter\x12\x43\n\x18label_specific_add_param\x18\xb1\x01 \x01(\x0b\x32 .caffe.LabelSpecificAddParameter\x12X\n#additive_margin_inner_product_param\x18\xb2\x01 \x01(\x0b\x32*.caffe.AdditiveMarginInnerProductParameter\x12\x35\n\x11\x63osin_add_m_param\x18\xb3\x01 \x01(\x0b\x32\x19.caffe.CosinAddmParameter\x12\x35\n\x11\x63osin_mul_m_param\x18\xb4\x01 \x01(\x0b\x32\x19.caffe.CosinMulmParameter\x12:\n\x13\x63hannel_scale_param\x18\xb5\x01 \x01(\x0b\x32\x1c.caffe.ChannelScaleParameter\x12)\n\nflip_param\x18\xb6\x01 \x01(\x0b\x32\x14.caffe.FlipParameter\x12\x38\n\x12triplet_loss_param\x18\xb7\x01 \x01(\x0b\x32\x1b.caffe.TripletLossParameter\x12G\n\x1a\x63oupled_cluster_loss_param\x18\xb8\x01 \x01(\x0b\x32\".caffe.CoupledClusterLossParameter\x12\x43\n\x1ageneral_triplet_loss_param\x18\xb9\x01 \x01(\x0b\x32\x1e.caffe.GeneralTripletParameter\x12\x32\n\x0froi_align_param\x18\xba\x01 \x01(\x0b\x32\x18.caffe.ROIAlignParameter\x12\x32\n\x0eupsample_param\x18\xa3\x8d\x06 \x01(\x0b\x32\x18.caffe.UpsampleParameter\x12.\n\x0cmatmul_param\x18\xa5\x8d\x06 \x01(\x0b\x32\x16.caffe.MatMulParameter\x12\x39\n\x12pass_through_param\x18\xa4\x8d\x06 \x01(\x0b\x32\x1b.caffe.PassThroughParameter\x12\x31\n\x0eproposal_param\x18\xcc\x01 \x01(\x0b\x32\x18.caffe.ProposalParameter\"\xa3\x01\n\x11UpsampleParameter\x12\x10\n\x05scale\x18\x01 \x01(\r:\x01\x32\x12\x0f\n\x07scale_h\x18\x02 \x01(\r\x12\x0f\n\x07scale_w\x18\x03 \x01(\r\x12\x18\n\tpad_out_h\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x18\n\tpad_out_w\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x12\n\nupsample_h\x18\x06 \x01(\r\x12\x12\n\nupsample_w\x18\x07 \x01(\r\"\xf2\x01\n\x11ProposalParameter\x12\x17\n\x0b\x66\x65\x61t_stride\x18\x01 \x01(\x05:\x02\x31\x36\x12\x15\n\tbase_size\x18\x02 \x01(\x05:\x02\x31\x36\x12\x14\n\x08min_size\x18\x03 \x01(\x05:\x02\x31\x36\x12\r\n\x05ratio\x18\x04 \x03(\x02\x12\r\n\x05scale\x18\x05 \x03(\x02\x12\x1a\n\x0cpre_nms_topn\x18\x06 \x01(\x05:\x04\x33\x30\x30\x30\x12\x1a\n\rpost_nms_topn\x18\x07 \x01(\x05:\x03\x33\x30\x34\x12\x1a\n\riou_threshold\x18\x08 \x01(\x02:\x03\x30.7\x12%\n\x16output_actual_rois_num\x18\t \x01(\x08:\x05\x66\x61lse\"\x8a\x01\n\x13ROIPoolingParameter\x12\x10\n\x08pooled_h\x18\x01 \x02(\x05\x12\x10\n\x08pooled_w\x18\x02 \x02(\x05\x12\x1d\n\rspatial_scale\x18\x03 \x01(\x02:\x06\x30.0625\x12\x17\n\x0fspatial_scale_h\x18\x04 \x01(\x02\x12\x17\n\x0fspatial_scale_w\x18\x05 \x01(\x02\">\n\x0fMatMulParameter\x12\r\n\x05\x64im_1\x18\x01 \x01(\r\x12\r\n\x05\x64im_2\x18\x02 \x01(\r\x12\r\n\x05\x64im_3\x18\x03 \x01(\r\"^\n\x14PassThroughParameter\x12\x15\n\nnum_output\x18\x01 \x01(\r:\x01\x30\x12\x17\n\x0c\x62lock_height\x18\x02 \x01(\r:\x01\x30\x12\x16\n\x0b\x62lock_width\x18\x03 \x01(\r:\x01\x30\"\x95\x01\n\x16\x41nnotatedDataParameter\x12*\n\rbatch_sampler\x18\x01 \x03(\x0b\x32\x13.caffe.BatchSampler\x12\x16\n\x0elabel_map_file\x18\x02 \x01(\t\x12\x37\n\tanno_type\x18\x03 \x01(\x0e\x32$.caffe.AnnotatedDatum.AnnotationType\"\xab\x01\n\x11\x41sdnDataParameter\x12\x16\n\ncount_drop\x18\x01 \x01(\x05:\x02\x31\x35\x12\x19\n\rpermute_count\x18\x02 \x01(\x05:\x02\x32\x30\x12\x19\n\x0e\x63ount_drop_neg\x18\x03 \x01(\x05:\x01\x30\x12\x16\n\x08\x63hannels\x18\x04 \x01(\x05:\x04\x31\x30\x32\x34\x12\x14\n\titer_size\x18\x05 \x01(\x05:\x01\x32\x12\x1a\n\x0fmaintain_before\x18\x06 \x01(\x05:\x01\x31\"\x80\x02\n\x12MTCNNDataParameter\x12\x17\n\taugmented\x18\x01 \x01(\x08:\x04true\x12\x12\n\x04\x66lip\x18\x02 \x01(\x08:\x04true\x12\x18\n\x0cnum_positive\x18\x03 \x01(\x05:\x02-1\x12\x18\n\x0cnum_negitive\x18\x04 \x01(\x05:\x02-1\x12\x14\n\x08num_part\x18\x05 \x01(\x05:\x02-1\x12\x17\n\x0cresize_width\x18\x06 \x01(\r:\x01\x30\x12\x18\n\rresize_height\x18\x07 \x01(\r:\x01\x30\x12\x1f\n\x12min_negitive_scale\x18\x08 \x01(\x02:\x03\x30.5\x12\x1f\n\x12max_negitive_scale\x18\t \x01(\x02:\x03\x31.5\"\x90\x01\n\x0fInterpParameter\x12\x11\n\x06height\x18\x01 \x01(\x05:\x01\x30\x12\x10\n\x05width\x18\x02 \x01(\x05:\x01\x30\x12\x16\n\x0bzoom_factor\x18\x03 \x01(\x05:\x01\x31\x12\x18\n\rshrink_factor\x18\x04 \x01(\x05:\x01\x31\x12\x12\n\x07pad_beg\x18\x05 \x01(\x05:\x01\x30\x12\x12\n\x07pad_end\x18\x06 \x01(\x05:\x01\x30\"V\n\x15PSROIPoolingParameter\x12\x15\n\rspatial_scale\x18\x01 \x02(\x02\x12\x12\n\noutput_dim\x18\x02 \x02(\x05\x12\x12\n\ngroup_size\x18\x03 \x02(\x05\"E\n\rFlipParameter\x12\x18\n\nflip_width\x18\x01 \x01(\x08:\x04true\x12\x1a\n\x0b\x66lip_height\x18\x02 \x01(\x08:\x05\x66\x61lse\"\x8b\x02\n\x0b\x42NParameter\x12,\n\x0cslope_filler\x18\x01 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x02 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x15\n\x08momentum\x18\x03 \x01(\x02:\x03\x30.9\x12\x12\n\x03\x65ps\x18\x04 \x01(\x02:\x05\x31\x65-05\x12\x15\n\x06\x66rozen\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x32\n\x06\x65ngine\x18\x06 \x01(\x0e\x32\x19.caffe.BNParameter.Engine:\x07\x44\x45\x46\x41ULT\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"\xa2\x01\n\x12\x46ocalLossParameter\x12\x34\n\x04type\x18\x01 \x01(\x0e\x32\x1e.caffe.FocalLossParameter.Type:\x06ORIGIN\x12\x10\n\x05gamma\x18\x02 \x01(\x02:\x01\x32\x12\x13\n\x05\x61lpha\x18\x03 \x01(\x02:\x04\x30.25\x12\x0f\n\x04\x62\x65ta\x18\x04 \x01(\x02:\x01\x31\"\x1e\n\x04Type\x12\n\n\x06ORIGIN\x10\x00\x12\n\n\x06LINEAR\x10\x01\"\xca\x03\n\x17TransformationParameter\x12\x10\n\x05scale\x18\x01 \x01(\x02:\x01\x31\x12\x15\n\x06mirror\x18\x02 \x01(\x08:\x05\x66\x61lse\x12\x14\n\tcrop_size\x18\x03 \x01(\r:\x01\x30\x12\x11\n\x06\x63rop_h\x18\x0b \x01(\r:\x01\x30\x12\x11\n\x06\x63rop_w\x18\x0c \x01(\r:\x01\x30\x12\x11\n\tmean_file\x18\x04 \x01(\t\x12\x12\n\nmean_value\x18\x05 \x03(\x02\x12\x1a\n\x0b\x66orce_color\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\x19\n\nforce_gray\x18\x07 \x01(\x08:\x05\x66\x61lse\x12,\n\x0cresize_param\x18\x08 \x01(\x0b\x32\x16.caffe.ResizeParameter\x12*\n\x0bnoise_param\x18\t \x01(\x0b\x32\x15.caffe.NoiseParameter\x12\x31\n\rdistort_param\x18\r \x01(\x0b\x32\x1a.caffe.DistortionParameter\x12/\n\x0c\x65xpand_param\x18\x0e \x01(\x0b\x32\x19.caffe.ExpansionParameter\x12.\n\x0f\x65mit_constraint\x18\n \x01(\x0b\x32\x15.caffe.EmitConstraint\"\x90\x04\n\x0fResizeParameter\x12\x0f\n\x04prob\x18\x01 \x01(\x02:\x01\x31\x12=\n\x0bresize_mode\x18\x02 \x01(\x0e\x32\".caffe.ResizeParameter.Resize_mode:\x04WARP\x12\x11\n\x06height\x18\x03 \x01(\r:\x01\x30\x12\x10\n\x05width\x18\x04 \x01(\r:\x01\x30\x12\x17\n\x0cheight_scale\x18\x08 \x01(\r:\x01\x30\x12\x16\n\x0bwidth_scale\x18\t \x01(\r:\x01\x30\x12;\n\x08pad_mode\x18\x05 \x01(\x0e\x32\x1f.caffe.ResizeParameter.Pad_mode:\x08\x43ONSTANT\x12\x11\n\tpad_value\x18\x06 \x03(\x02\x12\x37\n\x0binterp_mode\x18\x07 \x03(\x0e\x32\".caffe.ResizeParameter.Interp_mode\"G\n\x0bResize_mode\x12\x08\n\x04WARP\x10\x01\x12\x12\n\x0e\x46IT_SMALL_SIZE\x10\x02\x12\x1a\n\x16\x46IT_LARGE_SIZE_AND_PAD\x10\x03\":\n\x08Pad_mode\x12\x0c\n\x08\x43ONSTANT\x10\x01\x12\x0c\n\x08MIRRORED\x10\x02\x12\x12\n\x0eREPEAT_NEAREST\x10\x03\"I\n\x0bInterp_mode\x12\n\n\x06LINEAR\x10\x01\x12\x08\n\x04\x41REA\x10\x02\x12\x0b\n\x07NEAREST\x10\x03\x12\t\n\x05\x43UBIC\x10\x04\x12\x0c\n\x08LANCZOS4\x10\x05\"9\n\x13SaltPepperParameter\x12\x13\n\x08\x66raction\x18\x01 \x01(\x02:\x01\x30\x12\r\n\x05value\x18\x02 \x03(\x02\"\xee\x02\n\x0eNoiseParameter\x12\x0f\n\x04prob\x18\x01 \x01(\x02:\x01\x30\x12\x16\n\x07hist_eq\x18\x02 \x01(\x08:\x05\x66\x61lse\x12\x16\n\x07inverse\x18\x03 \x01(\x08:\x05\x66\x61lse\x12\x19\n\ndecolorize\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x19\n\ngauss_blur\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x10\n\x04jpeg\x18\x06 \x01(\x02:\x02-1\x12\x18\n\tposterize\x18\x07 \x01(\x08:\x05\x66\x61lse\x12\x14\n\x05\x65rode\x18\x08 \x01(\x08:\x05\x66\x61lse\x12\x19\n\nsaltpepper\x18\t \x01(\x08:\x05\x66\x61lse\x12\x34\n\x10saltpepper_param\x18\n \x01(\x0b\x32\x1a.caffe.SaltPepperParameter\x12\x14\n\x05\x63lahe\x18\x0b \x01(\x08:\x05\x66\x61lse\x12\x1d\n\x0e\x63onvert_to_hsv\x18\x0c \x01(\x08:\x05\x66\x61lse\x12\x1d\n\x0e\x63onvert_to_lab\x18\r \x01(\x08:\x05\x66\x61lse\"\xbd\x02\n\x13\x44istortionParameter\x12\x1a\n\x0f\x62rightness_prob\x18\x01 \x01(\x02:\x01\x30\x12\x1b\n\x10\x62rightness_delta\x18\x02 \x01(\x02:\x01\x30\x12\x18\n\rcontrast_prob\x18\x03 \x01(\x02:\x01\x30\x12\x19\n\x0e\x63ontrast_lower\x18\x04 \x01(\x02:\x01\x30\x12\x19\n\x0e\x63ontrast_upper\x18\x05 \x01(\x02:\x01\x30\x12\x13\n\x08hue_prob\x18\x06 \x01(\x02:\x01\x30\x12\x14\n\thue_delta\x18\x07 \x01(\x02:\x01\x30\x12\x1a\n\x0fsaturation_prob\x18\x08 \x01(\x02:\x01\x30\x12\x1b\n\x10saturation_lower\x18\t \x01(\x02:\x01\x30\x12\x1b\n\x10saturation_upper\x18\n \x01(\x02:\x01\x30\x12\x1c\n\x11random_order_prob\x18\x0b \x01(\x02:\x01\x30\"B\n\x12\x45xpansionParameter\x12\x0f\n\x04prob\x18\x01 \x01(\x02:\x01\x31\x12\x1b\n\x10max_expand_ratio\x18\x02 \x01(\x02:\x01\x31\"\xc2\x01\n\rLossParameter\x12\x14\n\x0cignore_label\x18\x01 \x01(\x05\x12\x44\n\rnormalization\x18\x03 \x01(\x0e\x32&.caffe.LossParameter.NormalizationMode:\x05VALID\x12\x11\n\tnormalize\x18\x02 \x01(\x08\"B\n\x11NormalizationMode\x12\x08\n\x04\x46ULL\x10\x00\x12\t\n\x05VALID\x10\x01\x12\x0e\n\nBATCH_SIZE\x10\x02\x12\x08\n\x04NONE\x10\x03\"L\n\x11\x41\x63\x63uracyParameter\x12\x10\n\x05top_k\x18\x01 \x01(\r:\x01\x31\x12\x0f\n\x04\x61xis\x18\x02 \x01(\x05:\x01\x31\x12\x14\n\x0cignore_label\x18\x03 \x01(\x05\"M\n\x0f\x41rgMaxParameter\x12\x1a\n\x0bout_max_val\x18\x01 \x01(\x08:\x05\x66\x61lse\x12\x10\n\x05top_k\x18\x02 \x01(\r:\x01\x31\x12\x0c\n\x04\x61xis\x18\x03 \x01(\x05\"9\n\x0f\x43oncatParameter\x12\x0f\n\x04\x61xis\x18\x02 \x01(\x05:\x01\x31\x12\x15\n\nconcat_dim\x18\x01 \x01(\r:\x01\x31\"j\n\x12\x42\x61tchNormParameter\x12\x18\n\x10use_global_stats\x18\x01 \x01(\x08\x12&\n\x17moving_average_fraction\x18\x02 \x01(\x02:\x05\x30.999\x12\x12\n\x03\x65ps\x18\x03 \x01(\x02:\x05\x31\x65-05\"]\n\rBiasParameter\x12\x0f\n\x04\x61xis\x18\x01 \x01(\x05:\x01\x31\x12\x13\n\x08num_axes\x18\x02 \x01(\x05:\x01\x31\x12&\n\x06\x66iller\x18\x03 \x01(\x0b\x32\x16.caffe.FillerParameter\"L\n\x18\x43ontrastiveLossParameter\x12\x11\n\x06margin\x18\x01 \x01(\x02:\x01\x31\x12\x1d\n\x0elegacy_version\x18\x02 \x01(\x08:\x05\x66\x61lse\"\xec\x01\n\x16\x44\x65tectionLossParameter\x12\x0f\n\x04side\x18\x01 \x01(\r:\x01\x37\x12\x15\n\tnum_class\x18\x02 \x01(\r:\x02\x32\x30\x12\x15\n\nnum_object\x18\x03 \x01(\r:\x01\x32\x12\x17\n\x0cobject_scale\x18\x04 \x01(\x02:\x01\x31\x12\x1b\n\x0enoobject_scale\x18\x05 \x01(\x02:\x03\x30.5\x12\x16\n\x0b\x63lass_scale\x18\x06 \x01(\x02:\x01\x31\x12\x16\n\x0b\x63oord_scale\x18\x07 \x01(\x02:\x01\x35\x12\x12\n\x04sqrt\x18\x08 \x01(\x08:\x04true\x12\x19\n\nconstriant\x18\t \x01(\x08:\x05\x66\x61lse\"\x91\x03\n\x13RegionLossParameter\x12\x10\n\x04side\x18\x01 \x01(\r:\x02\x31\x33\x12\x15\n\tnum_class\x18\x02 \x01(\r:\x02\x32\x30\x12\x15\n\nbias_match\x18\x03 \x01(\r:\x01\x31\x12\x11\n\x06\x63oords\x18\x04 \x01(\r:\x01\x34\x12\x0e\n\x03num\x18\x05 \x01(\r:\x01\x35\x12\x12\n\x07softmax\x18\x06 \x01(\r:\x01\x31\x12\x13\n\x06jitter\x18\x07 \x01(\x02:\x03\x30.2\x12\x12\n\x07rescore\x18\x08 \x01(\r:\x01\x31\x12\x17\n\x0cobject_scale\x18\t \x01(\x02:\x01\x31\x12\x16\n\x0b\x63lass_scale\x18\n \x01(\x02:\x01\x31\x12\x1b\n\x0enoobject_scale\x18\x0b \x01(\x02:\x03\x30.5\x12\x16\n\x0b\x63oord_scale\x18\x0c \x01(\x02:\x01\x35\x12\x13\n\x08\x61\x62solute\x18\r \x01(\r:\x01\x31\x12\x13\n\x06thresh\x18\x0e \x01(\x02:\x03\x30.2\x12\x11\n\x06random\x18\x0f \x01(\r:\x01\x31\x12\x0e\n\x06\x62iases\x18\x10 \x03(\x02\x12\x14\n\x0csoftmax_tree\x18\x11 \x01(\t\x12\x11\n\tclass_map\x18\x12 \x01(\t\"8\n\x0eReorgParameter\x12\x0e\n\x06stride\x18\x01 \x01(\r\x12\x16\n\x07reverse\x18\x02 \x01(\x08:\x05\x66\x61lse\"\xb3\x02\n\x16\x45valDetectionParameter\x12\x0f\n\x04side\x18\x01 \x01(\r:\x01\x37\x12\x15\n\tnum_class\x18\x02 \x01(\r:\x02\x32\x30\x12\x15\n\nnum_object\x18\x03 \x01(\r:\x01\x32\x12\x16\n\tthreshold\x18\x04 \x01(\x02:\x03\x30.5\x12\x12\n\x04sqrt\x18\x05 \x01(\x08:\x04true\x12\x18\n\nconstriant\x18\x06 \x01(\x08:\x04true\x12\x45\n\nscore_type\x18\x07 \x01(\x0e\x32\'.caffe.EvalDetectionParameter.ScoreType:\x08MULTIPLY\x12\x0f\n\x03nms\x18\x08 \x01(\x02:\x02-1\x12\x0e\n\x06\x62iases\x18\t \x03(\x02\",\n\tScoreType\x12\x07\n\x03OBJ\x10\x00\x12\x08\n\x04PROB\x10\x01\x12\x0c\n\x08MULTIPLY\x10\x02\"\xfc\x03\n\x14\x43onvolutionParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12\x17\n\tbias_term\x18\x02 \x01(\x08:\x04true\x12\x0b\n\x03pad\x18\x03 \x03(\r\x12\x13\n\x0bkernel_size\x18\x04 \x03(\r\x12\x0e\n\x06stride\x18\x06 \x03(\r\x12\x10\n\x08\x64ilation\x18\x12 \x03(\r\x12\x10\n\x05pad_h\x18\t \x01(\r:\x01\x30\x12\x10\n\x05pad_w\x18\n \x01(\r:\x01\x30\x12\x10\n\x08kernel_h\x18\x0b \x01(\r\x12\x10\n\x08kernel_w\x18\x0c \x01(\r\x12\x10\n\x08stride_h\x18\r \x01(\r\x12\x10\n\x08stride_w\x18\x0e \x01(\r\x12\x10\n\x05group\x18\x05 \x01(\r:\x01\x31\x12-\n\rweight_filler\x18\x07 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x08 \x01(\x0b\x32\x16.caffe.FillerParameter\x12;\n\x06\x65ngine\x18\x0f \x01(\x0e\x32\".caffe.ConvolutionParameter.Engine:\x07\x44\x45\x46\x41ULT\x12\x0f\n\x04\x61xis\x18\x10 \x01(\x05:\x01\x31\x12\x1e\n\x0f\x66orce_nd_im2col\x18\x11 \x01(\x08:\x05\x66\x61lse\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"0\n\rCropParameter\x12\x0f\n\x04\x61xis\x18\x01 \x01(\x05:\x01\x32\x12\x0e\n\x06offset\x18\x02 \x03(\r\"\xb2\x02\n\rDataParameter\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x12\n\nbatch_size\x18\x04 \x01(\r\x12\x14\n\trand_skip\x18\x07 \x01(\r:\x01\x30\x12\x31\n\x07\x62\x61\x63kend\x18\x08 \x01(\x0e\x32\x17.caffe.DataParameter.DB:\x07LEVELDB\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x11\n\tmean_file\x18\x03 \x01(\t\x12\x14\n\tcrop_size\x18\x05 \x01(\r:\x01\x30\x12\x15\n\x06mirror\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\"\n\x13\x66orce_encoded_color\x18\t \x01(\x08:\x05\x66\x61lse\x12\x13\n\x08prefetch\x18\n \x01(\r:\x01\x34\x12\x0c\n\x04side\x18\x0b \x03(\r\"\x1b\n\x02\x44\x42\x12\x0b\n\x07LEVELDB\x10\x00\x12\x08\n\x04LMDB\x10\x01\"\xdc\x01\n\x1a\x44\x65tectionEvaluateParameter\x12\x13\n\x0bnum_classes\x18\x01 \x01(\r\x12\x1e\n\x13\x62\x61\x63kground_label_id\x18\x02 \x01(\r:\x01\x30\x12\x1e\n\x11overlap_threshold\x18\x03 \x01(\x02:\x03\x30.5\x12#\n\x15\x65valuate_difficult_gt\x18\x04 \x01(\x08:\x04true\x12\x16\n\x0ename_size_file\x18\x05 \x01(\t\x12,\n\x0cresize_param\x18\x06 \x01(\x0b\x32\x16.caffe.ResizeParameter\"[\n\x1eNonMaximumSuppressionParameter\x12\x1a\n\rnms_threshold\x18\x01 \x01(\x02:\x03\x30.3\x12\r\n\x05top_k\x18\x02 \x01(\x05\x12\x0e\n\x03\x65ta\x18\x03 \x01(\x02:\x01\x31\"\xd8\x01\n\x13SaveOutputParameter\x12\x18\n\x10output_directory\x18\x01 \x01(\t\x12\x1a\n\x12output_name_prefix\x18\x02 \x01(\t\x12\x15\n\routput_format\x18\x03 \x01(\t\x12\x16\n\x0elabel_map_file\x18\x04 \x01(\t\x12\x16\n\x0ename_size_file\x18\x05 \x01(\t\x12\x16\n\x0enum_test_image\x18\x06 \x01(\r\x12,\n\x0cresize_param\x18\x07 \x01(\x0b\x32\x16.caffe.ResizeParameter\"\xc7\x03\n\x18\x44\x65tectionOutputParameter\x12\x13\n\x0bnum_classes\x18\x01 \x01(\r\x12\x1c\n\x0eshare_location\x18\x02 \x01(\x08:\x04true\x12\x1e\n\x13\x62\x61\x63kground_label_id\x18\x03 \x01(\x05:\x01\x30\x12\x38\n\tnms_param\x18\x04 \x01(\x0b\x32%.caffe.NonMaximumSuppressionParameter\x12\x35\n\x11save_output_param\x18\x05 \x01(\x0b\x32\x1a.caffe.SaveOutputParameter\x12<\n\tcode_type\x18\x06 \x01(\x0e\x32!.caffe.PriorBoxParameter.CodeType:\x06\x43ORNER\x12)\n\x1avariance_encoded_in_target\x18\x08 \x01(\x08:\x05\x66\x61lse\x12\x16\n\nkeep_top_k\x18\x07 \x01(\x05:\x02-1\x12\x1c\n\x14\x63onfidence_threshold\x18\t \x01(\x02\x12\x18\n\tvisualize\x18\n \x01(\x08:\x05\x66\x61lse\x12\x1b\n\x13visualize_threshold\x18\x0b \x01(\x02\x12\x11\n\tsave_file\x18\x0c \x01(\t\"I\n\x10\x44ropoutParameter\x12\x1a\n\rdropout_ratio\x18\x01 \x01(\x02:\x03\x30.5\x12\x19\n\x0bscale_train\x18\x02 \x01(\x08:\x04true\"\xa0\x01\n\x12\x44ummyDataParameter\x12+\n\x0b\x64\x61ta_filler\x18\x01 \x03(\x0b\x32\x16.caffe.FillerParameter\x12\x1f\n\x05shape\x18\x06 \x03(\x0b\x32\x10.caffe.BlobShape\x12\x0b\n\x03num\x18\x02 \x03(\r\x12\x10\n\x08\x63hannels\x18\x03 \x03(\r\x12\x0e\n\x06height\x18\x04 \x03(\r\x12\r\n\x05width\x18\x05 \x03(\r\"\xa5\x01\n\x10\x45ltwiseParameter\x12\x39\n\toperation\x18\x01 \x01(\x0e\x32!.caffe.EltwiseParameter.EltwiseOp:\x03SUM\x12\r\n\x05\x63oeff\x18\x02 \x03(\x02\x12\x1e\n\x10stable_prod_grad\x18\x03 \x01(\x08:\x04true\"\'\n\tEltwiseOp\x12\x08\n\x04PROD\x10\x00\x12\x07\n\x03SUM\x10\x01\x12\x07\n\x03MAX\x10\x02\" \n\x0c\x45LUParameter\x12\x10\n\x05\x61lpha\x18\x01 \x01(\x02:\x01\x31\"\xac\x01\n\x0e\x45mbedParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12\x11\n\tinput_dim\x18\x02 \x01(\r\x12\x17\n\tbias_term\x18\x03 \x01(\x08:\x04true\x12-\n\rweight_filler\x18\x04 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x05 \x01(\x0b\x32\x16.caffe.FillerParameter\"D\n\x0c\x45xpParameter\x12\x10\n\x04\x62\x61se\x18\x01 \x01(\x02:\x02-1\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x10\n\x05shift\x18\x03 \x01(\x02:\x01\x30\"9\n\x10\x46lattenParameter\x12\x0f\n\x04\x61xis\x18\x01 \x01(\x05:\x01\x31\x12\x14\n\x08\x65nd_axis\x18\x02 \x01(\x05:\x02-1\"O\n\x11HDF5DataParameter\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x12\n\nbatch_size\x18\x02 \x01(\r\x12\x16\n\x07shuffle\x18\x03 \x01(\x08:\x05\x66\x61lse\"(\n\x13HDF5OutputParameter\x12\x11\n\tfile_name\x18\x01 \x01(\t\"^\n\x12HingeLossParameter\x12\x30\n\x04norm\x18\x01 \x01(\x0e\x32\x1e.caffe.HingeLossParameter.Norm:\x02L1\"\x16\n\x04Norm\x12\x06\n\x02L1\x10\x01\x12\x06\n\x02L2\x10\x02\"\x97\x02\n\x12ImageDataParameter\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x15\n\nbatch_size\x18\x04 \x01(\r:\x01\x31\x12\x14\n\trand_skip\x18\x07 \x01(\r:\x01\x30\x12\x16\n\x07shuffle\x18\x08 \x01(\x08:\x05\x66\x61lse\x12\x15\n\nnew_height\x18\t \x01(\r:\x01\x30\x12\x14\n\tnew_width\x18\n \x01(\r:\x01\x30\x12\x16\n\x08is_color\x18\x0b \x01(\x08:\x04true\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x11\n\tmean_file\x18\x03 \x01(\t\x12\x14\n\tcrop_size\x18\x05 \x01(\r:\x01\x30\x12\x15\n\x06mirror\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\x15\n\x0broot_folder\x18\x0c \x01(\t:\x00\"\'\n\x15InfogainLossParameter\x12\x0e\n\x06source\x18\x01 \x01(\t\"\xe5\x01\n\x15InnerProductParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12\x17\n\tbias_term\x18\x02 \x01(\x08:\x04true\x12-\n\rweight_filler\x18\x03 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x04 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x0f\n\x04\x61xis\x18\x05 \x01(\x05:\x01\x31\x12\x18\n\ttranspose\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\x18\n\tnormalize\x18\x07 \x01(\x08:\x05\x66\x61lse\"1\n\x0eInputParameter\x12\x1f\n\x05shape\x18\x01 \x03(\x0b\x32\x10.caffe.BlobShape\"D\n\x0cLogParameter\x12\x10\n\x04\x62\x61se\x18\x01 \x01(\x02:\x02-1\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x10\n\x05shift\x18\x03 \x01(\x02:\x01\x30\"\xb8\x02\n\x0cLRNParameter\x12\x15\n\nlocal_size\x18\x01 \x01(\r:\x01\x35\x12\x10\n\x05\x61lpha\x18\x02 \x01(\x02:\x01\x31\x12\x12\n\x04\x62\x65ta\x18\x03 \x01(\x02:\x04\x30.75\x12\x44\n\x0bnorm_region\x18\x04 \x01(\x0e\x32\x1e.caffe.LRNParameter.NormRegion:\x0f\x41\x43ROSS_CHANNELS\x12\x0c\n\x01k\x18\x05 \x01(\x02:\x01\x31\x12\x33\n\x06\x65ngine\x18\x06 \x01(\x0e\x32\x1a.caffe.LRNParameter.Engine:\x07\x44\x45\x46\x41ULT\"5\n\nNormRegion\x12\x13\n\x0f\x41\x43ROSS_CHANNELS\x10\x00\x12\x12\n\x0eWITHIN_CHANNEL\x10\x01\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"Z\n\x13MemoryDataParameter\x12\x12\n\nbatch_size\x18\x01 \x01(\r\x12\x10\n\x08\x63hannels\x18\x02 \x01(\r\x12\x0e\n\x06height\x18\x03 \x01(\r\x12\r\n\x05width\x18\x04 \x01(\r\"\xe8\x08\n\x15MultiBoxLossParameter\x12J\n\rloc_loss_type\x18\x01 \x01(\x0e\x32(.caffe.MultiBoxLossParameter.LocLossType:\tSMOOTH_L1\x12J\n\x0e\x63onf_loss_type\x18\x02 \x01(\x0e\x32).caffe.MultiBoxLossParameter.ConfLossType:\x07SOFTMAX\x12\x15\n\nloc_weight\x18\x03 \x01(\x02:\x01\x31\x12\x13\n\x0bnum_classes\x18\x04 \x01(\r\x12\x1c\n\x0eshare_location\x18\x05 \x01(\x08:\x04true\x12J\n\nmatch_type\x18\x06 \x01(\x0e\x32&.caffe.MultiBoxLossParameter.MatchType:\x0ePER_PREDICTION\x12\x1e\n\x11overlap_threshold\x18\x07 \x01(\x02:\x03\x30.5\x12$\n\x16use_prior_for_matching\x18\x08 \x01(\x08:\x04true\x12\x1e\n\x13\x62\x61\x63kground_label_id\x18\t \x01(\r:\x01\x30\x12\x1e\n\x10use_difficult_gt\x18\n \x01(\x08:\x04true\x12\x15\n\rdo_neg_mining\x18\x0b \x01(\x08\x12\x18\n\rneg_pos_ratio\x18\x0c \x01(\x02:\x01\x33\x12\x18\n\x0bneg_overlap\x18\r \x01(\x02:\x03\x30.5\x12<\n\tcode_type\x18\x0e \x01(\x0e\x32!.caffe.PriorBoxParameter.CodeType:\x06\x43ORNER\x12(\n\x19\x65ncode_variance_in_target\x18\x10 \x01(\x08:\x05\x66\x61lse\x12%\n\x16map_object_to_agnostic\x18\x11 \x01(\x08:\x05\x66\x61lse\x12)\n\x1aignore_cross_boundary_bbox\x18\x12 \x01(\x08:\x05\x66\x61lse\x12\x18\n\tbp_inside\x18\x13 \x01(\x08:\x05\x66\x61lse\x12J\n\x0bmining_type\x18\x14 \x01(\x0e\x32\'.caffe.MultiBoxLossParameter.MiningType:\x0cMAX_NEGATIVE\x12\x38\n\tnms_param\x18\x15 \x01(\x0b\x32%.caffe.NonMaximumSuppressionParameter\x12\x17\n\x0bsample_size\x18\x16 \x01(\x05:\x02\x36\x34\x12 \n\x11use_prior_for_nms\x18\x17 \x01(\x08:\x05\x66\x61lse\"$\n\x0bLocLossType\x12\x06\n\x02L2\x10\x00\x12\r\n\tSMOOTH_L1\x10\x01\")\n\x0c\x43onfLossType\x12\x0b\n\x07SOFTMAX\x10\x00\x12\x0c\n\x08LOGISTIC\x10\x01\".\n\tMatchType\x12\r\n\tBIPARTITE\x10\x00\x12\x12\n\x0ePER_PREDICTION\x10\x01\":\n\nMiningType\x12\x08\n\x04NONE\x10\x00\x12\x10\n\x0cMAX_NEGATIVE\x10\x01\x12\x10\n\x0cHARD_EXAMPLE\x10\x02\"\x92\x01\n\x12NormalizeParameter\x12\x1c\n\x0e\x61\x63ross_spatial\x18\x01 \x01(\x08:\x04true\x12,\n\x0cscale_filler\x18\x02 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x1c\n\x0e\x63hannel_shared\x18\x03 \x01(\x08:\x04true\x12\x12\n\x03\x65ps\x18\x04 \x01(\x02:\x05\x31\x65-10\"!\n\x10PermuteParameter\x12\r\n\x05order\x18\x01 \x03(\r\"d\n\x0cMVNParameter\x12 \n\x12normalize_variance\x18\x01 \x01(\x08:\x04true\x12\x1e\n\x0f\x61\x63ross_channels\x18\x02 \x01(\x08:\x05\x66\x61lse\x12\x12\n\x03\x65ps\x18\x03 \x01(\x02:\x05\x31\x65-09\"5\n\x12ParameterParameter\x12\x1f\n\x05shape\x18\x01 \x01(\x0b\x32\x10.caffe.BlobShape\"\xbb\x03\n\x10PoolingParameter\x12\x35\n\x04pool\x18\x01 \x01(\x0e\x32\".caffe.PoolingParameter.PoolMethod:\x03MAX\x12\x0e\n\x03pad\x18\x04 \x01(\r:\x01\x30\x12\x10\n\x05pad_h\x18\t \x01(\r:\x01\x30\x12\x10\n\x05pad_w\x18\n \x01(\r:\x01\x30\x12\x13\n\x0bkernel_size\x18\x02 \x01(\r\x12\x10\n\x08kernel_h\x18\x05 \x01(\r\x12\x10\n\x08kernel_w\x18\x06 \x01(\r\x12\x11\n\x06stride\x18\x03 \x01(\r:\x01\x31\x12\x10\n\x08stride_h\x18\x07 \x01(\r\x12\x10\n\x08stride_w\x18\x08 \x01(\r\x12\x37\n\x06\x65ngine\x18\x0b \x01(\x0e\x32\x1e.caffe.PoolingParameter.Engine:\x07\x44\x45\x46\x41ULT\x12\x1d\n\x0eglobal_pooling\x18\x0c \x01(\x08:\x05\x66\x61lse\x12\x17\n\tceil_mode\x18\r \x01(\x08:\x04true\".\n\nPoolMethod\x12\x07\n\x03MAX\x10\x00\x12\x07\n\x03\x41VE\x10\x01\x12\x0e\n\nSTOCHASTIC\x10\x02\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"F\n\x0ePowerParameter\x12\x10\n\x05power\x18\x01 \x01(\x02:\x01\x31\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x10\n\x05shift\x18\x03 \x01(\x02:\x01\x30\"\xb5\x02\n\x11PriorBoxParameter\x12\x10\n\x08min_size\x18\x01 \x03(\x02\x12\x10\n\x08max_size\x18\x02 \x03(\x02\x12\x14\n\x0c\x61spect_ratio\x18\x03 \x03(\x02\x12\x12\n\x04\x66lip\x18\x04 \x01(\x08:\x04true\x12\x13\n\x04\x63lip\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x10\n\x08variance\x18\x06 \x03(\x02\x12\x10\n\x08img_size\x18\x07 \x01(\r\x12\r\n\x05img_h\x18\x08 \x01(\r\x12\r\n\x05img_w\x18\t \x01(\r\x12\x0c\n\x04step\x18\n \x01(\x02\x12\x0e\n\x06step_h\x18\x0b \x01(\x02\x12\x0e\n\x06step_w\x18\x0c \x01(\x02\x12\x13\n\x06offset\x18\r \x01(\x02:\x03\x30.5\"8\n\x08\x43odeType\x12\n\n\x06\x43ORNER\x10\x01\x12\x0f\n\x0b\x43\x45NTER_SIZE\x10\x02\x12\x0f\n\x0b\x43ORNER_SIZE\x10\x03\"g\n\x0fPythonParameter\x12\x0e\n\x06module\x18\x01 \x01(\t\x12\r\n\x05layer\x18\x02 \x01(\t\x12\x13\n\tparam_str\x18\x03 \x01(\t:\x00\x12 \n\x11share_in_parallel\x18\x04 \x01(\x08:\x05\x66\x61lse\"\xc0\x01\n\x12RecurrentParameter\x12\x15\n\nnum_output\x18\x01 \x01(\r:\x01\x30\x12-\n\rweight_filler\x18\x02 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x03 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x19\n\ndebug_info\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\rexpose_hidden\x18\x05 \x01(\x08:\x05\x66\x61lse\"\xad\x01\n\x12ReductionParameter\x12=\n\toperation\x18\x01 \x01(\x0e\x32%.caffe.ReductionParameter.ReductionOp:\x03SUM\x12\x0f\n\x04\x61xis\x18\x02 \x01(\x05:\x01\x30\x12\x10\n\x05\x63oeff\x18\x03 \x01(\x02:\x01\x31\"5\n\x0bReductionOp\x12\x07\n\x03SUM\x10\x01\x12\x08\n\x04\x41SUM\x10\x02\x12\t\n\x05SUMSQ\x10\x03\x12\x08\n\x04MEAN\x10\x04\"\x8d\x01\n\rReLUParameter\x12\x19\n\x0enegative_slope\x18\x01 \x01(\x02:\x01\x30\x12\x34\n\x06\x65ngine\x18\x02 \x01(\x0e\x32\x1b.caffe.ReLUParameter.Engine:\x07\x44\x45\x46\x41ULT\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"t\n\x0eReLU6Parameter\x12\x35\n\x06\x65ngine\x18\x02 \x01(\x0e\x32\x1c.caffe.ReLU6Parameter.Engine:\x07\x44\x45\x46\x41ULT\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"Z\n\x10ReshapeParameter\x12\x1f\n\x05shape\x18\x01 \x01(\x0b\x32\x10.caffe.BlobShape\x12\x0f\n\x04\x61xis\x18\x02 \x01(\x05:\x01\x30\x12\x14\n\x08num_axes\x18\x03 \x01(\x05:\x02-1\"\xcb\x01\n\x0eScaleParameter\x12\x0f\n\x04\x61xis\x18\x01 \x01(\x05:\x01\x31\x12\x13\n\x08num_axes\x18\x02 \x01(\x05:\x01\x31\x12&\n\x06\x66iller\x18\x03 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x18\n\tbias_term\x18\x04 \x01(\x08:\x05\x66\x61lse\x12+\n\x0b\x62ias_filler\x18\x05 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x11\n\tmin_value\x18\x06 \x01(\x02\x12\x11\n\tmax_value\x18\x07 \x01(\x02\"x\n\x10SigmoidParameter\x12\x37\n\x06\x65ngine\x18\x01 \x01(\x0e\x32\x1e.caffe.SigmoidParameter.Engine:\x07\x44\x45\x46\x41ULT\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\")\n\x15SmoothL1LossParameter\x12\x10\n\x05sigma\x18\x01 \x01(\x02:\x01\x31\"L\n\x0eSliceParameter\x12\x0f\n\x04\x61xis\x18\x03 \x01(\x05:\x01\x31\x12\x13\n\x0bslice_point\x18\x02 \x03(\r\x12\x14\n\tslice_dim\x18\x01 \x01(\r:\x01\x31\"\x89\x01\n\x10SoftmaxParameter\x12\x37\n\x06\x65ngine\x18\x01 \x01(\x0e\x32\x1e.caffe.SoftmaxParameter.Engine:\x07\x44\x45\x46\x41ULT\x12\x0f\n\x04\x61xis\x18\x02 \x01(\x05:\x01\x31\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"r\n\rTanHParameter\x12\x34\n\x06\x65ngine\x18\x01 \x01(\x0e\x32\x1b.caffe.TanHParameter.Engine:\x07\x44\x45\x46\x41ULT\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"/\n\rTileParameter\x12\x0f\n\x04\x61xis\x18\x01 \x01(\x05:\x01\x31\x12\r\n\x05tiles\x18\x02 \x01(\x05\"*\n\x12ThresholdParameter\x12\x14\n\tthreshold\x18\x01 \x01(\x02:\x01\x30\"\xc1\x02\n\x13WindowDataParameter\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x10\n\x05scale\x18\x02 \x01(\x02:\x01\x31\x12\x11\n\tmean_file\x18\x03 \x01(\t\x12\x12\n\nbatch_size\x18\x04 \x01(\r\x12\x14\n\tcrop_size\x18\x05 \x01(\r:\x01\x30\x12\x15\n\x06mirror\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\x19\n\x0c\x66g_threshold\x18\x07 \x01(\x02:\x03\x30.5\x12\x19\n\x0c\x62g_threshold\x18\x08 \x01(\x02:\x03\x30.5\x12\x19\n\x0b\x66g_fraction\x18\t \x01(\x02:\x04\x30.25\x12\x16\n\x0b\x63ontext_pad\x18\n \x01(\r:\x01\x30\x12\x17\n\tcrop_mode\x18\x0b \x01(\t:\x04warp\x12\x1b\n\x0c\x63\x61\x63he_images\x18\x0c \x01(\x08:\x05\x66\x61lse\x12\x15\n\x0broot_folder\x18\r \x01(\t:\x00\"\xeb\x01\n\x0cSPPParameter\x12\x16\n\x0epyramid_height\x18\x01 \x01(\r\x12\x31\n\x04pool\x18\x02 \x01(\x0e\x32\x1e.caffe.SPPParameter.PoolMethod:\x03MAX\x12\x33\n\x06\x65ngine\x18\x06 \x01(\x0e\x32\x1a.caffe.SPPParameter.Engine:\x07\x44\x45\x46\x41ULT\".\n\nPoolMethod\x12\x07\n\x03MAX\x10\x00\x12\x07\n\x03\x41VE\x10\x01\x12\x0e\n\nSTOCHASTIC\x10\x02\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"\xdc\x14\n\x10V1LayerParameter\x12\x0e\n\x06\x62ottom\x18\x02 \x03(\t\x12\x0b\n\x03top\x18\x03 \x03(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12$\n\x07include\x18  \x03(\x0b\x32\x13.caffe.NetStateRule\x12$\n\x07\x65xclude\x18! \x03(\x0b\x32\x13.caffe.NetStateRule\x12/\n\x04type\x18\x05 \x01(\x0e\x32!.caffe.V1LayerParameter.LayerType\x12\x1f\n\x05\x62lobs\x18\x06 \x03(\x0b\x32\x10.caffe.BlobProto\x12\x0e\n\x05param\x18\xe9\x07 \x03(\t\x12>\n\x0f\x62lob_share_mode\x18\xea\x07 \x03(\x0e\x32$.caffe.V1LayerParameter.DimCheckMode\x12\x10\n\x08\x62lobs_lr\x18\x07 \x03(\x02\x12\x14\n\x0cweight_decay\x18\x08 \x03(\x02\x12\x13\n\x0bloss_weight\x18# \x03(\x02\x12\x30\n\x0e\x61\x63\x63uracy_param\x18\x1b \x01(\x0b\x32\x18.caffe.AccuracyParameter\x12,\n\x0c\x61rgmax_param\x18\x17 \x01(\x0b\x32\x16.caffe.ArgMaxParameter\x12,\n\x0c\x63oncat_param\x18\t \x01(\x0b\x32\x16.caffe.ConcatParameter\x12?\n\x16\x63ontrastive_loss_param\x18( \x01(\x0b\x32\x1f.caffe.ContrastiveLossParameter\x12\x36\n\x11\x63onvolution_param\x18\n \x01(\x0b\x32\x1b.caffe.ConvolutionParameter\x12(\n\ndata_param\x18\x0b \x01(\x0b\x32\x14.caffe.DataParameter\x12.\n\rdropout_param\x18\x0c \x01(\x0b\x32\x17.caffe.DropoutParameter\x12\x33\n\x10\x64ummy_data_param\x18\x1a \x01(\x0b\x32\x19.caffe.DummyDataParameter\x12.\n\reltwise_param\x18\x18 \x01(\x0b\x32\x17.caffe.EltwiseParameter\x12&\n\texp_param\x18) \x01(\x0b\x32\x13.caffe.ExpParameter\x12\x31\n\x0fhdf5_data_param\x18\r \x01(\x0b\x32\x18.caffe.HDF5DataParameter\x12\x35\n\x11hdf5_output_param\x18\x0e \x01(\x0b\x32\x1a.caffe.HDF5OutputParameter\x12\x33\n\x10hinge_loss_param\x18\x1d \x01(\x0b\x32\x19.caffe.HingeLossParameter\x12\x33\n\x10image_data_param\x18\x0f \x01(\x0b\x32\x19.caffe.ImageDataParameter\x12\x39\n\x13infogain_loss_param\x18\x10 \x01(\x0b\x32\x1c.caffe.InfogainLossParameter\x12\x39\n\x13inner_product_param\x18\x11 \x01(\x0b\x32\x1c.caffe.InnerProductParameter\x12&\n\tlrn_param\x18\x12 \x01(\x0b\x32\x13.caffe.LRNParameter\x12\x35\n\x11memory_data_param\x18\x16 \x01(\x0b\x32\x1a.caffe.MemoryDataParameter\x12&\n\tmvn_param\x18\" \x01(\x0b\x32\x13.caffe.MVNParameter\x12.\n\rpooling_param\x18\x13 \x01(\x0b\x32\x17.caffe.PoolingParameter\x12*\n\x0bpower_param\x18\x15 \x01(\x0b\x32\x15.caffe.PowerParameter\x12(\n\nrelu_param\x18\x1e \x01(\x0b\x32\x14.caffe.ReLUParameter\x12.\n\rsigmoid_param\x18& \x01(\x0b\x32\x17.caffe.SigmoidParameter\x12.\n\rsoftmax_param\x18\' \x01(\x0b\x32\x17.caffe.SoftmaxParameter\x12*\n\x0bslice_param\x18\x1f \x01(\x0b\x32\x15.caffe.SliceParameter\x12(\n\ntanh_param\x18% \x01(\x0b\x32\x14.caffe.TanHParameter\x12\x32\n\x0fthreshold_param\x18\x19 \x01(\x0b\x32\x19.caffe.ThresholdParameter\x12\x35\n\x11window_data_param\x18\x14 \x01(\x0b\x32\x1a.caffe.WindowDataParameter\x12\x37\n\x0ftransform_param\x18$ \x01(\x0b\x32\x1e.caffe.TransformationParameter\x12(\n\nloss_param\x18* \x01(\x0b\x32\x14.caffe.LossParameter\x12<\n\x14\x64\x65tection_loss_param\x18\xc8\x01 \x01(\x0b\x32\x1d.caffe.DetectionLossParameter\x12<\n\x14\x65val_detection_param\x18\xc9\x01 \x01(\x0b\x32\x1d.caffe.EvalDetectionParameter\x12&\n\x05layer\x18\x01 \x01(\x0b\x32\x17.caffe.V0LayerParameter\"\xd8\x04\n\tLayerType\x12\x08\n\x04NONE\x10\x00\x12\n\n\x06\x41\x42SVAL\x10#\x12\x0c\n\x08\x41\x43\x43URACY\x10\x01\x12\n\n\x06\x41RGMAX\x10\x1e\x12\x08\n\x04\x42NLL\x10\x02\x12\n\n\x06\x43ONCAT\x10\x03\x12\x14\n\x10\x43ONTRASTIVE_LOSS\x10%\x12\x0f\n\x0b\x43ONVOLUTION\x10\x04\x12\x08\n\x04\x44\x41TA\x10\x05\x12\x11\n\rDECONVOLUTION\x10\'\x12\x0b\n\x07\x44ROPOUT\x10\x06\x12\x0e\n\nDUMMY_DATA\x10 \x12\x12\n\x0e\x45UCLIDEAN_LOSS\x10\x07\x12\x0b\n\x07\x45LTWISE\x10\x19\x12\x07\n\x03\x45XP\x10&\x12\x0b\n\x07\x46LATTEN\x10\x08\x12\r\n\tHDF5_DATA\x10\t\x12\x0f\n\x0bHDF5_OUTPUT\x10\n\x12\x0e\n\nHINGE_LOSS\x10\x1c\x12\n\n\x06IM2COL\x10\x0b\x12\x0e\n\nIMAGE_DATA\x10\x0c\x12\x11\n\rINFOGAIN_LOSS\x10\r\x12\x11\n\rINNER_PRODUCT\x10\x0e\x12\x07\n\x03LRN\x10\x0f\x12\x0f\n\x0bMEMORY_DATA\x10\x1d\x12\x1d\n\x19MULTINOMIAL_LOGISTIC_LOSS\x10\x10\x12\x07\n\x03MVN\x10\"\x12\x0b\n\x07POOLING\x10\x11\x12\t\n\x05POWER\x10\x1a\x12\x08\n\x04RELU\x10\x12\x12\x0b\n\x07SIGMOID\x10\x13\x12\x1e\n\x1aSIGMOID_CROSS_ENTROPY_LOSS\x10\x1b\x12\x0b\n\x07SILENCE\x10$\x12\x0b\n\x07SOFTMAX\x10\x14\x12\x10\n\x0cSOFTMAX_LOSS\x10\x15\x12\t\n\x05SPLIT\x10\x16\x12\t\n\x05SLICE\x10!\x12\x08\n\x04TANH\x10\x17\x12\x0f\n\x0bWINDOW_DATA\x10\x18\x12\r\n\tTHRESHOLD\x10\x1f\"*\n\x0c\x44imCheckMode\x12\n\n\x06STRICT\x10\x00\x12\x0e\n\nPERMISSIVE\x10\x01\"\xfd\x07\n\x10V0LayerParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x12\n\nnum_output\x18\x03 \x01(\r\x12\x16\n\x08\x62iasterm\x18\x04 \x01(\x08:\x04true\x12-\n\rweight_filler\x18\x05 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x06 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x0e\n\x03pad\x18\x07 \x01(\r:\x01\x30\x12\x12\n\nkernelsize\x18\x08 \x01(\r\x12\x10\n\x05group\x18\t \x01(\r:\x01\x31\x12\x11\n\x06stride\x18\n \x01(\r:\x01\x31\x12\x35\n\x04pool\x18\x0b \x01(\x0e\x32\".caffe.V0LayerParameter.PoolMethod:\x03MAX\x12\x1a\n\rdropout_ratio\x18\x0c \x01(\x02:\x03\x30.5\x12\x15\n\nlocal_size\x18\r \x01(\r:\x01\x35\x12\x10\n\x05\x61lpha\x18\x0e \x01(\x02:\x01\x31\x12\x12\n\x04\x62\x65ta\x18\x0f \x01(\x02:\x04\x30.75\x12\x0c\n\x01k\x18\x16 \x01(\x02:\x01\x31\x12\x0e\n\x06source\x18\x10 \x01(\t\x12\x10\n\x05scale\x18\x11 \x01(\x02:\x01\x31\x12\x10\n\x08meanfile\x18\x12 \x01(\t\x12\x11\n\tbatchsize\x18\x13 \x01(\r\x12\x13\n\x08\x63ropsize\x18\x14 \x01(\r:\x01\x30\x12\x15\n\x06mirror\x18\x15 \x01(\x08:\x05\x66\x61lse\x12\x1f\n\x05\x62lobs\x18\x32 \x03(\x0b\x32\x10.caffe.BlobProto\x12\x10\n\x08\x62lobs_lr\x18\x33 \x03(\x02\x12\x14\n\x0cweight_decay\x18\x34 \x03(\x02\x12\x14\n\trand_skip\x18\x35 \x01(\r:\x01\x30\x12\x1d\n\x10\x64\x65t_fg_threshold\x18\x36 \x01(\x02:\x03\x30.5\x12\x1d\n\x10\x64\x65t_bg_threshold\x18\x37 \x01(\x02:\x03\x30.5\x12\x1d\n\x0f\x64\x65t_fg_fraction\x18\x38 \x01(\x02:\x04\x30.25\x12\x1a\n\x0f\x64\x65t_context_pad\x18: \x01(\r:\x01\x30\x12\x1b\n\rdet_crop_mode\x18; \x01(\t:\x04warp\x12\x12\n\x07new_num\x18< \x01(\x05:\x01\x30\x12\x17\n\x0cnew_channels\x18= \x01(\x05:\x01\x30\x12\x15\n\nnew_height\x18> \x01(\x05:\x01\x30\x12\x14\n\tnew_width\x18? \x01(\x05:\x01\x30\x12\x1d\n\x0eshuffle_images\x18@ \x01(\x08:\x05\x66\x61lse\x12\x15\n\nconcat_dim\x18\x41 \x01(\r:\x01\x31\x12\x36\n\x11hdf5_output_param\x18\xe9\x07 \x01(\x0b\x32\x1a.caffe.HDF5OutputParameter\".\n\nPoolMethod\x12\x07\n\x03MAX\x10\x00\x12\x07\n\x03\x41VE\x10\x01\x12\x0e\n\nSTOCHASTIC\x10\x02\"W\n\x0ePReLUParameter\x12&\n\x06\x66iller\x18\x01 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x1d\n\x0e\x63hannel_shared\x18\x02 \x01(\x08:\x05\x66\x61lse\"\xa8\x01\n\x0cRPNParameter\x12\x13\n\x0b\x66\x65\x61t_stride\x18\x01 \x01(\r\x12\x10\n\x08\x62\x61sesize\x18\x02 \x01(\r\x12\r\n\x05scale\x18\x03 \x03(\r\x12\r\n\x05ratio\x18\x04 \x03(\x02\x12\x12\n\nboxminsize\x18\x05 \x01(\r\x12\x14\n\x0cper_nms_topn\x18\t \x01(\r\x12\x15\n\rpost_nms_topn\x18\x0b \x01(\r\x12\x12\n\nnms_thresh\x18\x08 \x01(\x02\"\xbb\x01\n\x12VideoDataParameter\x12?\n\nvideo_type\x18\x01 \x01(\x0e\x32#.caffe.VideoDataParameter.VideoType:\x06WEBCAM\x12\x14\n\tdevice_id\x18\x02 \x01(\x05:\x01\x30\x12\x12\n\nvideo_file\x18\x03 \x01(\t\x12\x16\n\x0bskip_frames\x18\x04 \x01(\r:\x01\x30\"\"\n\tVideoType\x12\n\n\x06WEBCAM\x10\x00\x12\t\n\x05VIDEO\x10\x01\"i\n\x13\x43\x65nterLossParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12-\n\rcenter_filler\x18\x02 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x0f\n\x04\x61xis\x18\x03 \x01(\x05:\x01\x31\"\xd9\x02\n\x1bMarginInnerProductParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12\x43\n\x04type\x18\x02 \x01(\x0e\x32-.caffe.MarginInnerProductParameter.MarginType:\x06SINGLE\x12-\n\rweight_filler\x18\x03 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x0f\n\x04\x61xis\x18\x04 \x01(\x05:\x01\x31\x12\x0f\n\x04\x62\x61se\x18\x05 \x01(\x02:\x01\x31\x12\x10\n\x05gamma\x18\x06 \x01(\x02:\x01\x30\x12\x10\n\x05power\x18\x07 \x01(\x02:\x01\x31\x12\x14\n\titeration\x18\x08 \x01(\x05:\x01\x30\x12\x15\n\nlambda_min\x18\t \x01(\x02:\x01\x30\"?\n\nMarginType\x12\n\n\x06SINGLE\x10\x00\x12\n\n\x06\x44OUBLE\x10\x01\x12\n\n\x06TRIPLE\x10\x02\x12\r\n\tQUADRUPLE\x10\x03\"\x8a\x01\n#AdditiveMarginInnerProductParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12-\n\rweight_filler\x18\x02 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x0f\n\x01m\x18\x03 \x01(\x02:\x04\x30.35\x12\x0f\n\x04\x61xis\x18\x04 \x01(\x05:\x01\x31\"\xad\x04\n\x1e\x44\x65\x66ormableConvolutionParameter\x12\x12\n\nnum_output\x18\x01 \x01(\r\x12\x17\n\tbias_term\x18\x02 \x01(\x08:\x04true\x12\x0b\n\x03pad\x18\x03 \x03(\r\x12\x13\n\x0bkernel_size\x18\x04 \x03(\r\x12\x0e\n\x06stride\x18\x06 \x03(\r\x12\x10\n\x08\x64ilation\x18\x12 \x03(\r\x12\x10\n\x05pad_h\x18\t \x01(\r:\x01\x30\x12\x10\n\x05pad_w\x18\n \x01(\r:\x01\x30\x12\x10\n\x08kernel_h\x18\x0b \x01(\r\x12\x10\n\x08kernel_w\x18\x0c \x01(\r\x12\x10\n\x08stride_h\x18\r \x01(\r\x12\x10\n\x08stride_w\x18\x0e \x01(\r\x12\x10\n\x05group\x18\x05 \x01(\r:\x01\x34\x12\x1b\n\x10\x64\x65\x66ormable_group\x18\x19 \x01(\r:\x01\x34\x12-\n\rweight_filler\x18\x07 \x01(\x0b\x32\x16.caffe.FillerParameter\x12+\n\x0b\x62ias_filler\x18\x08 \x01(\x0b\x32\x16.caffe.FillerParameter\x12\x45\n\x06\x65ngine\x18\x0f \x01(\x0e\x32,.caffe.DeformableConvolutionParameter.Engine:\x07\x44\x45\x46\x41ULT\x12\x0f\n\x04\x61xis\x18\x10 \x01(\x05:\x01\x31\x12\x1e\n\x0f\x66orce_nd_im2col\x18\x11 \x01(\x08:\x05\x66\x61lse\"+\n\x06\x45ngine\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\t\n\x05\x43\x41\x46\x46\x45\x10\x01\x12\t\n\x05\x43UDNN\x10\x02\"K\n\x19LabelSpecificAddParameter\x12\x0f\n\x04\x62ias\x18\x01 \x01(\x02:\x01\x30\x12\x1d\n\x0etransform_test\x18\x02 \x01(\x08:\x05\x66\x61lse\"\xed\x01\n\x15\x43hannelScaleParameter\x12\x18\n\ndo_forward\x18\x01 \x01(\x08:\x04true\x12!\n\x13\x64o_backward_feature\x18\x02 \x01(\x08:\x04true\x12\x1f\n\x11\x64o_backward_scale\x18\x03 \x01(\x08:\x04true\x12\x1b\n\x0cglobal_scale\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x1e\n\x10max_global_scale\x18\x05 \x01(\x02:\x04\x31\x30\x30\x30\x12\x1b\n\x10min_global_scale\x18\x06 \x01(\x02:\x01\x30\x12\x1c\n\x11init_global_scale\x18\x07 \x01(\x02:\x01\x31\"C\n\x12\x43osinAddmParameter\x12\x0e\n\x01m\x18\x01 \x01(\x02:\x03\x30.5\x12\x1d\n\x0etransform_test\x18\x02 \x01(\x08:\x05\x66\x61lse\"A\n\x12\x43osinMulmParameter\x12\x0c\n\x01m\x18\x01 \x01(\x02:\x01\x34\x12\x1d\n\x0etransform_test\x18\x02 \x01(\x08:\x05\x66\x61lse\"r\n\x1b\x43oupledClusterLossParameter\x12\x11\n\x06margin\x18\x01 \x01(\x02:\x01\x31\x12\x15\n\ngroup_size\x18\x02 \x01(\x05:\x01\x33\x12\x10\n\x05scale\x18\x03 \x01(\x02:\x01\x31\x12\x17\n\x08log_flag\x18\x04 \x01(\x08:\x05\x66\x61lse\"R\n\x14TripletLossParameter\x12\x11\n\x06margin\x18\x01 \x01(\x02:\x01\x31\x12\x15\n\ngroup_size\x18\x02 \x01(\x05:\x01\x33\x12\x10\n\x05scale\x18\x03 \x01(\x02:\x01\x31\"\xe2\x01\n\x17GeneralTripletParameter\x12\x13\n\x06margin\x18\x01 \x01(\x02:\x03\x30.2\x12\x1d\n\x0f\x61\x64\x64_center_loss\x18\x02 \x01(\x08:\x04true\x12\x1b\n\x0chardest_only\x18\x03 \x01(\x08:\x05\x66\x61lse\x12\x1d\n\x0epositive_first\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x1f\n\x14positive_upper_bound\x18\x05 \x01(\x02:\x01\x31\x12\x1a\n\x0fpositive_weight\x18\x06 \x01(\x02:\x01\x31\x12\x1a\n\x0fnegative_weight\x18\x07 \x01(\x02:\x01\x31\"W\n\x11ROIAlignParameter\x12\x13\n\x08pooled_h\x18\x01 \x01(\r:\x01\x30\x12\x13\n\x08pooled_w\x18\x02 \x01(\r:\x01\x30\x12\x18\n\rspatial_scale\x18\x03 \x01(\x02:\x01\x31*\x1c\n\x05Phase\x12\t\n\x05TRAIN\x10\x00\x12\x08\n\x04TEST\x10\x01')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -40,8 +41,8 @@ _PHASE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=29252,
-  serialized_end=29280,
+  serialized_start=29598,
+  serialized_end=29626,
 )
 _sym_db.RegisterEnumDescriptor(_PHASE)
 
@@ -241,8 +242,8 @@ _BNPARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_BNPARAMETER_ENGINE)
 
@@ -263,8 +264,8 @@ _FOCALLOSSPARAMETER_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10959,
-  serialized_end=10989,
+  serialized_start=11396,
+  serialized_end=11426,
 )
 _sym_db.RegisterEnumDescriptor(_FOCALLOSSPARAMETER_TYPE)
 
@@ -289,8 +290,8 @@ _RESIZEPARAMETER_RESIZE_MODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11775,
-  serialized_end=11846,
+  serialized_start=12212,
+  serialized_end=12283,
 )
 _sym_db.RegisterEnumDescriptor(_RESIZEPARAMETER_RESIZE_MODE)
 
@@ -315,8 +316,8 @@ _RESIZEPARAMETER_PAD_MODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11848,
-  serialized_end=11906,
+  serialized_start=12285,
+  serialized_end=12343,
 )
 _sym_db.RegisterEnumDescriptor(_RESIZEPARAMETER_PAD_MODE)
 
@@ -349,8 +350,8 @@ _RESIZEPARAMETER_INTERP_MODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11908,
-  serialized_end=11981,
+  serialized_start=12345,
+  serialized_end=12418,
 )
 _sym_db.RegisterEnumDescriptor(_RESIZEPARAMETER_INTERP_MODE)
 
@@ -379,8 +380,8 @@ _LOSSPARAMETER_NORMALIZATIONMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12928,
-  serialized_end=12994,
+  serialized_start=13365,
+  serialized_end=13431,
 )
 _sym_db.RegisterEnumDescriptor(_LOSSPARAMETER_NORMALIZATIONMODE)
 
@@ -405,8 +406,8 @@ _EVALDETECTIONPARAMETER_SCORETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=14458,
-  serialized_end=14502,
+  serialized_start=14895,
+  serialized_end=14939,
 )
 _sym_db.RegisterEnumDescriptor(_EVALDETECTIONPARAMETER_SCORETYPE)
 
@@ -431,8 +432,8 @@ _CONVOLUTIONPARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_CONVOLUTIONPARAMETER_ENGINE)
 
@@ -453,8 +454,8 @@ _DATAPARAMETER_DB = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=15345,
-  serialized_end=15372,
+  serialized_start=15782,
+  serialized_end=15809,
 )
 _sym_db.RegisterEnumDescriptor(_DATAPARAMETER_DB)
 
@@ -479,8 +480,8 @@ _ELTWISEPARAMETER_ELTWISEOP = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=16732,
-  serialized_end=16771,
+  serialized_start=17169,
+  serialized_end=17208,
 )
 _sym_db.RegisterEnumDescriptor(_ELTWISEPARAMETER_ELTWISEOP)
 
@@ -501,8 +502,8 @@ _HINGELOSSPARAMETER_NORM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=17306,
-  serialized_end=17328,
+  serialized_start=17743,
+  serialized_end=17765,
 )
 _sym_db.RegisterEnumDescriptor(_HINGELOSSPARAMETER_NORM)
 
@@ -523,8 +524,8 @@ _LRNPARAMETER_NORMREGION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=18221,
-  serialized_end=18274,
+  serialized_start=18658,
+  serialized_end=18711,
 )
 _sym_db.RegisterEnumDescriptor(_LRNPARAMETER_NORMREGION)
 
@@ -549,8 +550,8 @@ _LRNPARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_LRNPARAMETER_ENGINE)
 
@@ -571,8 +572,8 @@ _MULTIBOXLOSSPARAMETER_LOCLOSSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=19355,
-  serialized_end=19391,
+  serialized_start=19792,
+  serialized_end=19828,
 )
 _sym_db.RegisterEnumDescriptor(_MULTIBOXLOSSPARAMETER_LOCLOSSTYPE)
 
@@ -593,8 +594,8 @@ _MULTIBOXLOSSPARAMETER_CONFLOSSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=19393,
-  serialized_end=19434,
+  serialized_start=19830,
+  serialized_end=19871,
 )
 _sym_db.RegisterEnumDescriptor(_MULTIBOXLOSSPARAMETER_CONFLOSSTYPE)
 
@@ -615,8 +616,8 @@ _MULTIBOXLOSSPARAMETER_MATCHTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=19436,
-  serialized_end=19482,
+  serialized_start=19873,
+  serialized_end=19919,
 )
 _sym_db.RegisterEnumDescriptor(_MULTIBOXLOSSPARAMETER_MATCHTYPE)
 
@@ -641,8 +642,8 @@ _MULTIBOXLOSSPARAMETER_MININGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=19484,
-  serialized_end=19542,
+  serialized_start=19921,
+  serialized_end=19979,
 )
 _sym_db.RegisterEnumDescriptor(_MULTIBOXLOSSPARAMETER_MININGTYPE)
 
@@ -667,8 +668,8 @@ _POOLINGPARAMETER_POOLMETHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=20238,
-  serialized_end=20284,
+  serialized_start=20675,
+  serialized_end=20721,
 )
 _sym_db.RegisterEnumDescriptor(_POOLINGPARAMETER_POOLMETHOD)
 
@@ -693,8 +694,8 @@ _POOLINGPARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_POOLINGPARAMETER_ENGINE)
 
@@ -719,8 +720,8 @@ _PRIORBOXPARAMETER_CODETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=20657,
-  serialized_end=20713,
+  serialized_start=21094,
+  serialized_end=21150,
 )
 _sym_db.RegisterEnumDescriptor(_PRIORBOXPARAMETER_CODETYPE)
 
@@ -749,8 +750,8 @@ _REDUCTIONPARAMETER_REDUCTIONOP = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=21136,
-  serialized_end=21189,
+  serialized_start=21573,
+  serialized_end=21626,
 )
 _sym_db.RegisterEnumDescriptor(_REDUCTIONPARAMETER_REDUCTIONOP)
 
@@ -775,8 +776,8 @@ _RELUPARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_RELUPARAMETER_ENGINE)
 
@@ -801,8 +802,8 @@ _RELU6PARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_RELU6PARAMETER_ENGINE)
 
@@ -827,8 +828,8 @@ _SIGMOIDPARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_SIGMOIDPARAMETER_ENGINE)
 
@@ -853,8 +854,8 @@ _SOFTMAXPARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_SOFTMAXPARAMETER_ENGINE)
 
@@ -879,8 +880,8 @@ _TANHPARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_TANHPARAMETER_ENGINE)
 
@@ -905,8 +906,8 @@ _SPPPARAMETER_POOLMETHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=20238,
-  serialized_end=20284,
+  serialized_start=20675,
+  serialized_end=20721,
 )
 _sym_db.RegisterEnumDescriptor(_SPPPARAMETER_POOLMETHOD)
 
@@ -931,8 +932,8 @@ _SPPPARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_SPPPARAMETER_ENGINE)
 
@@ -1105,8 +1106,8 @@ _V1LAYERPARAMETER_LAYERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=25005,
-  serialized_end=25605,
+  serialized_start=25351,
+  serialized_end=25951,
 )
 _sym_db.RegisterEnumDescriptor(_V1LAYERPARAMETER_LAYERTYPE)
 
@@ -1153,8 +1154,8 @@ _V0LAYERPARAMETER_POOLMETHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=20238,
-  serialized_end=20284,
+  serialized_start=20675,
+  serialized_end=20721,
 )
 _sym_db.RegisterEnumDescriptor(_V0LAYERPARAMETER_POOLMETHOD)
 
@@ -1175,8 +1176,8 @@ _VIDEODATAPARAMETER_VIDEOTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=27089,
-  serialized_end=27123,
+  serialized_start=27435,
+  serialized_end=27469,
 )
 _sym_db.RegisterEnumDescriptor(_VIDEODATAPARAMETER_VIDEOTYPE)
 
@@ -1205,8 +1206,8 @@ _MARGININNERPRODUCTPARAMETER_MARGINTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=27515,
-  serialized_end=27578,
+  serialized_start=27861,
+  serialized_end=27924,
 )
 _sym_db.RegisterEnumDescriptor(_MARGININNERPRODUCTPARAMETER_MARGINTYPE)
 
@@ -1231,8 +1232,8 @@ _DEFORMABLECONVOLUTIONPARAMETER_ENGINE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10781,
-  serialized_end=10824,
+  serialized_start=11218,
+  serialized_end=11261,
 )
 _sym_db.RegisterEnumDescriptor(_DEFORMABLECONVOLUTIONPARAMETER_ENGINE)
 
@@ -1259,6 +1260,7 @@ _BLOBSHAPE = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1345,6 +1347,7 @@ _BLOBPROTO = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1375,6 +1378,7 @@ _BLOBPROTOVECTOR = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1454,6 +1458,7 @@ _DATUM = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1498,6 +1503,7 @@ _LABELMAPITEM = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1528,6 +1534,7 @@ _LABELMAP = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1546,28 +1553,28 @@ _SAMPLER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='min_scale', full_name='caffe.Sampler.min_scale', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='max_scale', full_name='caffe.Sampler.max_scale', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='min_aspect_ratio', full_name='caffe.Sampler.min_aspect_ratio', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='max_aspect_ratio', full_name='caffe.Sampler.max_aspect_ratio', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1579,6 +1586,7 @@ _SAMPLER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1597,42 +1605,42 @@ _SAMPLECONSTRAINT = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='min_jaccard_overlap', full_name='caffe.SampleConstraint.min_jaccard_overlap', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='max_jaccard_overlap', full_name='caffe.SampleConstraint.max_jaccard_overlap', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='min_sample_coverage', full_name='caffe.SampleConstraint.min_sample_coverage', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='max_sample_coverage', full_name='caffe.SampleConstraint.max_sample_coverage', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='min_object_coverage', full_name='caffe.SampleConstraint.min_object_coverage', index=4,
       number=5, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='max_object_coverage', full_name='caffe.SampleConstraint.max_object_coverage', index=5,
       number=6, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1644,6 +1652,7 @@ _SAMPLECONSTRAINT = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1702,6 +1711,7 @@ _BATCHSAMPLER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1727,7 +1737,7 @@ _EMITCONSTRAINT = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='emit_overlap', full_name='caffe.EmitConstraint.emit_overlap', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1740,6 +1750,7 @@ _EMITCONSTRAINT = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1758,28 +1769,28 @@ _NORMALIZEDBBOX = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='xmin', full_name='caffe.NormalizedBBox.xmin', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='ymin', full_name='caffe.NormalizedBBox.ymin', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='xmax', full_name='caffe.NormalizedBBox.xmax', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='ymax', full_name='caffe.NormalizedBBox.ymax', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1800,14 +1811,14 @@ _NORMALIZEDBBOX = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='score', full_name='caffe.NormalizedBBox.score', index=6,
       number=7, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='size', full_name='caffe.NormalizedBBox.size', index=7,
       number=8, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1819,6 +1830,7 @@ _NORMALIZEDBBOX = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1856,6 +1868,7 @@ _ANNOTATION = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1893,6 +1906,7 @@ _ANNOTATIONGROUP = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1938,6 +1952,7 @@ _ANNOTATEDDATUM = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -1956,28 +1971,28 @@ _MTCNNBBOX = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='xmin', full_name='caffe.MTCNNBBox.xmin', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='ymin', full_name='caffe.MTCNNBBox.ymin', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='xmax', full_name='caffe.MTCNNBBox.xmax', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='ymax', full_name='caffe.MTCNNBBox.ymax', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1989,6 +2004,7 @@ _MTCNNBBOX = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -2033,6 +2049,7 @@ _MTCNNDATUM = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -2058,35 +2075,35 @@ _FILLERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='value', full_name='caffe.FillerParameter.value', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='min', full_name='caffe.FillerParameter.min', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='max', full_name='caffe.FillerParameter.max', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='mean', full_name='caffe.FillerParameter.mean', index=4,
       number=5, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='std', full_name='caffe.FillerParameter.std', index=5,
       number=6, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -2120,6 +2137,7 @@ _FILLERPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -2206,6 +2224,7 @@ _NETPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -2308,7 +2327,7 @@ _SOLVERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='base_lr', full_name='caffe.SolverParameter.base_lr', index=12,
       number=5, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -2350,28 +2369,28 @@ _SOLVERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='gamma', full_name='caffe.SolverParameter.gamma', index=18,
       number=9, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='power', full_name='caffe.SolverParameter.power', index=19,
       number=10, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='momentum', full_name='caffe.SolverParameter.momentum', index=20,
       number=11, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='weight_decay', full_name='caffe.SolverParameter.weight_decay', index=21,
       number=12, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -2413,7 +2432,7 @@ _SOLVERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='clip_gradients', full_name='caffe.SolverParameter.clip_gradients', index=27,
       number=35, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=-1,
+      has_default_value=True, default_value=float(-1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -2476,21 +2495,21 @@ _SOLVERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='delta', full_name='caffe.SolverParameter.delta', index=36,
       number=31, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1e-08,
+      has_default_value=True, default_value=float(1e-08),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='momentum2', full_name='caffe.SolverParameter.momentum2', index=37,
       number=39, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.999,
+      has_default_value=True, default_value=float(0.999),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='rms_decay', full_name='caffe.SolverParameter.rms_decay', index=38,
       number=38, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -2526,6 +2545,7 @@ _SOLVERPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -2577,6 +2597,7 @@ _SOLVERSTATE = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -2621,6 +2642,7 @@ _NETSTATE = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -2679,6 +2701,7 @@ _NETSTATERULE = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -2732,42 +2755,42 @@ _SPATIALTRANSFORMERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='theta_1_1', full_name='caffe.SpatialTransformerParameter.theta_1_1', index=5,
       number=6, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='theta_1_2', full_name='caffe.SpatialTransformerParameter.theta_1_2', index=6,
       number=7, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='theta_1_3', full_name='caffe.SpatialTransformerParameter.theta_1_3', index=7,
       number=8, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='theta_2_1', full_name='caffe.SpatialTransformerParameter.theta_2_1', index=8,
       number=9, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='theta_2_2', full_name='caffe.SpatialTransformerParameter.theta_2_2', index=9,
       number=10, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='theta_2_3', full_name='caffe.SpatialTransformerParameter.theta_2_3', index=10,
       number=11, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -2779,6 +2802,7 @@ _SPATIALTRANSFORMERPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -2816,6 +2840,7 @@ _STLOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -2848,14 +2873,14 @@ _PARAMSPEC = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='lr_mult', full_name='caffe.ParamSpec.lr_mult', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='decay_mult', full_name='caffe.ParamSpec.decay_mult', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -2868,6 +2893,7 @@ _PARAMSPEC = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
@@ -3562,6 +3588,13 @@ _LAYERPARAMETER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='proposal_param', full_name='caffe.LayerParameter.proposal_param', index=97,
+      number=204, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -3570,11 +3603,12 @@ _LAYERPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=4536,
-  serialized_end=9337,
+  serialized_end=9388,
 )
 
 
@@ -3642,11 +3676,158 @@ _UPSAMPLEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9340,
-  serialized_end=9503,
+  serialized_start=9391,
+  serialized_end=9554,
+)
+
+
+_PROPOSALPARAMETER = _descriptor.Descriptor(
+  name='ProposalParameter',
+  full_name='caffe.ProposalParameter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='feat_stride', full_name='caffe.ProposalParameter.feat_stride', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=True, default_value=16,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='base_size', full_name='caffe.ProposalParameter.base_size', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=True, default_value=16,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='min_size', full_name='caffe.ProposalParameter.min_size', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=True, default_value=16,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ratio', full_name='caffe.ProposalParameter.ratio', index=3,
+      number=4, type=2, cpp_type=6, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='scale', full_name='caffe.ProposalParameter.scale', index=4,
+      number=5, type=2, cpp_type=6, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pre_nms_topn', full_name='caffe.ProposalParameter.pre_nms_topn', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=True, default_value=3000,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='post_nms_topn', full_name='caffe.ProposalParameter.post_nms_topn', index=6,
+      number=7, type=5, cpp_type=1, label=1,
+      has_default_value=True, default_value=304,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='iou_threshold', full_name='caffe.ProposalParameter.iou_threshold', index=7,
+      number=8, type=2, cpp_type=6, label=1,
+      has_default_value=True, default_value=float(0.7),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='output_actual_rois_num', full_name='caffe.ProposalParameter.output_actual_rois_num', index=8,
+      number=9, type=8, cpp_type=7, label=1,
+      has_default_value=True, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9557,
+  serialized_end=9799,
+)
+
+
+_ROIPOOLINGPARAMETER = _descriptor.Descriptor(
+  name='ROIPoolingParameter',
+  full_name='caffe.ROIPoolingParameter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pooled_h', full_name='caffe.ROIPoolingParameter.pooled_h', index=0,
+      number=1, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='pooled_w', full_name='caffe.ROIPoolingParameter.pooled_w', index=1,
+      number=2, type=5, cpp_type=1, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='spatial_scale', full_name='caffe.ROIPoolingParameter.spatial_scale', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=True, default_value=float(0.0625),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='spatial_scale_h', full_name='caffe.ROIPoolingParameter.spatial_scale_h', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='spatial_scale_w', full_name='caffe.ROIPoolingParameter.spatial_scale_w', index=4,
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9802,
+  serialized_end=9940,
 )
 
 
@@ -3686,11 +3867,12 @@ _MATMULPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9505,
-  serialized_end=9567,
+  serialized_start=9942,
+  serialized_end=10004,
 )
 
 
@@ -3730,11 +3912,12 @@ _PASSTHROUGHPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9569,
-  serialized_end=9663,
+  serialized_start=10006,
+  serialized_end=10100,
 )
 
 
@@ -3774,11 +3957,12 @@ _ANNOTATEDDATAPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9666,
-  serialized_end=9815,
+  serialized_start=10103,
+  serialized_end=10252,
 )
 
 
@@ -3839,11 +4023,12 @@ _ASDNDATAPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9818,
-  serialized_end=9989,
+  serialized_start=10255,
+  serialized_end=10426,
 )
 
 
@@ -3906,14 +4091,14 @@ _MTCNNDATAPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='min_negitive_scale', full_name='caffe.MTCNNDataParameter.min_negitive_scale', index=7,
       number=8, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='max_negitive_scale', full_name='caffe.MTCNNDataParameter.max_negitive_scale', index=8,
       number=9, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1.5,
+      has_default_value=True, default_value=float(1.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -3925,11 +4110,12 @@ _MTCNNDATAPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9992,
-  serialized_end=10248,
+  serialized_start=10429,
+  serialized_end=10685,
 )
 
 
@@ -3990,11 +4176,12 @@ _INTERPPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10251,
-  serialized_end=10395,
+  serialized_start=10688,
+  serialized_end=10832,
 )
 
 
@@ -4008,7 +4195,7 @@ _PSROIPOOLINGPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='spatial_scale', full_name='caffe.PSROIPoolingParameter.spatial_scale', index=0,
       number=1, type=2, cpp_type=6, label=2,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4034,11 +4221,12 @@ _PSROIPOOLINGPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10397,
-  serialized_end=10483,
+  serialized_start=10834,
+  serialized_end=10920,
 )
 
 
@@ -4071,11 +4259,12 @@ _FLIPPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10485,
-  serialized_end=10554,
+  serialized_start=10922,
+  serialized_end=10991,
 )
 
 
@@ -4103,14 +4292,14 @@ _BNPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='momentum', full_name='caffe.BNParameter.momentum', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.9,
+      has_default_value=True, default_value=float(0.9),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='eps', full_name='caffe.BNParameter.eps', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1e-05,
+      has_default_value=True, default_value=float(1e-05),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4137,11 +4326,12 @@ _BNPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10557,
-  serialized_end=10824,
+  serialized_start=10994,
+  serialized_end=11261,
 )
 
 
@@ -4162,21 +4352,21 @@ _FOCALLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='gamma', full_name='caffe.FocalLossParameter.gamma', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=2,
+      has_default_value=True, default_value=float(2),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='alpha', full_name='caffe.FocalLossParameter.alpha', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.25,
+      has_default_value=True, default_value=float(0.25),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='beta', full_name='caffe.FocalLossParameter.beta', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4189,11 +4379,12 @@ _FOCALLOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10827,
-  serialized_end=10989,
+  serialized_start=11264,
+  serialized_end=11426,
 )
 
 
@@ -4207,7 +4398,7 @@ _TRANSFORMATIONPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='scale', full_name='caffe.TransformationParameter.scale', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4310,11 +4501,12 @@ _TRANSFORMATIONPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10992,
-  serialized_end=11450,
+  serialized_start=11429,
+  serialized_end=11887,
 )
 
 
@@ -4328,7 +4520,7 @@ _RESIZEPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='prob', full_name='caffe.ResizeParameter.prob', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4399,11 +4591,12 @@ _RESIZEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11453,
-  serialized_end=11981,
+  serialized_start=11890,
+  serialized_end=12418,
 )
 
 
@@ -4417,7 +4610,7 @@ _SALTPEPPERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='fraction', full_name='caffe.SaltPepperParameter.fraction', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4436,11 +4629,12 @@ _SALTPEPPERPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11983,
-  serialized_end=12040,
+  serialized_start=12420,
+  serialized_end=12477,
 )
 
 
@@ -4454,7 +4648,7 @@ _NOISEPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='prob', full_name='caffe.NoiseParameter.prob', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4489,7 +4683,7 @@ _NOISEPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='jpeg', full_name='caffe.NoiseParameter.jpeg', index=5,
       number=6, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=-1,
+      has_default_value=True, default_value=float(-1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4550,11 +4744,12 @@ _NOISEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12043,
-  serialized_end=12409,
+  serialized_start=12480,
+  serialized_end=12846,
 )
 
 
@@ -4568,77 +4763,77 @@ _DISTORTIONPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='brightness_prob', full_name='caffe.DistortionParameter.brightness_prob', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='brightness_delta', full_name='caffe.DistortionParameter.brightness_delta', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='contrast_prob', full_name='caffe.DistortionParameter.contrast_prob', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='contrast_lower', full_name='caffe.DistortionParameter.contrast_lower', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='contrast_upper', full_name='caffe.DistortionParameter.contrast_upper', index=4,
       number=5, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='hue_prob', full_name='caffe.DistortionParameter.hue_prob', index=5,
       number=6, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='hue_delta', full_name='caffe.DistortionParameter.hue_delta', index=6,
       number=7, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='saturation_prob', full_name='caffe.DistortionParameter.saturation_prob', index=7,
       number=8, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='saturation_lower', full_name='caffe.DistortionParameter.saturation_lower', index=8,
       number=9, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='saturation_upper', full_name='caffe.DistortionParameter.saturation_upper', index=9,
       number=10, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='random_order_prob', full_name='caffe.DistortionParameter.random_order_prob', index=10,
       number=11, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4650,11 +4845,12 @@ _DISTORTIONPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12412,
-  serialized_end=12729,
+  serialized_start=12849,
+  serialized_end=13166,
 )
 
 
@@ -4668,14 +4864,14 @@ _EXPANSIONPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='prob', full_name='caffe.ExpansionParameter.prob', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='max_expand_ratio', full_name='caffe.ExpansionParameter.max_expand_ratio', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4687,11 +4883,12 @@ _EXPANSIONPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12731,
-  serialized_end=12797,
+  serialized_start=13168,
+  serialized_end=13234,
 )
 
 
@@ -4732,11 +4929,12 @@ _LOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12800,
-  serialized_end=12994,
+  serialized_start=13237,
+  serialized_end=13431,
 )
 
 
@@ -4776,11 +4974,12 @@ _ACCURACYPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12996,
-  serialized_end=13072,
+  serialized_start=13433,
+  serialized_end=13509,
 )
 
 
@@ -4820,11 +5019,12 @@ _ARGMAXPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13074,
-  serialized_end=13151,
+  serialized_start=13511,
+  serialized_end=13588,
 )
 
 
@@ -4857,11 +5057,12 @@ _CONCATPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13153,
-  serialized_end=13210,
+  serialized_start=13590,
+  serialized_end=13647,
 )
 
 
@@ -4882,14 +5083,14 @@ _BATCHNORMPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='moving_average_fraction', full_name='caffe.BatchNormParameter.moving_average_fraction', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.999,
+      has_default_value=True, default_value=float(0.999),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='eps', full_name='caffe.BatchNormParameter.eps', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1e-05,
+      has_default_value=True, default_value=float(1e-05),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4901,11 +5102,12 @@ _BATCHNORMPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13212,
-  serialized_end=13318,
+  serialized_start=13649,
+  serialized_end=13755,
 )
 
 
@@ -4945,11 +5147,12 @@ _BIASPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13320,
-  serialized_end=13413,
+  serialized_start=13757,
+  serialized_end=13850,
 )
 
 
@@ -4963,7 +5166,7 @@ _CONTRASTIVELOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='margin', full_name='caffe.ContrastiveLossParameter.margin', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -4982,11 +5185,12 @@ _CONTRASTIVELOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13415,
-  serialized_end=13491,
+  serialized_start=13852,
+  serialized_end=13928,
 )
 
 
@@ -5021,28 +5225,28 @@ _DETECTIONLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='object_scale', full_name='caffe.DetectionLossParameter.object_scale', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='noobject_scale', full_name='caffe.DetectionLossParameter.noobject_scale', index=4,
       number=5, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='class_scale', full_name='caffe.DetectionLossParameter.class_scale', index=5,
       number=6, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='coord_scale', full_name='caffe.DetectionLossParameter.coord_scale', index=6,
       number=7, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=5,
+      has_default_value=True, default_value=float(5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5068,11 +5272,12 @@ _DETECTIONLOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13494,
-  serialized_end=13730,
+  serialized_start=13931,
+  serialized_end=14167,
 )
 
 
@@ -5128,7 +5333,7 @@ _REGIONLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='jitter', full_name='caffe.RegionLossParameter.jitter', index=6,
       number=7, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.2,
+      has_default_value=True, default_value=float(0.2),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5142,28 +5347,28 @@ _REGIONLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='object_scale', full_name='caffe.RegionLossParameter.object_scale', index=8,
       number=9, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='class_scale', full_name='caffe.RegionLossParameter.class_scale', index=9,
       number=10, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='noobject_scale', full_name='caffe.RegionLossParameter.noobject_scale', index=10,
       number=11, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='coord_scale', full_name='caffe.RegionLossParameter.coord_scale', index=11,
       number=12, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=5,
+      has_default_value=True, default_value=float(5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5177,7 +5382,7 @@ _REGIONLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='thresh', full_name='caffe.RegionLossParameter.thresh', index=13,
       number=14, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.2,
+      has_default_value=True, default_value=float(0.2),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5217,11 +5422,12 @@ _REGIONLOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13733,
-  serialized_end=14134,
+  serialized_start=14170,
+  serialized_end=14571,
 )
 
 
@@ -5254,11 +5460,12 @@ _REORGPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14136,
-  serialized_end=14192,
+  serialized_start=14573,
+  serialized_end=14629,
 )
 
 
@@ -5293,7 +5500,7 @@ _EVALDETECTIONPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='threshold', full_name='caffe.EvalDetectionParameter.threshold', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5321,7 +5528,7 @@ _EVALDETECTIONPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='nms', full_name='caffe.EvalDetectionParameter.nms', index=7,
       number=8, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=-1,
+      has_default_value=True, default_value=float(-1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5341,11 +5548,12 @@ _EVALDETECTIONPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14195,
-  serialized_end=14502,
+  serialized_start=14632,
+  serialized_end=14939,
 )
 
 
@@ -5491,11 +5699,12 @@ _CONVOLUTIONPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14505,
-  serialized_end=15013,
+  serialized_start=14942,
+  serialized_end=15450,
 )
 
 
@@ -5528,11 +5737,12 @@ _CROPPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15015,
-  serialized_end=15063,
+  serialized_start=15452,
+  serialized_end=15500,
 )
 
 
@@ -5574,7 +5784,7 @@ _DATAPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='scale', full_name='caffe.DataParameter.scale', index=4,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5629,11 +5839,12 @@ _DATAPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15066,
-  serialized_end=15372,
+  serialized_start=15503,
+  serialized_end=15809,
 )
 
 
@@ -5661,7 +5872,7 @@ _DETECTIONEVALUATEPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='overlap_threshold', full_name='caffe.DetectionEvaluateParameter.overlap_threshold', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5694,11 +5905,12 @@ _DETECTIONEVALUATEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15375,
-  serialized_end=15595,
+  serialized_start=15812,
+  serialized_end=16032,
 )
 
 
@@ -5712,7 +5924,7 @@ _NONMAXIMUMSUPPRESSIONPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='nms_threshold', full_name='caffe.NonMaximumSuppressionParameter.nms_threshold', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.3,
+      has_default_value=True, default_value=float(0.3),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5726,7 +5938,7 @@ _NONMAXIMUMSUPPRESSIONPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='eta', full_name='caffe.NonMaximumSuppressionParameter.eta', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5738,11 +5950,12 @@ _NONMAXIMUMSUPPRESSIONPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15597,
-  serialized_end=15688,
+  serialized_start=16034,
+  serialized_end=16125,
 )
 
 
@@ -5810,11 +6023,12 @@ _SAVEOUTPUTPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15691,
-  serialized_end=15907,
+  serialized_start=16128,
+  serialized_end=16344,
 )
 
 
@@ -5884,7 +6098,7 @@ _DETECTIONOUTPUTPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='confidence_threshold', full_name='caffe.DetectionOutputParameter.confidence_threshold', index=8,
       number=9, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5898,7 +6112,7 @@ _DETECTIONOUTPUTPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='visualize_threshold', full_name='caffe.DetectionOutputParameter.visualize_threshold', index=10,
       number=11, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5917,11 +6131,12 @@ _DETECTIONOUTPUTPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15910,
-  serialized_end=16365,
+  serialized_start=16347,
+  serialized_end=16802,
 )
 
 
@@ -5935,7 +6150,7 @@ _DROPOUTPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='dropout_ratio', full_name='caffe.DropoutParameter.dropout_ratio', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -5954,11 +6169,12 @@ _DROPOUTPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16367,
-  serialized_end=16440,
+  serialized_start=16804,
+  serialized_end=16877,
 )
 
 
@@ -6019,11 +6235,12 @@ _DUMMYDATAPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16443,
-  serialized_end=16603,
+  serialized_start=16880,
+  serialized_end=17040,
 )
 
 
@@ -6064,11 +6281,12 @@ _ELTWISEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16606,
-  serialized_end=16771,
+  serialized_start=17043,
+  serialized_end=17208,
 )
 
 
@@ -6082,7 +6300,7 @@ _ELUPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='alpha', full_name='caffe.ELUParameter.alpha', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -6094,11 +6312,12 @@ _ELUPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16773,
-  serialized_end=16805,
+  serialized_start=17210,
+  serialized_end=17242,
 )
 
 
@@ -6152,11 +6371,12 @@ _EMBEDPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16808,
-  serialized_end=16980,
+  serialized_start=17245,
+  serialized_end=17417,
 )
 
 
@@ -6170,21 +6390,21 @@ _EXPPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='base', full_name='caffe.ExpParameter.base', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=-1,
+      has_default_value=True, default_value=float(-1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='scale', full_name='caffe.ExpParameter.scale', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='shift', full_name='caffe.ExpParameter.shift', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -6196,11 +6416,12 @@ _EXPPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16982,
-  serialized_end=17050,
+  serialized_start=17419,
+  serialized_end=17487,
 )
 
 
@@ -6233,11 +6454,12 @@ _FLATTENPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17052,
-  serialized_end=17109,
+  serialized_start=17489,
+  serialized_end=17546,
 )
 
 
@@ -6277,11 +6499,12 @@ _HDF5DATAPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17111,
-  serialized_end=17190,
+  serialized_start=17548,
+  serialized_end=17627,
 )
 
 
@@ -6307,11 +6530,12 @@ _HDF5OUTPUTPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17192,
-  serialized_end=17232,
+  serialized_start=17629,
+  serialized_end=17669,
 )
 
 
@@ -6338,11 +6562,12 @@ _HINGELOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17234,
-  serialized_end=17328,
+  serialized_start=17671,
+  serialized_end=17765,
 )
 
 
@@ -6405,7 +6630,7 @@ _IMAGEDATAPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='scale', full_name='caffe.ImageDataParameter.scale', index=7,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -6445,11 +6670,12 @@ _IMAGEDATAPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17331,
-  serialized_end=17610,
+  serialized_start=17768,
+  serialized_end=18047,
 )
 
 
@@ -6475,11 +6701,12 @@ _INFOGAINLOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17612,
-  serialized_end=17651,
+  serialized_start=18049,
+  serialized_end=18088,
 )
 
 
@@ -6547,11 +6774,12 @@ _INNERPRODUCTPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17654,
-  serialized_end=17883,
+  serialized_start=18091,
+  serialized_end=18320,
 )
 
 
@@ -6577,11 +6805,12 @@ _INPUTPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17885,
-  serialized_end=17934,
+  serialized_start=18322,
+  serialized_end=18371,
 )
 
 
@@ -6595,21 +6824,21 @@ _LOGPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='base', full_name='caffe.LogParameter.base', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=-1,
+      has_default_value=True, default_value=float(-1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='scale', full_name='caffe.LogParameter.scale', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='shift', full_name='caffe.LogParameter.shift', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -6621,11 +6850,12 @@ _LOGPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17936,
-  serialized_end=18004,
+  serialized_start=18373,
+  serialized_end=18441,
 )
 
 
@@ -6646,14 +6876,14 @@ _LRNPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='alpha', full_name='caffe.LRNParameter.alpha', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='beta', full_name='caffe.LRNParameter.beta', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.75,
+      has_default_value=True, default_value=float(0.75),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -6667,7 +6897,7 @@ _LRNPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='k', full_name='caffe.LRNParameter.k', index=4,
       number=5, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -6688,11 +6918,12 @@ _LRNPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18007,
-  serialized_end=18319,
+  serialized_start=18444,
+  serialized_end=18756,
 )
 
 
@@ -6739,11 +6970,12 @@ _MEMORYDATAPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18321,
-  serialized_end=18411,
+  serialized_start=18758,
+  serialized_end=18848,
 )
 
 
@@ -6771,7 +7003,7 @@ _MULTIBOXLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='loc_weight', full_name='caffe.MultiBoxLossParameter.loc_weight', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -6799,7 +7031,7 @@ _MULTIBOXLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='overlap_threshold', full_name='caffe.MultiBoxLossParameter.overlap_threshold', index=6,
       number=7, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -6834,14 +7066,14 @@ _MULTIBOXLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='neg_pos_ratio', full_name='caffe.MultiBoxLossParameter.neg_pos_ratio', index=11,
       number=12, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=3,
+      has_default_value=True, default_value=float(3),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='neg_overlap', full_name='caffe.MultiBoxLossParameter.neg_overlap', index=12,
       number=13, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -6920,11 +7152,12 @@ _MULTIBOXLOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18414,
-  serialized_end=19542,
+  serialized_start=18851,
+  serialized_end=19979,
 )
 
 
@@ -6959,7 +7192,7 @@ _NORMALIZEPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='eps', full_name='caffe.NormalizeParameter.eps', index=3,
       number=4, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1e-10,
+      has_default_value=True, default_value=float(1e-10),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -6971,11 +7204,12 @@ _NORMALIZEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19545,
-  serialized_end=19691,
+  serialized_start=19982,
+  serialized_end=20128,
 )
 
 
@@ -7001,11 +7235,12 @@ _PERMUTEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19693,
-  serialized_end=19726,
+  serialized_start=20130,
+  serialized_end=20163,
 )
 
 
@@ -7033,7 +7268,7 @@ _MVNPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='eps', full_name='caffe.MVNParameter.eps', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1e-09,
+      has_default_value=True, default_value=float(1e-09),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -7045,11 +7280,12 @@ _MVNPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19728,
-  serialized_end=19828,
+  serialized_start=20165,
+  serialized_end=20265,
 )
 
 
@@ -7075,11 +7311,12 @@ _PARAMETERPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19830,
-  serialized_end=19883,
+  serialized_start=20267,
+  serialized_end=20320,
 )
 
 
@@ -7191,11 +7428,12 @@ _POOLINGPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19886,
-  serialized_end=20329,
+  serialized_start=20323,
+  serialized_end=20766,
 )
 
 
@@ -7209,21 +7447,21 @@ _POWERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='power', full_name='caffe.PowerParameter.power', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='scale', full_name='caffe.PowerParameter.scale', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='shift', full_name='caffe.PowerParameter.shift', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -7235,11 +7473,12 @@ _POWERPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20331,
-  serialized_end=20401,
+  serialized_start=20768,
+  serialized_end=20838,
 )
 
 
@@ -7316,28 +7555,28 @@ _PRIORBOXPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='step', full_name='caffe.PriorBoxParameter.step', index=9,
       number=10, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='step_h', full_name='caffe.PriorBoxParameter.step_h', index=10,
       number=11, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='step_w', full_name='caffe.PriorBoxParameter.step_w', index=11,
       number=12, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='offset', full_name='caffe.PriorBoxParameter.offset', index=12,
       number=13, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -7350,11 +7589,12 @@ _PRIORBOXPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20404,
-  serialized_end=20713,
+  serialized_start=20841,
+  serialized_end=21150,
 )
 
 
@@ -7401,11 +7641,12 @@ _PYTHONPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20715,
-  serialized_end=20818,
+  serialized_start=21152,
+  serialized_end=21255,
 )
 
 
@@ -7459,11 +7700,12 @@ _RECURRENTPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20821,
-  serialized_end=21013,
+  serialized_start=21258,
+  serialized_end=21450,
 )
 
 
@@ -7491,7 +7733,7 @@ _REDUCTIONPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='coeff', full_name='caffe.ReductionParameter.coeff', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -7504,11 +7746,12 @@ _REDUCTIONPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21016,
-  serialized_end=21189,
+  serialized_start=21453,
+  serialized_end=21626,
 )
 
 
@@ -7522,7 +7765,7 @@ _RELUPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='negative_slope', full_name='caffe.ReLUParameter.negative_slope', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -7542,11 +7785,12 @@ _RELUPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21192,
-  serialized_end=21333,
+  serialized_start=21629,
+  serialized_end=21770,
 )
 
 
@@ -7573,11 +7817,12 @@ _RELU6PARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21335,
-  serialized_end=21451,
+  serialized_start=21772,
+  serialized_end=21888,
 )
 
 
@@ -7617,55 +7862,12 @@ _RESHAPEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21453,
-  serialized_end=21543,
-)
-
-
-_ROIPOOLINGPARAMETER = _descriptor.Descriptor(
-  name='ROIPoolingParameter',
-  full_name='caffe.ROIPoolingParameter',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='pooled_h', full_name='caffe.ROIPoolingParameter.pooled_h', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=True, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='pooled_w', full_name='caffe.ROIPoolingParameter.pooled_w', index=1,
-      number=2, type=13, cpp_type=3, label=1,
-      has_default_value=True, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='spatial_scale', full_name='caffe.ROIPoolingParameter.spatial_scale', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=21545,
-  serialized_end=21634,
+  serialized_start=21890,
+  serialized_end=21980,
 )
 
 
@@ -7714,14 +7916,14 @@ _SCALEPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='min_value', full_name='caffe.ScaleParameter.min_value', index=5,
       number=6, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='max_value', full_name='caffe.ScaleParameter.max_value', index=6,
       number=7, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -7733,11 +7935,12 @@ _SCALEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21637,
-  serialized_end=21840,
+  serialized_start=21983,
+  serialized_end=22186,
 )
 
 
@@ -7764,11 +7967,12 @@ _SIGMOIDPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21842,
-  serialized_end=21962,
+  serialized_start=22188,
+  serialized_end=22308,
 )
 
 
@@ -7782,7 +7986,7 @@ _SMOOTHL1LOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='sigma', full_name='caffe.SmoothL1LossParameter.sigma', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -7794,11 +7998,12 @@ _SMOOTHL1LOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21964,
-  serialized_end=22005,
+  serialized_start=22310,
+  serialized_end=22351,
 )
 
 
@@ -7838,11 +8043,12 @@ _SLICEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22007,
-  serialized_end=22083,
+  serialized_start=22353,
+  serialized_end=22429,
 )
 
 
@@ -7876,11 +8082,12 @@ _SOFTMAXPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22086,
-  serialized_end=22223,
+  serialized_start=22432,
+  serialized_end=22569,
 )
 
 
@@ -7907,11 +8114,12 @@ _TANHPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22225,
-  serialized_end=22339,
+  serialized_start=22571,
+  serialized_end=22685,
 )
 
 
@@ -7944,11 +8152,12 @@ _TILEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22341,
-  serialized_end=22388,
+  serialized_start=22687,
+  serialized_end=22734,
 )
 
 
@@ -7962,7 +8171,7 @@ _THRESHOLDPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='threshold', full_name='caffe.ThresholdParameter.threshold', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -7974,11 +8183,12 @@ _THRESHOLDPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22390,
-  serialized_end=22432,
+  serialized_start=22736,
+  serialized_end=22778,
 )
 
 
@@ -7999,7 +8209,7 @@ _WINDOWDATAPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='scale', full_name='caffe.WindowDataParameter.scale', index=1,
       number=2, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -8034,21 +8244,21 @@ _WINDOWDATAPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='fg_threshold', full_name='caffe.WindowDataParameter.fg_threshold', index=6,
       number=7, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='bg_threshold', full_name='caffe.WindowDataParameter.bg_threshold', index=7,
       number=8, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='fg_fraction', full_name='caffe.WindowDataParameter.fg_fraction', index=8,
       number=9, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.25,
+      has_default_value=True, default_value=float(0.25),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -8088,11 +8298,12 @@ _WINDOWDATAPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22435,
-  serialized_end=22756,
+  serialized_start=22781,
+  serialized_end=23102,
 )
 
 
@@ -8134,11 +8345,12 @@ _SPPPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22759,
-  serialized_end=22994,
+  serialized_start=23105,
+  serialized_end=23340,
 )
 
 
@@ -8474,11 +8686,12 @@ _V1LAYERPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22997,
-  serialized_end=25649,
+  serialized_start=23343,
+  serialized_end=25995,
 )
 
 
@@ -8569,7 +8782,7 @@ _V0LAYERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='dropout_ratio', full_name='caffe.V0LayerParameter.dropout_ratio', index=11,
       number=12, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -8583,21 +8796,21 @@ _V0LAYERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='alpha', full_name='caffe.V0LayerParameter.alpha', index=13,
       number=14, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='beta', full_name='caffe.V0LayerParameter.beta', index=14,
       number=15, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.75,
+      has_default_value=True, default_value=float(0.75),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='k', full_name='caffe.V0LayerParameter.k', index=15,
       number=22, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -8611,7 +8824,7 @@ _V0LAYERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='scale', full_name='caffe.V0LayerParameter.scale', index=17,
       number=17, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -8674,21 +8887,21 @@ _V0LAYERPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='det_fg_threshold', full_name='caffe.V0LayerParameter.det_fg_threshold', index=26,
       number=54, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='det_bg_threshold', full_name='caffe.V0LayerParameter.det_bg_threshold', index=27,
       number=55, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='det_fg_fraction', full_name='caffe.V0LayerParameter.det_fg_fraction', index=28,
       number=56, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.25,
+      has_default_value=True, default_value=float(0.25),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -8764,11 +8977,12 @@ _V0LAYERPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25652,
-  serialized_end=26673,
+  serialized_start=25998,
+  serialized_end=27019,
 )
 
 
@@ -8801,11 +9015,12 @@ _PRELUPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26675,
-  serialized_end=26762,
+  serialized_start=27021,
+  serialized_end=27108,
 )
 
 
@@ -8868,7 +9083,7 @@ _RPNPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='nms_thresh', full_name='caffe.RPNParameter.nms_thresh', index=7,
       number=8, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=0,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -8880,11 +9095,12 @@ _RPNPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26765,
-  serialized_end=26933,
+  serialized_start=27111,
+  serialized_end=27279,
 )
 
 
@@ -8932,11 +9148,12 @@ _VIDEODATAPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26936,
-  serialized_end=27123,
+  serialized_start=27282,
+  serialized_end=27469,
 )
 
 
@@ -8976,11 +9193,12 @@ _CENTERLOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27125,
-  serialized_end=27230,
+  serialized_start=27471,
+  serialized_end=27576,
 )
 
 
@@ -9022,21 +9240,21 @@ _MARGININNERPRODUCTPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='base', full_name='caffe.MarginInnerProductParameter.base', index=4,
       number=5, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='gamma', full_name='caffe.MarginInnerProductParameter.gamma', index=5,
       number=6, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='power', full_name='caffe.MarginInnerProductParameter.power', index=6,
       number=7, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9050,7 +9268,7 @@ _MARGININNERPRODUCTPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='lambda_min', full_name='caffe.MarginInnerProductParameter.lambda_min', index=8,
       number=9, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9063,11 +9281,12 @@ _MARGININNERPRODUCTPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27233,
-  serialized_end=27578,
+  serialized_start=27579,
+  serialized_end=27924,
 )
 
 
@@ -9095,7 +9314,7 @@ _ADDITIVEMARGININNERPRODUCTPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='m', full_name='caffe.AdditiveMarginInnerProductParameter.m', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.35,
+      has_default_value=True, default_value=float(0.35),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9114,11 +9333,12 @@ _ADDITIVEMARGININNERPRODUCTPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27581,
-  serialized_end=27719,
+  serialized_start=27927,
+  serialized_end=28065,
 )
 
 
@@ -9271,11 +9491,12 @@ _DEFORMABLECONVOLUTIONPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27722,
-  serialized_end=28279,
+  serialized_start=28068,
+  serialized_end=28625,
 )
 
 
@@ -9289,7 +9510,7 @@ _LABELSPECIFICADDPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='bias', full_name='caffe.LabelSpecificAddParameter.bias', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9308,11 +9529,12 @@ _LABELSPECIFICADDPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28281,
-  serialized_end=28356,
+  serialized_start=28627,
+  serialized_end=28702,
 )
 
 
@@ -9354,21 +9576,21 @@ _CHANNELSCALEPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='max_global_scale', full_name='caffe.ChannelScaleParameter.max_global_scale', index=4,
       number=5, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1000,
+      has_default_value=True, default_value=float(1000),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='min_global_scale', full_name='caffe.ChannelScaleParameter.min_global_scale', index=5,
       number=6, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0,
+      has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='init_global_scale', full_name='caffe.ChannelScaleParameter.init_global_scale', index=6,
       number=7, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9380,11 +9602,12 @@ _CHANNELSCALEPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28359,
-  serialized_end=28596,
+  serialized_start=28705,
+  serialized_end=28942,
 )
 
 
@@ -9398,7 +9621,7 @@ _COSINADDMPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='m', full_name='caffe.CosinAddmParameter.m', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.5,
+      has_default_value=True, default_value=float(0.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9417,11 +9640,12 @@ _COSINADDMPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28598,
-  serialized_end=28665,
+  serialized_start=28944,
+  serialized_end=29011,
 )
 
 
@@ -9435,7 +9659,7 @@ _COSINMULMPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='m', full_name='caffe.CosinMulmParameter.m', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=4,
+      has_default_value=True, default_value=float(4),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9454,11 +9678,12 @@ _COSINMULMPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28667,
-  serialized_end=28732,
+  serialized_start=29013,
+  serialized_end=29078,
 )
 
 
@@ -9472,7 +9697,7 @@ _COUPLEDCLUSTERLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='margin', full_name='caffe.CoupledClusterLossParameter.margin', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9486,7 +9711,7 @@ _COUPLEDCLUSTERLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='scale', full_name='caffe.CoupledClusterLossParameter.scale', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9505,11 +9730,12 @@ _COUPLEDCLUSTERLOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28734,
-  serialized_end=28848,
+  serialized_start=29080,
+  serialized_end=29194,
 )
 
 
@@ -9523,7 +9749,7 @@ _TRIPLETLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='margin', full_name='caffe.TripletLossParameter.margin', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9537,7 +9763,7 @@ _TRIPLETLOSSPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='scale', full_name='caffe.TripletLossParameter.scale', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9549,11 +9775,12 @@ _TRIPLETLOSSPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28850,
-  serialized_end=28932,
+  serialized_start=29196,
+  serialized_end=29278,
 )
 
 
@@ -9567,7 +9794,7 @@ _GENERALTRIPLETPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='margin', full_name='caffe.GeneralTripletParameter.margin', index=0,
       number=1, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=0.2,
+      has_default_value=True, default_value=float(0.2),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9595,21 +9822,21 @@ _GENERALTRIPLETPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='positive_upper_bound', full_name='caffe.GeneralTripletParameter.positive_upper_bound', index=4,
       number=5, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='positive_weight', full_name='caffe.GeneralTripletParameter.positive_weight', index=5,
       number=6, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
       name='negative_weight', full_name='caffe.GeneralTripletParameter.negative_weight', index=6,
       number=7, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9621,11 +9848,12 @@ _GENERALTRIPLETPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28935,
-  serialized_end=29161,
+  serialized_start=29281,
+  serialized_end=29507,
 )
 
 
@@ -9653,7 +9881,7 @@ _ROIALIGNPARAMETER = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='spatial_scale', full_name='caffe.ROIAlignParameter.spatial_scale', index=2,
       number=3, type=2, cpp_type=6, label=1,
-      has_default_value=True, default_value=1,
+      has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -9665,11 +9893,12 @@ _ROIALIGNPARAMETER = _descriptor.Descriptor(
   ],
   options=None,
   is_extendable=False,
+  syntax='proto2',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29163,
-  serialized_end=29250,
+  serialized_start=29509,
+  serialized_end=29596,
 )
 
 _BLOBPROTO.fields_by_name['shape'].message_type = _BLOBSHAPE
@@ -9800,6 +10029,7 @@ _LAYERPARAMETER.fields_by_name['roi_align_param'].message_type = _ROIALIGNPARAME
 _LAYERPARAMETER.fields_by_name['upsample_param'].message_type = _UPSAMPLEPARAMETER
 _LAYERPARAMETER.fields_by_name['matmul_param'].message_type = _MATMULPARAMETER
 _LAYERPARAMETER.fields_by_name['pass_through_param'].message_type = _PASSTHROUGHPARAMETER
+_LAYERPARAMETER.fields_by_name['proposal_param'].message_type = _PROPOSALPARAMETER
 _ANNOTATEDDATAPARAMETER.fields_by_name['batch_sampler'].message_type = _BATCHSAMPLER
 _ANNOTATEDDATAPARAMETER.fields_by_name['anno_type'].enum_type = _ANNOTATEDDATUM_ANNOTATIONTYPE
 _BNPARAMETER.fields_by_name['slope_filler'].message_type = _FILLERPARAMETER
@@ -9974,6 +10204,8 @@ DESCRIPTOR.message_types_by_name['STLossParameter'] = _STLOSSPARAMETER
 DESCRIPTOR.message_types_by_name['ParamSpec'] = _PARAMSPEC
 DESCRIPTOR.message_types_by_name['LayerParameter'] = _LAYERPARAMETER
 DESCRIPTOR.message_types_by_name['UpsampleParameter'] = _UPSAMPLEPARAMETER
+DESCRIPTOR.message_types_by_name['ProposalParameter'] = _PROPOSALPARAMETER
+DESCRIPTOR.message_types_by_name['ROIPoolingParameter'] = _ROIPOOLINGPARAMETER
 DESCRIPTOR.message_types_by_name['MatMulParameter'] = _MATMULPARAMETER
 DESCRIPTOR.message_types_by_name['PassThroughParameter'] = _PASSTHROUGHPARAMETER
 DESCRIPTOR.message_types_by_name['AnnotatedDataParameter'] = _ANNOTATEDDATAPARAMETER
@@ -10039,7 +10271,6 @@ DESCRIPTOR.message_types_by_name['ReductionParameter'] = _REDUCTIONPARAMETER
 DESCRIPTOR.message_types_by_name['ReLUParameter'] = _RELUPARAMETER
 DESCRIPTOR.message_types_by_name['ReLU6Parameter'] = _RELU6PARAMETER
 DESCRIPTOR.message_types_by_name['ReshapeParameter'] = _RESHAPEPARAMETER
-DESCRIPTOR.message_types_by_name['ROIPoolingParameter'] = _ROIPOOLINGPARAMETER
 DESCRIPTOR.message_types_by_name['ScaleParameter'] = _SCALEPARAMETER
 DESCRIPTOR.message_types_by_name['SigmoidParameter'] = _SIGMOIDPARAMETER
 DESCRIPTOR.message_types_by_name['SmoothL1LossParameter'] = _SMOOTHL1LOSSPARAMETER
@@ -10257,6 +10488,20 @@ UpsampleParameter = _reflection.GeneratedProtocolMessageType('UpsampleParameter'
   # @@protoc_insertion_point(class_scope:caffe.UpsampleParameter)
   ))
 _sym_db.RegisterMessage(UpsampleParameter)
+
+ProposalParameter = _reflection.GeneratedProtocolMessageType('ProposalParameter', (_message.Message,), dict(
+  DESCRIPTOR = _PROPOSALPARAMETER,
+  __module__ = 'caffe_pb2'
+  # @@protoc_insertion_point(class_scope:caffe.ProposalParameter)
+  ))
+_sym_db.RegisterMessage(ProposalParameter)
+
+ROIPoolingParameter = _reflection.GeneratedProtocolMessageType('ROIPoolingParameter', (_message.Message,), dict(
+  DESCRIPTOR = _ROIPOOLINGPARAMETER,
+  __module__ = 'caffe_pb2'
+  # @@protoc_insertion_point(class_scope:caffe.ROIPoolingParameter)
+  ))
+_sym_db.RegisterMessage(ROIPoolingParameter)
 
 MatMulParameter = _reflection.GeneratedProtocolMessageType('MatMulParameter', (_message.Message,), dict(
   DESCRIPTOR = _MATMULPARAMETER,
@@ -10712,13 +10957,6 @@ ReshapeParameter = _reflection.GeneratedProtocolMessageType('ReshapeParameter', 
   # @@protoc_insertion_point(class_scope:caffe.ReshapeParameter)
   ))
 _sym_db.RegisterMessage(ReshapeParameter)
-
-ROIPoolingParameter = _reflection.GeneratedProtocolMessageType('ROIPoolingParameter', (_message.Message,), dict(
-  DESCRIPTOR = _ROIPOOLINGPARAMETER,
-  __module__ = 'caffe_pb2'
-  # @@protoc_insertion_point(class_scope:caffe.ROIPoolingParameter)
-  ))
-_sym_db.RegisterMessage(ROIPoolingParameter)
 
 ScaleParameter = _reflection.GeneratedProtocolMessageType('ScaleParameter', (_message.Message,), dict(
   DESCRIPTOR = _SCALEPARAMETER,

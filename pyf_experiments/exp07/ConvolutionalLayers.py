@@ -410,10 +410,10 @@ class Expand(nn.Module):
 
 if __name__ == '__main__':
 
-    input_tensor = Variable(torch.tensor([[1], [2], [3]]))
-    model = Expand()
-    name = f'exp07/Expand'
-    caffe_model_name = f'Expand'
+    input_tensor = torch.randn(20, 100, 35, 45)
+    model = Interpolate()
+    name = f'exp07/Interpolate'
+    caffe_model_name = f'Interpolate'
     model.eval()
 
     moduel_list = [

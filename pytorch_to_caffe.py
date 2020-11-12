@@ -220,8 +220,8 @@ def _max(raw,*args):
         log.cnet.add_layer(layer)
     return x
 
-def _cat(raw,inputs, dimension=0):
-    x=raw(inputs, dimension)
+def _cat(raw,inputs, dim=0):
+    x=raw(inputs, dim)
     bottom_blobs=[]
     for input in inputs:
         bottom_blobs.append(log.blobs(input))
@@ -229,7 +229,7 @@ def _cat(raw,inputs, dimension=0):
     top_blobs=log.add_blobs([x],name='cat_blob')
     layer=caffe_net.Layer_param(name=layer_name,type='Concat',
                                 bottom=bottom_blobs,top=top_blobs)
-    layer.param.concat_param.axis =dimension
+    layer.param.concat_param.axis =dim
     log.cnet.add_layer(layer)
     return x
 
@@ -393,7 +393,7 @@ def _instance_norm(raw, input, running_mean=None, running_var=None, weight=None,
 
 
 #upsample layer
-def _interpolate(raw, input,size=None, scale_factor=None, mode='nearest', align_corners=None):
+def _interpolate(raw, input, size=None, scale_factor=None, mode='nearest', align_corners=None):
     # 定义的参数包括 scale,即输出与输入的尺寸比例,如 2;scale_h、scale_w,
     # 同 scale,分别为 h、w 方向上的尺寸比例;pad_out_h、pad_out_w,仅在 scale 为 2 时
     # 有用,对输出进行额外 padding 在 h、w 方向上的数值;upsample_h、upsample_w,输
@@ -402,7 +402,7 @@ def _interpolate(raw, input,size=None, scale_factor=None, mode='nearest', align_
     # for nearest _interpolate
     if mode != "nearest" or align_corners != None:
         raise NotImplementedError("not implement F.interpolate totoaly")
-    x = raw(input,size , scale_factor ,mode)
+    x = raw(input, size, scale_factor,mode)
 
     layer_name = log.add_layer(name='upsample')
     top_blobs = log.add_blobs([x], name='upsample_blob'.format(type))
@@ -413,6 +413,89 @@ def _interpolate(raw, input,size=None, scale_factor=None, mode='nearest', align_
     log.cnet.add_layer(layer)
     return x
 
+
+# pyf Proposal 用于Faster R-CNN，根据rpn_cls_prob的foreground，rpn_bbox_pred中的bounding box regression修正anchors获得精确的proposals。
+def _proposal(raw, cls_prob, bbox_delta):
+    """
+    How to support a new layer type:
+    layer_name=log.add_layer(layer_type_name)
+    top_blobs=log.add_blobs(<output of that layer>)
+    layer=caffe_net.Layer_param(xxx)
+    <set layer parameters>
+    [<layer.add_data(*datas)>]
+    log.cnet.add_layer(layer)
+    
+    Please MUTE the inplace operations to avoid not find in graph
+
+    注意：只有torch.nn.functional中的函数才能转换为caffe中的层
+    """
+    """ example 1 
+    # 定义的参数包括 scale,即输出与输入的尺寸比例,如 2;scale_h、scale_w,
+    # 同 scale,分别为 h、w 方向上的尺寸比例;pad_out_h、pad_out_w,仅在 scale 为 2 时
+    # 有用,对输出进行额外 padding 在 h、w 方向上的数值;upsample_h、upsample_w,输
+    # 出图像尺寸的数值。在 Upsample 的相关代码中,推荐仅仅使用 upsample_h、
+    # upsample_w 准确定义 Upsample 层的输出尺寸,其他所有的参数都不推荐继续使用。
+    # for nearest _interpolate
+    if mode != "nearest" or align_corners != None:
+        raise NotImplementedError("not implement F.interpolate totoaly")
+    x = raw(input, size, scale_factor,mode)
+
+    layer_name = log.add_layer(name='upsample')
+    top_blobs = log.add_blobs([x], name='upsample_blob'.format(type))
+    layer = caffe_net.Layer_param(name=layer_name, type='Upsample',
+                                  bottom=[log.blobs(input)], top=top_blobs)
+
+    layer.upsample_param(size =(input.size(2),input.size(3)), scale_factor= scale_factor)
+    log.cnet.add_layer(layer)
+    return x """
+    rois, actual_rois_num = raw(cls_prob, bbox_delta)
+
+    bottom_blobs=[]
+    bottom_blobs.append(log.blobs(cls_prob))
+    bottom_blobs.append(log.blobs(bbox_delta))
+
+    top_blobs=log.add_blobs([rois, actual_rois_num],name='proposal_blob')
+
+    layer_name = log.add_layer(name='Proposal')
+
+    layer = caffe_net.Layer_param(name=layer_name, type='Proposal',
+                                  bottom=bottom_blobs, top=top_blobs)
+    layer.proposal_param()
+    log.cnet.add_layer(layer)
+    return rois, actual_rois_num
+
+    """ example 2
+def _cat(raw,inputs, dim=0):
+    x=raw(inputs, dim)
+    bottom_blobs=[]
+    for input in inputs:
+        bottom_blobs.append(log.blobs(input))
+    layer_name=log.add_layer(name='cat')
+    top_blobs=log.add_blobs([x],name='cat_blob')
+    layer=caffe_net.Layer_param(name=layer_name,type='Concat',
+                                bottom=bottom_blobs,top=top_blobs)
+    layer.param.concat_param.axis =dim
+    log.cnet.add_layer(layer)
+    return x """
+
+
+# pyf Proposal 用于Faster R-CNN，根据rpn_cls_prob的foreground，rpn_bbox_pred中的bounding box regression修正anchors获得精确的proposals。
+def _roipooling(raw, rois, feature_map):
+    pool = raw(rois, feature_map)
+
+    bottom_blobs=[]
+    bottom_blobs.append(log.blobs(rois))
+    bottom_blobs.append(log.blobs(feature_map))
+
+    top_blobs=log.add_blobs([pool],name='pool')
+
+    layer_name = log.add_layer(name='ROIPooling')
+
+    layer = caffe_net.Layer_param(name=layer_name, type='ROIPooling',
+                                  bottom=bottom_blobs, top=top_blobs)
+    layer.roipooling_param()
+    log.cnet.add_layer(layer)
+    return pool
 
 #sigmid layer
 def _sigmoid(raw, input):
@@ -693,6 +776,8 @@ class Rp(object):
         return out
 
 
+
+
 F.conv2d=Rp(F.conv2d,_conv2d)
 F.linear=Rp(F.linear,_linear)
 F.relu=Rp(F.relu,_relu)
@@ -713,6 +798,10 @@ F.tanh = Rp(F.tanh,_tanh)
 F.tanh = Rp(F.tanh,_tanh)
 F.hardtanh = Rp(F.hardtanh,_hardtanh)
 # F.l2norm = Rp(F.l2norm,_l2Norm)
+# pyf proposal
+F.proposal = Rp(F.proposal, _proposal)
+# pyf ROIPooling
+F.roipooling = Rp(F.roipooling, _roipooling)
 
 torch.split=Rp(torch.split,_split)
 torch.max=Rp(torch.max,_max)

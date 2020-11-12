@@ -634,6 +634,10 @@ message LayerParameter {
   optional MatMulParameter matmul_param = 100005;
   optional PassThroughParameter pass_through_param = 100004;
   //optional NormalizeParameter norm_param = 100001;
+
+  //**************add by pyf***************
+  optional ProposalParameter proposal_param = 204;
+  // optional ROIPoolingParameter roi_pooling_param = 205;
 }
 
 //*********************add by wdd******************
@@ -645,6 +649,28 @@ message UpsampleParameter {
   optional bool pad_out_w = 5 [default = false];
   optional uint32 upsample_h = 6;
   optional uint32 upsample_w = 7;
+}
+
+//*********************add by pyf******************
+message ProposalParameter {
+    optional int32 feat_stride = 1 [default = 16];
+    optional int32 base_size = 2 [default = 16];
+    optional int32 min_size = 3 [default = 16];
+    repeated float ratio = 4;
+    repeated float scale = 5;
+    optional int32 pre_nms_topn = 6 [default = 3000];
+    optional int32 post_nms_topn = 7 [default = 304];
+    optional float iou_threshold = 8 [default = 0.7];
+    optional bool output_actual_rois_num = 9 [default = false];
+}
+
+//*********************add by pyf******************
+message ROIPoolingParameter {
+  required int32 pooled_h = 1;
+  required int32 pooled_w = 2;
+  optional float spatial_scale = 3 [default=0.0625];
+  optional float spatial_scale_h = 4;
+  optional float spatial_scale_w = 5;
 }
 
 message MatMulParameter {
@@ -1863,16 +1889,17 @@ message ReshapeParameter {
   optional int32 num_axes = 3 [default = -1];
 }
 
+
 // Message that stores parameters used by ROIPoolingLayer
-message ROIPoolingParameter {
-  // Pad, kernel size, and stride are all given as a single value for equal
-  // dimensions in height and width or as Y, X pairs.
-  optional uint32 pooled_h = 1 [default = 0]; // The pooled output height
-  optional uint32 pooled_w = 2 [default = 0]; // The pooled output width
-  // Multiplicative spatial scale factor to translate ROI coords from their
-  // input scale to the scale used when pooling
-  optional float spatial_scale = 3 [default = 1];
-}
+// message ROIPoolingParameter {
+//   // Pad, kernel size, and stride are all given as a single value for equal
+//   // dimensions in height and width or as Y, X pairs.
+//   optional uint32 pooled_h = 1 [default = 0]; // The pooled output height
+//   optional uint32 pooled_w = 2 [default = 0]; // The pooled output width
+//   // Multiplicative spatial scale factor to translate ROI coords from their
+//   // input scale to the scale used when pooling
+//   optional float spatial_scale = 3 [default = 1];
+// }
 
 message ScaleParameter {
   // The first axis of bottom[0] (the first input Blob) along which to apply

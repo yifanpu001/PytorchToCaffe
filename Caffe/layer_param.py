@@ -145,7 +145,7 @@ class Layer_param():
     #         upsample_w: 224
     #     }
     # }
-    def upsample_param(self,size=None, scale_factor=None):
+    def upsample_param(self, size=None, scale_factor=None):
         upsample_param=pb.UpsampleParameter()
         if scale_factor:
             if isinstance(scale_factor,int):
@@ -162,6 +162,28 @@ class Layer_param():
                 upsample_param.\
                     upsample_w = size[1] * scale_factor
         self.param.upsample_param.CopyFrom(upsample_param)
+
+    # pyf
+    def proposal_param(self):
+        proposal_param = pb.ProposalParameter()
+
+        proposal_param.feat_stride = 16
+        proposal_param.base_size = 16 
+        proposal_param.min_size = 16
+        proposal_param.pre_nms_topn = 3000
+        proposal_param.post_nms_topn = 304
+        proposal_param.iou_threshold = 0.7
+        proposal_param.output_actual_rois_num = True
+        self.param.proposal_param.CopyFrom(proposal_param)
+
+    # pyf
+    def roipooling_param(self):
+        roipooling_param = pb.ROIPoolingParameter()
+
+        roipooling_param.pooled_h = 7
+        roipooling_param.pooled_w = 7
+        roipooling_param.spatial_scale = 0.0625
+        self.param.roi_pooling_param.CopyFrom(roipooling_param)
 
     def add_data(self,*args):
         """Args are data numpy array
