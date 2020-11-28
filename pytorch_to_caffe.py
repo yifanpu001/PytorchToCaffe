@@ -146,6 +146,16 @@ def _linear(raw,input, weight, bias=None):
 
 def _split(raw,tensor, split_size, dim=0):
     # split in pytorch is slice in caffe
+    # x=raw(tensor, split_size, dim)
+    # layer_name=log.add_layer('split')
+    # top_blobs=log.add_blobs(x,name='split_blob')
+    # layer=caffe_net.Layer_param(name=layer_name, type='Slice',
+    #                             bottom=[log.blobs(tensor)], top=top_blobs)
+    # slice_num=int(np.floor(tensor.size()[dim]/split_size))
+    # slice_param=caffe_net.pb.SliceParameter(axis=dim,slice_point=[split_size*i for i in range(1,slice_num)])
+    # layer.param.slice_param.CopyFrom(slice_param)
+    # log.cnet.add_layer(layer)
+    # return x
     x=raw(tensor, split_size, dim)
     layer_name=log.add_layer('split')
     top_blobs=log.add_blobs(x,name='split_blob')
@@ -167,7 +177,7 @@ def _pool(type,raw,input,x,kernel_size,stride,padding,ceil_mode):
     # TODO w,h different kernel, stride and padding
     # processing ceil mode
     layer.pool_param(kernel_size=kernel_size, stride=kernel_size if stride is None else stride,
-                     pad=padding, type=type.upper() , ceil_mode = ceil_mode)
+                     pad=padding, type=type.upper() , ceil_mode = not ceil_mode)
     log.cnet.add_layer(layer)
     if ceil_mode==False and stride is not None:
         oheight = (input.size()[2] - _pair(kernel_size)[0] + 2 * _pair(padding)[0]) % (_pair(stride)[0])

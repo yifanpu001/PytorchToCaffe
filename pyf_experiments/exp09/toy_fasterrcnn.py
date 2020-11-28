@@ -94,7 +94,7 @@ class toy_fasterrcnn(nn.Module):
         x2 = self.softmax(x2)
         x2 = x2.view(1, 18, -1, x2.shape[3])
 
-        # rois, _ = F.proposal(x1, x2)
+        rois, _ = F.proposal(x1, x2)
 
         # pool = F.roipooling(rois, feature_map)
 
